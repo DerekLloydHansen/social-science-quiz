@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    body { margin: 0; font-size: 14px; }
+    img { max-width: 100%; }
+    [hidden] { display: none !important; }
+</style>
+  <title>Social Science Methods Quiz</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+/* ─── Token system ─────────────────────────────────────── */
+:root {
+  --bg:        #edf1f7;
+  --surface:   #ffffff;
+  --surface2:  #f4f6fb;
+  --border:    #d4dae6;
+  --navy:      #1b3564;
+  --navy-mid:  #2a4a80;
+  --blue:      #2666cf;
+  --amber:     #d4880a;
+  --amber-lt:  #fff3d6;
+  --green:     #1a7f5a;
+  --green-lt:  #d4f0e5;
+  --red:       #c0392b;
+  --red-lt:    #fde8e6;
+  --text:      #13202f;
+  --text2:     #4a5568;
+  --text3:     #7a8ba0;
+  --shadow:    0 2px 12px rgba(27,53,100,.08);
+  --shadow-lg: 0 6px 28px rgba(27,53,100,.13);
+  --radius:    12px;
+  --radius-sm: 8px;
+
+  /* Module accent colors */
+  --m1: #2666cf;
+  --m2: #7b3fb5;
+  --m3: #1a7f5a;
+  --m4: #b5601a;
+  --m5: #2d6e9e;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:        #0d1a27;
+    --surface:   #162435;
+    --surface2:  #1c2e42;
+    --border:    #2a3d54;
+    --navy:      #4d7ac9;
+    --navy-mid:  #6390d9;
+    --blue:      #5b90e8;
+    --amber:     #e8a320;
+    --amber-lt:  #3a2a05;
+    --green:     #2aad7a;
+    --green-lt:  #0d2d1e;
+    --red:       #e05548;
+    --red-lt:    #2d0f0d;
+    --text:      #dce8f5;
+    --text2:     #96afc5;
+    --text3:     #5a7a95;
+    --shadow:    0 2px 12px rgba(0,0,0,.25);
+    --shadow-lg: 0 6px 28px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"] {
+  --bg:        #0d1a27;
+  --surface:   #162435;
+  --surface2:  #1c2e42;
+  --border:    #2a3d54;
+  --navy:      #4d7ac9;
+  --navy-mid:  #6390d9;
+  --blue:      #5b90e8;
+  --amber:     #e8a320;
+  --amber-lt:  #3a2a05;
+  --green:     #2aad7a;
+  --green-lt:  #0d2d1e;
+  --red:       #e05548;
+  --red-lt:    #2d0f0d;
+  --text:      #dce8f5;
+  --text2:     #96afc5;
+  --text3:     #5a7a95;
+  --shadow:    0 2px 12px rgba(0,0,0,.25);
+  --shadow-lg: 0 6px 28px rgba(0,0,0,.4);
+}
+
+/* ─── Reset & base ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 16px;
+}
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+a { color: var(--blue); }
+
+/* ─── Layout ───────────────────────────────────────────── */
+#root { min-height: 100%; display: flex; flex-direction: column; }
+
+/* ─── Sticky Header ────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 100;
+  background: var(--navy);
+  color: #fff;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 60px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.site-header h1 {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex: 1;
+  letter-spacing: -.01em;
+}
+.header-badge {
+  font-size: .75rem;
+  font-weight: 600;
+  background: rgba(255,255,255,.18);
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* ─── Progress bar ─────────────────────────────────────── */
+.progress-bar-wrap {
+  height: 4px;
+  background: var(--border);
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: var(--amber);
+  transition: width .4s ease;
+}
+
+/* ─── Main content container ────────────────────────────── */
+.content {
+  flex: 1;
+  padding: 32px 24px 60px;
+  max-width: 780px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ─── HOME SCREEN ──────────────────────────────────────── */
+.home-intro {
+  text-align: center;
+  padding: 32px 0 24px;
+}
+.home-intro h2 {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-wrap: balance;
+  margin-bottom: 10px;
+}
+.home-intro p {
+  font-size: 1.05rem;
+  color: var(--text2);
+  max-width: 520px;
+  margin: 0 auto 24px;
+}
+.overall-score-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--text2);
+  box-shadow: var(--shadow);
+}
+.overall-score-pill span.score-num {
+  font-size: 1.1rem;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+.module-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.module-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+.module-card:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+.module-card .m-accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.module-card .m-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-top: 4px;
+}
+.module-card .m-title {
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--text);
+  line-height: 1.3;
+}
+.module-card .m-desc {
+  font-size: .82rem;
+  color: var(--text2);
+  line-height: 1.4;
+  flex: 1;
+}
+.module-card .m-progress {
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--text3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+.m-mini-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.m-mini-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width .4s;
+}
+.module-card.completed-mod {
+  border-color: var(--green);
+}
+.check-badge {
+  position: absolute;
+  top: 14px; right: 14px;
+  width: 22px; height: 22px;
+  background: var(--green);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ─── QUIZ SCREEN ──────────────────────────────────────── */
+.quiz-nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--text2);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: background .15s;
+}
+.back-btn:hover { background: var(--surface2); }
+.q-counter {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--text3);
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+.q-score-badge {
+  font-size: .85rem;
+  font-weight: 700;
+  background: var(--amber-lt);
+  color: var(--amber);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Module progress strip */
+.module-strip {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--module-color, var(--blue));
+}
+.module-strip .ms-icon { font-size: 1.4rem; }
+.module-strip .ms-info { flex: 1; }
+.module-strip .ms-title {
+  font-weight: 700;
+  font-size: .92rem;
+  color: var(--text);
+}
+.module-strip .ms-sub {
+  font-size: .78rem;
+  color: var(--text3);
+}
+.ms-dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.ms-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background .25s;
+}
+.ms-dot.done { background: var(--green); }
+.ms-dot.active { background: var(--module-color, var(--blue)); transform: scale(1.25); }
+
+/* Scenario box */
+.scenario-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--amber);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+.scenario-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 10px;
+}
+.scenario-text {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+.scenario-text p { margin-bottom: 10px; }
+.scenario-text p:last-child { margin-bottom: 0; }
+.scenario-text em { font-style: italic; }
+.scenario-text strong { font-weight: 700; }
+
+/* Question card */
+.question-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 26px 26px 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+}
+.q-type-label {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 14px;
+}
+.q-text {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 22px;
+  text-wrap: pretty;
+}
+.q-text em { font-style: italic; }
+.q-text strong { font-weight: 700; }
+
+/* MC options */
+.mc-options { display: flex; flex-direction: column; gap: 10px; }
+.mc-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--surface2);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+  text-align: left;
+  width: 100%;
+  line-height: 1.4;
+  font-size: .95rem;
+}
+.mc-option:hover:not(:disabled) { border-color: var(--blue); background: var(--surface); }
+.mc-option:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.mc-option .opt-letter {
+  flex-shrink: 0;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--border);
+  color: var(--text2);
+  font-weight: 700;
+  font-size: .8rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s, color .15s;
+}
+.mc-option.selected {
+  border-color: var(--blue);
+  background: #e8f0fe;
+}
+.mc-option.selected .opt-letter { background: var(--blue); color: #fff; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .mc-option.selected { background: rgba(38,102,207,.15); }
+}
+:root[data-theme="dark"] .mc-option.selected { background: rgba(38,102,207,.15); }
+.mc-option.correct-opt {
+  border-color: var(--green);
+  background: var(--green-lt);
+}
+.mc-option.correct-opt .opt-letter { background: var(--green); color: #fff; }
+.mc-option.wrong-opt {
+  border-color: var(--red);
+  background: var(--red-lt);
+}
+.mc-option.wrong-opt .opt-letter { background: var(--red); color: #fff; }
+.mc-option:disabled { cursor: default; }
+
+/* Matching */
+.match-table { width: 100%; border-collapse: collapse; }
+.match-row { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+.match-left {
+  flex: 0 0 auto;
+  min-width: 160px;
+  max-width: 200px;
+  background: var(--navy);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: .88rem;
+  text-align: center;
+}
+.match-arrow { flex-shrink: 0; color: var(--text3); font-size: 1.1rem; }
+.match-select {
+  flex: 1;
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--border);
+  background: var(--surface2);
+  color: var(--text);
+  font-family: inherit;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: border-color .15s;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a8ba0' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+.match-select:focus { outline: none; border-color: var(--blue); }
+.match-select:disabled { cursor: default; opacity: .85; }
+.match-select.match-correct { border-color: var(--green); background-color: var(--green-lt); }
+.match-select.match-wrong { border-color: var(--red); background-color: var(--red-lt); }
+.match-correct-answer {
+  font-size: .8rem;
+  color: var(--green);
+  font-weight: 600;
+  margin-top: 2px;
+  display: none;
+}
+.match-correct-answer.visible { display: block; }
+
+/* Short answer */
+.short-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px 16px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface2);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color .15s;
+}
+.short-textarea:focus { outline: none; border-color: var(--blue); }
+.short-textarea:disabled { cursor: default; }
+.short-hint {
+  font-size: .78rem;
+  color: var(--text3);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* Feedback box */
+.feedback-box {
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  border: 2px solid transparent;
+  box-shadow: var(--shadow);
+}
+.feedback-box.correct {
+  background: var(--green-lt);
+  border-color: var(--green);
+}
+.feedback-box.incorrect {
+  background: var(--red-lt);
+  border-color: var(--red);
+}
+.feedback-box.neutral {
+  background: var(--amber-lt);
+  border-color: var(--amber);
+}
+.feedback-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.feedback-icon { font-size: 1.3rem; }
+.feedback-label {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.feedback-box.correct .feedback-label { color: var(--green); }
+.feedback-box.incorrect .feedback-label { color: var(--red); }
+.feedback-box.neutral .feedback-label { color: var(--amber); }
+.feedback-explanation {
+  font-size: .93rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+.feedback-explanation strong { font-weight: 700; }
+.model-answer-box {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.model-answer-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 8px;
+}
+.model-answer-text {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* Action buttons */
+.action-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: .95rem;
+  transition: background .15s, transform .1s;
+  box-shadow: var(--shadow);
+}
+.btn-primary:hover { background: var(--navy-mid); }
+.btn-primary:active { transform: scale(.98); }
+.btn-primary:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.btn-primary:disabled { opacity: .45; cursor: default; }
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 2px solid var(--border);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: .95rem;
+  transition: background .15s;
+  box-shadow: var(--shadow);
+}
+.btn-secondary:hover { background: var(--surface2); }
+.btn-secondary:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+/* ─── SUMMARY SCREEN ───────────────────────────────────── */
+.summary-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  border: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.summary-icon { font-size: 3rem; margin-bottom: 12px; }
+.summary-title {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.summary-score {
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 6px;
+}
+.summary-score .total { color: var(--text3); font-size: 1.8rem; }
+.summary-sub { font-size: .95rem; color: var(--text2); }
+
+.review-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.review-item {
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  box-shadow: var(--shadow);
+}
+.review-item.r-correct { border-left-color: var(--green); }
+.review-item.r-incorrect { border-left-color: var(--red); }
+.review-item.r-short { border-left-color: var(--amber); }
+.review-icon { font-size: 1rem; flex-shrink: 0; padding-top: 2px; }
+.review-q { font-size: .88rem; color: var(--text); line-height: 1.4; }
+.review-q strong { display: block; font-size: .8rem; color: var(--text3); font-weight: 600; margin-bottom: 2px; }
+
+/* ─── FINAL SCREEN ─────────────────────────────────────── */
+.final-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 40px 28px;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  border: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.final-icon { font-size: 3.5rem; margin-bottom: 16px; }
+.final-title {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.final-score {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 6px;
+}
+.final-score .of { font-size: 2rem; color: var(--text3); }
+.final-message { font-size: 1.05rem; color: var(--text2); margin-bottom: 28px; }
+.module-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  margin-bottom: 28px;
+}
+.breakdown-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface2);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+}
+.breakdown-icon { font-size: 1.1rem; }
+.breakdown-name { font-weight: 600; font-size: .88rem; flex: 1; color: var(--text); }
+.breakdown-score { font-variant-numeric: tabular-nums; font-weight: 700; font-size: .92rem; color: var(--text2); }
+.breakdown-bar-wrap { width: 80px; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.breakdown-bar { height: 100%; border-radius: 3px; background: var(--green); transition: width .5s; }
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .content { padding: 20px 16px 48px; }
+  .home-intro h2 { font-size: 1.7rem; }
+  .modules-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .match-left { min-width: 110px; max-width: 140px; font-size: .8rem; }
+  .question-card { padding: 20px 16px 16px; }
+  .q-text { font-size: 1.1rem; }
+  .final-score { font-size: 2.8rem; }
+  .breakdown-bar-wrap { width: 50px; }
+}
+@media (max-width: 400px) {
+  .modules-grid { grid-template-columns: 1fr; }
+  .match-row { flex-wrap: wrap; }
+  .match-left { min-width: 100%; max-width: 100%; }
+  .match-arrow { display: none; }
+  .match-select { width: 100%; }
+}
+</style>
+</head>
+<body>
+<div id="root">
+  <header class="site-header">
+    <h1>Social Science Methods</h1>
+    <div class="header-badge" id="header-badge">Practice Quiz</div>
+  </header>
+  <div class="progress-bar-wrap">
+    <div class="progress-bar-fill" id="global-progress" style="width:0%"></div>
+  </div>
+
+  <!-- HOME -->
+  <div id="screen-home" class="content">
+    <div class="home-intro">
+      <h2>Research Methods Practice</h2>
+      <p>Test your understanding of social science paradigms, research types, variables, and hypotheses. Based on UNIV 118R course materials.</p>
+      <div class="overall-score-pill">
+        <span>Overall score:</span>
+        <span class="score-num" id="home-score">— / —</span>
+      </div>
+    </div>
+    <div class="modules-grid" id="modules-grid"></div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="screen-quiz" class="content" hidden>
+    <div class="quiz-nav-bar">
+      <button class="back-btn" id="back-btn" onclick="showHome()">← Modules</button>
+      <span class="q-counter" id="q-counter"></span>
+      <span class="q-score-badge" id="q-score-badge"></span>
+    </div>
+    <div class="module-strip" id="module-strip">
+      <span class="ms-icon" id="ms-icon"></span>
+      <div class="ms-info">
+        <div class="ms-title" id="ms-title"></div>
+        <div class="ms-sub" id="ms-sub"></div>
+      </div>
+      <div class="ms-dots" id="ms-dots"></div>
+    </div>
+    <div class="scenario-box" id="scenario-box" hidden>
+      <div class="scenario-label">📖 Scenario</div>
+      <div class="scenario-text" id="scenario-text"></div>
+    </div>
+    <div class="question-card" id="question-card"></div>
+    <div class="feedback-box" id="feedback-box" hidden></div>
+    <div class="action-row" id="action-row">
+      <button class="btn-primary" id="submit-btn" onclick="submitAnswer()">Check Answer</button>
+      <button class="btn-secondary" id="next-btn" onclick="nextQuestion()" hidden>Next Question →</button>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div id="screen-summary" class="content" hidden></div>
+
+  <!-- FINAL -->
+  <div id="screen-final" class="content" hidden></div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   DATA
+═══════════════════════════════════════════════════════ */
+const MODULES = [
+  {
+    id: 'paradigms',
+    title: 'Research Paradigms',
+    icon: '🔭',
+    color: '#2666cf',
+    desc: 'Positivist, interpretive, critical & design',
+    questions: [
+      {
+        id:'p1', type:'mc',
+        q:'A researcher conducts a randomized controlled experiment to test whether fact-checking labels reduce people\'s willingness to share misinformation on social media. She uses statistical analysis to compare belief scores between the two groups. Which research paradigm does this represent?',
+        opts:['Positivist','Interpretive','Critical','Design'],
+        correct:0,
+        exp:'The <strong>positivist paradigm</strong> emphasizes objective, empirical testing through controlled experiments and statistics. This study manipulates an independent variable (label vs. no label) and measures its effect — a hallmark of positivist research that seeks general laws through hypothesis testing.'
+      },
+      {
+        id:'p2', type:'mc',
+        q:'A researcher examines how platform algorithms and corporate power shape whose claims get labeled "misinformation" and whose knowledge is treated as credible. She uses critical discourse analysis of policy documents and interviews with affected communities. Which paradigm is this?',
+        opts:['Positivist','Interpretive','Critical','Design'],
+        correct:2,
+        exp:'The <strong>critical paradigm</strong> focuses on power relations, inequality, and social justice. It examines how dominant structures shape knowledge and credibility. Critical discourse analysis of policies and power dynamics is a defining critical research method.'
+      },
+      {
+        id:'p3', type:'mc',
+        q:'A UX research team runs participatory workshops with university students to co-design a new social media feature that helps young people recognize bias in their news feeds. They iteratively prototype and test the tool based on user feedback. Which paradigm does this represent?',
+        opts:['Positivist','Interpretive','Critical','Design'],
+        correct:3,
+        exp:'The <strong>design paradigm</strong> is intervention- and solution-driven. It focuses on creating and iteratively evaluating tools or features that help people achieve goals. Participatory workshops and prototype testing are characteristic design research methods.'
+      },
+      {
+        id:'p4', type:'mc',
+        q:'A researcher spends six months conducting in-depth interviews and participant observation to understand how families in rural communities interpret and talk about their trust in government institutions. The goal is to build a rich, nuanced understanding of their lived experience. Which paradigm is this?',
+        opts:['Positivist','Interpretive','Critical','Design'],
+        correct:1,
+        exp:'The <strong>interpretive paradigm</strong> seeks to understand subjective meaning and lived experience. In-depth interviews and participant observation are classic interpretive methods used to gain rich qualitative understanding — the goal is understanding "how people make sense" rather than testing hypotheses.'
+      },
+      {
+        id:'p5', type:'matching',
+        q:'Match each research paradigm to its defining characteristic.',
+        pairs:[
+          {L:'Positivist', R:'Tests falsifiable hypotheses through controlled experiments and statistical analysis'},
+          {L:'Interpretive', R:'Seeks to understand lived experience and how people construct meaning'},
+          {L:'Critical', R:'Examines power structures, inequality, and whose knowledge is privileged'},
+          {L:'Design', R:'Creates and iteratively evaluates interventions to solve real-world problems'},
+        ],
+        exp:'Each paradigm has a distinct goal and method. Positivist: empirical hypothesis testing. Interpretive: rich qualitative understanding. Critical: power and social justice analysis. Design: creating and evaluating solutions.'
+      },
+    ]
+  },
+  {
+    id: 'research-types',
+    title: 'Research Types',
+    icon: '🔍',
+    color: '#7b3fb5',
+    desc: 'Exploratory, descriptive, explanatory & inductive/deductive',
+    questions: [
+      {
+        id:'rt1', type:'mc',
+        q:'A student is curious about how teenagers use TikTok to stay informed about politics. There is very little existing research on this topic, so she interviews a small group of teens and observes their TikTok usage over several weeks to develop initial insights. What type of research is this?',
+        opts:['Exploratory','Descriptive','Explanatory'],
+        correct:0,
+        exp:'<strong>Exploratory research</strong> is used when a topic is new or understudied. It aims to develop initial insights and generate hypotheses rather than test them. Open-ended interviews and observation in an understudied domain are classic exploratory methods.'
+      },
+      {
+        id:'rt2', type:'mc',
+        q:'A research team uses a large national survey to document how many Americans trust social media for news, broken down by age, income, and political affiliation. They are not testing a hypothesis — they want a detailed, accurate picture of current attitudes across the population. What type of research is this?',
+        opts:['Exploratory','Descriptive','Explanatory'],
+        correct:1,
+        exp:'<strong>Descriptive research</strong> carefully documents "what, where, when, and who" — it provides detailed, accurate documentation of a phenomenon. Large-scale surveys used to measure and characterize a population fall clearly in this category.'
+      },
+      {
+        id:'rt3', type:'mc',
+        q:'A researcher runs a randomized controlled experiment to determine whether displaying a "fact-check" label on a social media post <em>causes</em> users to share it less. She randomly assigns half of participants to see the label and compares their sharing rates to those who did not see it. What type of research is this?',
+        opts:['Exploratory','Descriptive','Explanatory'],
+        correct:2,
+        exp:'<strong>Explanatory research</strong> seeks to establish causal relationships — answering "why" and "how." Randomized experiments that manipulate a variable and measure its causal effect on an outcome are the gold standard for explanatory research.'
+      },
+      {
+        id:'rt4', type:'mc',
+        q:'A sociologist wants to develop a new theoretical model about why people join extremist online communities. She begins by observing several online forums and interviewing members, then identifies patterns that help her construct a theoretical framework. Is this primarily inductive or deductive?',
+        opts:['Inductive (theory-building)','Deductive (theory-testing)'],
+        correct:0,
+        exp:'<strong>Inductive research</strong> moves from observations toward theory — the researcher observes patterns and constructs a theoretical explanation from the ground up. This contrasts with deductive research, which starts with an existing theory and tests it.'
+      },
+      {
+        id:'rt5', type:'mc',
+        q:'Drawing on Social Identity Theory, a researcher hypothesizes that people are more likely to believe misinformation that aligns with their political group identity. She designs a survey experiment to test this specific, falsifiable prediction using statistical analysis. Is this primarily inductive or deductive?',
+        opts:['Inductive (theory-building)','Deductive (theory-testing)'],
+        correct:1,
+        exp:'<strong>Deductive research</strong> starts with an established theory, derives a testable hypothesis from it, then tests it with empirical data. Here the researcher begins with Social Identity Theory, uses it to generate a specific falsifiable prediction, then tests it — classic deductive logic.'
+      },
+      {
+        id:'rt6', type:'matching',
+        q:'Match each approach to the method or goal that best fits it.',
+        pairs:[
+          {L:'Exploratory', R:'Observing a new domain to develop initial understanding and hypotheses'},
+          {L:'Descriptive', R:'A national survey documenting social media usage patterns across demographics'},
+          {L:'Explanatory', R:'A randomized experiment measuring the causal effect of an intervention'},
+          {L:'Inductive', R:'Watching communities online to build a new theoretical model'},
+        ],
+        exp:'Exploratory research opens new territory with open-ended methods. Descriptive research documents with surveys and case studies. Explanatory research establishes cause with experiments. Inductive research builds theory from observations.'
+      },
+    ]
+  },
+  {
+    id: 'variables',
+    title: 'Variables & Hypotheses',
+    icon: '📐',
+    color: '#1a7f5a',
+    desc: 'Independent/dependent variables, hypotheses, constructs',
+    questions: [
+      {
+        id:'v1', type:'mc',
+        q:'A researcher studies whether the amount of sleep students get each night affects their exam performance. She measures each student\'s nightly sleep hours and then compares their exam scores. What is the <strong>independent variable</strong>?',
+        opts:['Exam performance (test scores)','Amount of sleep per night','Number of students in the study','Type of exam administered'],
+        correct:1,
+        exp:'The <strong>independent variable</strong> is the cause — the factor the researcher believes predicts or influences the outcome. Sleep is the predictor being measured. Exam performance is the dependent variable (the outcome that "depends on" sleep).'
+      },
+      {
+        id:'v2', type:'mc',
+        q:'In that same sleep-and-performance study: a researcher records nightly sleep hours and compares exam scores. What is the <strong>dependent variable</strong>?',
+        opts:['Exam performance (test scores)','Amount of sleep per night','Class enrollment size','Time of day the exam is given'],
+        correct:0,
+        exp:'The <strong>dependent variable</strong> is the outcome — the thing being explained or predicted. Exam performance depends on (is affected by) sleep, so it is the dependent variable. It changes in response to changes in the independent variable.'
+      },
+      {
+        id:'v3', type:'mc',
+        q:'Which of the following is the best example of a <strong>hypothesis</strong>?',
+        opts:[
+          'Why do people share misinformation online?',
+          'Students who study more hours per week will earn higher GPAs than students who study fewer hours.',
+          'The relationship between social media use and mental health in college students.',
+          'An investigation of leadership styles in non-profit organizations.'
+        ],
+        correct:1,
+        exp:'A <strong>hypothesis</strong> is a specific, testable, <em>falsifiable</em> prediction about the relationship between variables. "Students who study more will earn higher GPAs" predicts a specific direction, can be tested, and could be shown to be false. The other options are research topics or questions — not hypotheses.'
+      },
+      {
+        id:'v4', type:'mc',
+        q:'A researcher proposes: <em>"Employees who receive public recognition for their work will report higher job satisfaction than employees who do not receive recognition."</em> What is the <strong>independent variable</strong>?',
+        opts:['Job satisfaction','Type of company or industry','Whether the employee received public recognition','Employee retention rate'],
+        correct:2,
+        exp:'Public recognition is the cause — what the researcher manipulates or groups by (recognized vs. not recognized). That makes it the <strong>independent variable</strong>. Job satisfaction is the outcome that depends on recognition, making it the dependent variable.'
+      },
+      {
+        id:'v5', type:'mc',
+        q:'Which of the following best describes a <strong>construct</strong> in social science research?',
+        opts:[
+          'A raw data value collected from a survey',
+          'An abstract theoretical concept used to explain a phenomenon (e.g., "trust," "motivation")',
+          'The statistical method used to analyze data',
+          'A specific survey question or measurement instrument'
+        ],
+        correct:1,
+        exp:'A <strong>construct</strong> is an abstract, theoretical concept — like "trust," "convincingness," or "social capital" — that researchers use to explain phenomena. Constructs exist on the <em>theoretical plane</em>. They must be <em>operationalized</em> (given a concrete measure) to move to the <em>empirical plane</em> where they can be tested.'
+      },
+    ]
+  },
+  {
+    id: 'scenario-phishing',
+    title: 'Scenario: Phishing Study',
+    icon: '🎣',
+    color: '#b5601a',
+    desc: 'Apply concepts to a real cybersecurity study',
+    scenario: '<p>A cybersecurity researcher at BYU recruits 200 university employees and randomly assigns half to receive a <strong>generic phishing email</strong> (no personalization) and half to receive a <strong>personalized spear-phishing email</strong> that includes their name, department, and a reference to a recent campus event they attended.</p><p>The researcher measures whether each participant clicks the embedded link. Her formal hypothesis is: <em>"Employees who receive personalized spear-phishing emails will click on malicious links at a higher rate than those who receive generic phishing emails."</em></p><p>After the experiment, she uses statistical tests (chi-square and logistic regression) to compare click rates between the two groups and publishes results in a peer-reviewed cybersecurity journal.</p>',
+    questions: [
+      {
+        id:'sp1', type:'mc',
+        q:'What is the <strong>independent variable</strong> in this study?',
+        opts:['The total number of employees recruited','Whether the email was personalized or generic','Whether the employee clicked the embedded link','The type of statistical test used for analysis'],
+        correct:1,
+        exp:'The <strong>independent variable</strong> is what the researcher manipulates. Here, the researcher controls whether employees receive a personalized or generic email — this is the "cause" being tested. It has two levels: personalized vs. generic.'
+      },
+      {
+        id:'sp2', type:'mc',
+        q:'What is the <strong>dependent variable</strong> in this study?',
+        opts:['Level of email personalization','Whether the employee clicked the embedded link','Department of the employee','Type of phishing email used'],
+        correct:1,
+        exp:'The <strong>dependent variable</strong> is the outcome being measured. Whether an employee clicks the link is what "depends on" the level of personalization — it\'s the effect being observed and compared between groups.'
+      },
+      {
+        id:'sp3', type:'mc',
+        q:'Which research paradigm best describes this study?',
+        opts:['Positivist','Interpretive','Critical','Design'],
+        correct:0,
+        exp:'This is a <strong>positivist</strong> study. It uses a randomized controlled experiment, tests a specific falsifiable hypothesis, collects quantitative data (click rates), and uses statistical analysis — all hallmarks of the positivist paradigm, which seeks objective, empirical evidence of causal relationships.'
+      },
+      {
+        id:'sp4', type:'mc',
+        q:'Is this study primarily inductive or deductive?',
+        opts:['Inductive (theory-building)','Deductive (theory-testing)'],
+        correct:1,
+        exp:'This is <strong>deductive</strong> research. The researcher starts with a theoretical idea (personalization increases deceptive effectiveness), derives a specific testable hypothesis, then collects data to confirm or disconfirm it — classic deductive logic moving from theory to data.'
+      },
+      {
+        id:'sp5', type:'mc',
+        q:'What <strong>type</strong> of research is this — exploratory, descriptive, or explanatory?',
+        opts:['Exploratory','Descriptive','Explanatory'],
+        correct:2,
+        exp:'This is <strong>explanatory</strong> research. It uses a randomized experiment to establish whether personalization <em>causes</em> higher click rates. The goal is not just to describe what happens but to explain why — establishing a causal relationship through experimental manipulation.'
+      },
+      {
+        id:'sp6', type:'mc',
+        q:'The researcher\'s theoretical concept is "convincingness of phishing emails," operationalized as the click-rate in the experiment. On which plane does the abstract concept "convincingness" exist?',
+        opts:['The empirical plane','The theoretical plane','It exists equally on both planes','Neither — it is just informal language'],
+        correct:1,
+        exp:'"Convincingness" is an abstract concept — a <strong>construct</strong> that exists on the <strong>theoretical plane</strong>. The actual click-rate is how this construct is operationalized on the <em>empirical plane</em>. Constructs must be operationalized (given measurable form) before they can be tested empirically.'
+      },
+    ]
+  },
+  {
+    id: 'scenario-media',
+    title: 'Scenario: Teen Media Use',
+    icon: '📱',
+    color: '#2d6e9e',
+    desc: 'Contrast interpretive and positivist research approaches',
+    scenario: '<p>A communications researcher wants to understand how college students navigate political content and misinformation on social media. Unlike prior studies that measured sharing rates or belief scores, she wants to understand the <em>lived experience</em> — how students feel, reason, and build trust (or distrust) as they scroll through their feeds.</p><p>Over four months, she follows 15 students closely: spending time with each one as they use their phones (with consent), conducting in-depth interviews every two weeks, and asking them to keep digital journals documenting moments when they encountered content they found suspicious or surprising.</p><p>From these rich records, she develops a new conceptual model describing how trust, identity, and emotional reaction interact when students evaluate online information. She plans to use this model as the foundation for a future quantitative study.</p>',
+    questions: [
+      {
+        id:'tm1', type:'mc',
+        q:'Which research paradigm best describes this study?',
+        opts:['Positivist','Interpretive','Critical','Design'],
+        correct:1,
+        exp:'This is clearly an <strong>interpretive</strong> study. The researcher wants to understand lived experience, meaning-making, and subjective sense-making processes. In-depth interviews, co-observation, and diary studies are quintessential interpretive methods — the goal is rich understanding, not hypothesis testing.'
+      },
+      {
+        id:'tm2', type:'mc',
+        q:'Is this research primarily inductive or deductive?',
+        opts:['Inductive (theory-building)','Deductive (theory-testing)'],
+        correct:0,
+        exp:'This is <strong>inductive</strong> research. The researcher begins with rich observations and qualitative data, then develops a new conceptual model from those observations — building theory from the ground up. She explicitly plans to use the model as the basis for a future deductive study.'
+      },
+      {
+        id:'tm3', type:'mc',
+        q:'What <strong>type</strong> of research is this study?',
+        opts:['Exploratory','Descriptive','Explanatory'],
+        correct:0,
+        exp:'This is <strong>exploratory</strong> research. The researcher is entering relatively new territory — the subjective lived experience of navigating online misinformation — using open-ended qualitative methods to develop new theoretical understanding, rather than testing an existing hypothesis.'
+      },
+      {
+        id:'tm4', type:'mc',
+        q:'Suppose a follow-up study uses the researcher\'s new conceptual model to design and then experimentally test a social media tool that helps students flag potentially misleading content. Which paradigm would that follow-up study best represent?',
+        opts:['Positivist','Interpretive','Critical','Design'],
+        correct:3,
+        exp:'A study focused on designing, prototyping, and evaluating a tool to solve a real-world problem falls under the <strong>design paradigm</strong>. The goal shifts from understanding experience to creating and testing an intervention — even if some positivist methods (like an experiment) are used to evaluate the tool.'
+      },
+      {
+        id:'tm5', type:'short',
+        q:'The researcher identifies "trust in online sources" as a key construct in her conceptual model. If a future <em>positivist</em> study wanted to test a hypothesis about this construct, it would need to <strong>operationalize</strong> it. In 2–3 sentences, explain what it means to operationalize a construct, and give one specific example of how "trust in online sources" could be operationalized.',
+        keywords:['measur','survey','scale','rating','observable','operationaliz','quantif','empirical','score','instrument'],
+        modelAnswer:'To operationalize a construct means to translate an abstract theoretical concept into a concrete, observable, empirical measure that can be recorded in a study. For example, "trust in online sources" could be operationalized as participants\' average agreement rating on a 7-point Likert scale for statements like "I trust the news content I see on social media" and "I believe the information shared by my online contacts is accurate." Alternatively, it could be operationalized behaviorally — measuring how often a participant shares a news article without clicking through to verify its source.',
+        exp:'Operationalization is the bridge between the <strong>theoretical plane</strong> (where constructs like "trust" live as abstract ideas) and the <strong>empirical plane</strong> (where things can be measured and tested). Every construct in a positivist study must be operationalized before a hypothesis can be tested.'
+      },
+    ]
+  }
+];
+
+/* ═══════════════════════════════════════════════════════
+   STATE
+═══════════════════════════════════════════════════════ */
+let S = {
+  modIdx: 0,
+  qIdx: 0,
+  questionOrder: [], // shuffled indices into mod.questions for the current module
+  submitted: false,
+  curAnswer: null,   // for mc: number; for matching: {0:v,1:v,...}; for short: string
+  results: {},       // { 'p1': {correct:true|false|null(short)} }
+  moduleScores: {},  // { 'paradigms': {correct:2, total:5} }
+};
+
+/* ═══════════════════════════════════════════════════════
+   HELPERS
+═══════════════════════════════════════════════════════ */
+function getTotalScore() {
+  let c = 0, t = 0;
+  MODULES.forEach(m => {
+    m.questions.forEach(q => {
+      if (q.type === 'short') return;
+      const r = S.results[q.id];
+      if (r !== undefined) { t++; if (r.correct) c++; }
+    });
+  });
+  return { correct: c, total: t };
+}
+function getModuleScore(mod) {
+  let c = 0, t = 0;
+  mod.questions.forEach(q => {
+    if (q.type === 'short') return;
+    const r = S.results[q.id];
+    if (r !== undefined) { t++; if (r.correct) c++; }
+  });
+  return { correct: c, total: t };
+}
+function isModuleComplete(mod) {
+  return mod.questions.every(q => S.results[q.id] !== undefined);
+}
+function updateGlobalProgress() {
+  let answered = Object.keys(S.results).length;
+  let total = MODULES.reduce((a, m) => a + m.questions.length, 0);
+  const pct = total > 0 ? (answered / total * 100) : 0;
+  document.getElementById('global-progress').style.width = pct + '%';
+  const sc = getTotalScore();
+  document.getElementById('header-badge').textContent =
+    sc.total > 0 ? sc.correct + '/' + sc.total + ' correct' : 'Practice Quiz';
+  const homeScore = document.getElementById('home-score');
+  if (homeScore) homeScore.textContent = sc.total > 0 ? sc.correct + ' / ' + sc.total : '— / —';
+}
+
+/* ═══════════════════════════════════════════════════════
+   SCREENS
+═══════════════════════════════════════════════════════ */
+function showScreen(id) {
+  ['screen-home','screen-quiz','screen-summary','screen-final'].forEach(s => {
+    document.getElementById(s).hidden = (s !== id);
+  });
+}
+
+function showHome() {
+  updateGlobalProgress();
+  renderModuleGrid();
+  showScreen('screen-home');
+}
+
+function renderModuleGrid() {
+  const grid = document.getElementById('modules-grid');
+  grid.innerHTML = '';
+  MODULES.forEach((mod, i) => {
+    const done = isModuleComplete(mod);
+    const sc = getModuleScore(mod);
+    const answered = mod.questions.filter(q => S.results[q.id] !== undefined).length;
+    const pct = mod.questions.length > 0 ? answered / mod.questions.length * 100 : 0;
+
+    const card = document.createElement('button');
+    card.className = 'module-card' + (done ? ' completed-mod' : '');
+    card.setAttribute('aria-label', 'Start module: ' + mod.title);
+    card.onclick = () => startModule(i);
+
+    const scoreText = sc.total > 0 ? sc.correct + '/' + sc.total : answered + '/' + mod.questions.length;
+
+    card.innerHTML = `
+      <div class="m-accent" style="background:${mod.color}"></div>
+      ${done ? '<div class="check-badge">✓</div>' : ''}
+      <div class="m-icon">${mod.icon}</div>
+      <div class="m-title">${mod.title}</div>
+      <div class="m-desc">${mod.desc}</div>
+      <div class="m-progress">
+        <div class="m-mini-bar"><div class="m-mini-bar-fill" style="background:${mod.color};width:${pct}%"></div></div>
+        <span>${scoreText}</span>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function startModule(modIdx, qIdx = 0) {
+  S.modIdx = modIdx;
+  S.qIdx = qIdx;
+  // Shuffle question order fresh each time a module is started
+  const mod = MODULES[modIdx];
+  S.questionOrder = shuffleArr(mod.questions.map((_, i) => i));
+  S.submitted = false;
+  S.curAnswer = null;
+  updateModuleStrip();
+  renderQuestion();
+  showScreen('screen-quiz');
+  window.scrollTo(0, 0);
+}
+
+function updateModuleStrip() {
+  const mod = MODULES[S.modIdx];
+  document.getElementById('ms-icon').textContent = mod.icon;
+  document.getElementById('ms-title').textContent = mod.title;
+  document.getElementById('ms-sub').textContent = mod.desc;
+  document.getElementById('module-strip').style.setProperty('--module-color', mod.color);
+
+  const dots = document.getElementById('ms-dots');
+  dots.innerHTML = '';
+  mod.questions.forEach((q, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'ms-dot' +
+      (i < S.qIdx ? ' done' : '') +
+      (i === S.qIdx ? ' active' : '');
+    dots.appendChild(dot);
+  });
+}
+
+/* ═══════════════════════════════════════════════════════
+   RENDER QUESTION
+═══════════════════════════════════════════════════════ */
+function renderQuestion() {
+  const mod = MODULES[S.modIdx];
+  const q = mod.questions[S.questionOrder[S.qIdx]];
+  S.submitted = !!S.results[q.id];
+  S.curAnswer = null;
+
+  // counter
+  document.getElementById('q-counter').textContent =
+    'Q ' + (S.qIdx + 1) + ' of ' + mod.questions.length;
+  const sc = getModuleScore(mod);
+  document.getElementById('q-score-badge').textContent =
+    sc.total > 0 ? '✦ ' + sc.correct + '/' + sc.total : '✦ —';
+
+  // scenario
+  const scenBox = document.getElementById('scenario-box');
+  if (mod.scenario) {
+    document.getElementById('scenario-text').innerHTML = mod.scenario;
+    scenBox.hidden = false;
+  } else {
+    scenBox.hidden = true;
+  }
+
+  // question card
+  const card = document.getElementById('question-card');
+  const typeLabel = {mc:'Multiple Choice', matching:'Matching', short:'Short Answer'}[q.type];
+  card.innerHTML = `<div class="q-type-label">${typeLabel}</div>
+    <div class="q-text">${q.q}</div>
+    <div id="q-input"></div>`;
+
+  const input = document.getElementById('q-input');
+  if (q.type === 'mc') renderMC(q, input);
+  else if (q.type === 'matching') renderMatching(q, input);
+  else renderShort(q, input);
+
+  // feedback
+  const fb = document.getElementById('feedback-box');
+  fb.hidden = true;
+
+  // buttons
+  const submitBtn = document.getElementById('submit-btn');
+  const nextBtn = document.getElementById('next-btn');
+
+  if (S.submitted) {
+    // Already answered — show feedback immediately
+    showFeedback(q);
+    submitBtn.hidden = true;
+    nextBtn.hidden = false;
+    nextBtn.textContent = S.qIdx < mod.questions.length - 1 ? 'Next Question →' : 'See Results →';
+  } else {
+    submitBtn.hidden = false;
+    submitBtn.disabled = false;
+    nextBtn.hidden = true;
+  }
+
+  updateModuleStrip();
+}
+
+function renderMC(q, container) {
+  const letters = ['A','B','C','D','E'];
+  const div = document.createElement('div');
+  div.className = 'mc-options';
+  const prev = S.results[q.id];
+
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'mc-option';
+    btn.setAttribute('type','button');
+    if (prev !== undefined) {
+      btn.disabled = true;
+      if (i === q.correct) btn.classList.add('correct-opt');
+      else if (prev.chosen === i) btn.classList.add('wrong-opt');
+    }
+    btn.innerHTML = `<span class="opt-letter">${letters[i]}</span><span>${opt}</span>`;
+    if (prev === undefined) {
+      btn.onclick = () => {
+        document.querySelectorAll('.mc-option').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        S.curAnswer = i;
+      };
+    }
+    div.appendChild(btn);
+  });
+  container.appendChild(div);
+}
+
+function renderMatching(q, container) {
+  const prev = S.results[q.id];
+  // Shuffle right items for options
+  const rights = q.pairs.map(p => p.R).slice();
+  const shuffled = shuffleArr(rights.slice());
+
+  q.pairs.forEach((pair, i) => {
+    const row = document.createElement('div');
+    row.className = 'match-row';
+
+    const left = document.createElement('div');
+    left.className = 'match-left';
+    left.textContent = pair.L;
+
+    const arrow = document.createElement('div');
+    arrow.className = 'match-arrow';
+    arrow.textContent = '→';
+
+    const select = document.createElement('select');
+    select.className = 'match-select';
+    select.id = 'match-sel-' + i;
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = '— choose a match —';
+    placeholder.disabled = true;
+    placeholder.selected = true;
+    select.appendChild(placeholder);
+    shuffled.forEach(r => {
+      const opt = document.createElement('option');
+      opt.value = r;
+      opt.textContent = r.length > 70 ? r.slice(0,70)+'…' : r;
+      opt.title = r;
+      select.appendChild(opt);
+    });
+
+    if (prev !== undefined) {
+      select.disabled = true;
+      const chosen = prev.chosen ? prev.chosen[i] : null;
+      if (chosen) {
+        select.value = chosen;
+        select.classList.add(chosen === pair.R ? 'match-correct' : 'match-wrong');
+        if (chosen !== pair.R) {
+          const corr = document.createElement('div');
+          corr.className = 'match-correct-answer visible';
+          corr.textContent = '✓ ' + pair.R;
+          row.appendChild(left); row.appendChild(arrow); row.appendChild(select);
+          row.appendChild(corr);
+          container.appendChild(row);
+          return;
+        }
+      }
+    } else {
+      select.onchange = () => {
+        if (!S.curAnswer) S.curAnswer = {};
+        S.curAnswer[i] = select.value;
+      };
+    }
+
+    row.appendChild(left);
+    row.appendChild(arrow);
+    row.appendChild(select);
+    container.appendChild(row);
+  });
+}
+
+function renderShort(q, container) {
+  const prev = S.results[q.id];
+  const ta = document.createElement('textarea');
+  ta.className = 'short-textarea';
+  ta.placeholder = 'Type your answer here…';
+  if (prev !== undefined) {
+    ta.value = prev.text || '';
+    ta.disabled = true;
+  } else {
+    ta.oninput = () => { S.curAnswer = ta.value; };
+  }
+  container.appendChild(ta);
+  const hint = document.createElement('div');
+  hint.className = 'short-hint';
+  hint.textContent = 'Write 2–3 sentences. Your answer will be compared to the model answer.';
+  container.appendChild(hint);
+}
+
+/* ═══════════════════════════════════════════════════════
+   SUBMIT
+═══════════════════════════════════════════════════════ */
+function submitAnswer() {
+  const mod = MODULES[S.modIdx];
+  const q = mod.questions[S.questionOrder[S.qIdx]];
+
+  if (q.type === 'mc') {
+    if (S.curAnswer === null) { flash('Please select an answer first.'); return; }
+    const correct = S.curAnswer === q.correct;
+    S.results[q.id] = { correct, chosen: S.curAnswer };
+    // Lock options
+    document.querySelectorAll('.mc-option').forEach((btn, i) => {
+      btn.disabled = true;
+      if (i === q.correct) btn.classList.add('correct-opt');
+      else if (i === S.curAnswer) btn.classList.add('wrong-opt');
+      btn.classList.remove('selected');
+    });
+  } else if (q.type === 'matching') {
+    if (!S.curAnswer || Object.keys(S.curAnswer).length < q.pairs.length) {
+      // Check for any unset
+      let allSet = true;
+      for (let i = 0; i < q.pairs.length; i++) {
+        const sel = document.getElementById('match-sel-' + i);
+        if (!sel || !sel.value) { allSet = false; break; }
+        if (!S.curAnswer) S.curAnswer = {};
+        S.curAnswer[i] = sel.value;
+      }
+      if (!allSet) { flash('Please match all items before submitting.'); return; }
+    }
+    let correct = true;
+    q.pairs.forEach((pair, i) => {
+      if (S.curAnswer[i] !== pair.R) correct = false;
+      const sel = document.getElementById('match-sel-' + i);
+      if (sel) {
+        sel.disabled = true;
+        sel.classList.add(S.curAnswer[i] === pair.R ? 'match-correct' : 'match-wrong');
+        if (S.curAnswer[i] !== pair.R) {
+          const row = sel.closest('.match-row');
+          const corr = document.createElement('div');
+          corr.className = 'match-correct-answer visible';
+          corr.textContent = '✓ ' + pair.R;
+          row.appendChild(corr);
+        }
+      }
+    });
+    S.results[q.id] = { correct, chosen: {...S.curAnswer} };
+  } else {
+    // short answer
+    const text = S.curAnswer || '';
+    if (text.trim().length < 10) { flash('Please write a longer answer before submitting.'); return; }
+    const lower = text.toLowerCase();
+    const hits = q.keywords.filter(k => lower.includes(k)).length;
+    S.results[q.id] = { correct: null, text, hits };
+  }
+
+  S.submitted = true;
+  showFeedback(q);
+
+  const submitBtn = document.getElementById('submit-btn');
+  const nextBtn = document.getElementById('next-btn');
+  submitBtn.hidden = true;
+  nextBtn.hidden = false;
+  nextBtn.textContent = S.qIdx < mod.questions.length - 1 ? 'Next Question →' : 'See Results →';
+  updateGlobalProgress();
+}
+
+function showFeedback(q) {
+  const fb = document.getElementById('feedback-box');
+  const result = S.results[q.id];
+  let cls, icon, label, body;
+
+  if (q.type === 'short') {
+    const hits = result.hits || 0;
+    cls = 'neutral';
+    icon = '📝';
+    label = hits >= 2 ? 'Good thinking!' : hits === 1 ? 'Partially there' : 'Review the model answer';
+    body = `<div class="feedback-explanation">${q.exp}</div>
+      <div class="model-answer-box">
+        <div class="model-answer-label">Model Answer</div>
+        <div class="model-answer-text">${q.modelAnswer}</div>
+      </div>`;
+  } else if (result.correct) {
+    cls = 'correct';
+    icon = '✓';
+    label = 'Correct!';
+    body = `<div class="feedback-explanation">${q.exp}</div>`;
+  } else {
+    cls = 'incorrect';
+    icon = '✗';
+    label = 'Not quite';
+    body = `<div class="feedback-explanation">${q.exp}</div>`;
+  }
+
+  fb.className = 'feedback-box ' + cls;
+  fb.innerHTML = `<div class="feedback-header"><span class="feedback-icon">${icon}</span><strong class="feedback-label">${label}</strong></div>${body}`;
+  fb.hidden = false;
+}
+
+/* ═══════════════════════════════════════════════════════
+   NEXT
+═══════════════════════════════════════════════════════ */
+function nextQuestion() {
+  const mod = MODULES[S.modIdx];
+  if (S.qIdx < mod.questions.length - 1) {
+    S.qIdx++;
+    S.submitted = false;
+    S.curAnswer = null;
+    renderQuestion();
+    window.scrollTo(0, 0);
+  } else {
+    showModuleSummary();
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   SUMMARY
+═══════════════════════════════════════════════════════ */
+function showModuleSummary() {
+  const mod = MODULES[S.modIdx];
+  const sc = getModuleScore(mod);
+  const pct = sc.total > 0 ? Math.round(sc.correct / sc.total * 100) : null;
+  let emoji = '🎯';
+  let msg = '';
+  if (pct === null) { emoji = '📝'; msg = 'Great reflection! Review the model answer above.'; }
+  else if (pct === 100) { emoji = '⭐'; msg = 'Perfect score! Excellent work.'; }
+  else if (pct >= 75) { emoji = '👍'; msg = 'Solid understanding! Review any missed questions.'; }
+  else if (pct >= 50) { emoji = '📚'; msg = 'Good effort — review the explanations to strengthen your understanding.'; }
+  else { emoji = '💪'; msg = 'Keep practicing! Read through the explanations carefully.'; }
+
+  const review = mod.questions.map(q => {
+    const r = S.results[q.id];
+    let cls, icon, note;
+    if (q.type === 'short') {
+      cls = 'r-short'; icon = '📝';
+      note = 'Self-graded (short answer)';
+    } else if (r && r.correct) {
+      cls = 'r-correct'; icon = '✓'; note = 'Correct';
+    } else {
+      cls = 'r-incorrect'; icon = '✗';
+      const correctAns = q.type === 'mc' ? q.opts[q.correct] : 'See explanation';
+      note = 'Incorrect — ' + correctAns;
+    }
+    const qPreview = q.q.replace(/<[^>]+>/g,'').slice(0,80) + (q.q.length > 80 ? '…' : '');
+    return `<div class="review-item ${cls}">
+      <div class="review-icon">${icon}</div>
+      <div class="review-q"><strong>${note}</strong>${qPreview}</div>
+    </div>`;
+  }).join('');
+
+  const isLast = S.modIdx === MODULES.length - 1;
+  const allDone = MODULES.every(m => isModuleComplete(m));
+  const nextBtn = isLast || allDone
+    ? `<button class="btn-primary" onclick="showFinal()">View Final Results →</button>`
+    : `<button class="btn-primary" onclick="startModule(${S.modIdx + 1})">Next Module: ${MODULES[S.modIdx + 1] ? MODULES[S.modIdx + 1].title : ''} →</button>`;
+
+  document.getElementById('screen-summary').innerHTML = `
+    <div class="quiz-nav-bar">
+      <button class="back-btn" onclick="showHome()">← Modules</button>
+    </div>
+    <div class="summary-card">
+      <div class="summary-icon">${emoji}</div>
+      <div class="summary-title">${mod.title}</div>
+      ${sc.total > 0
+        ? `<div class="summary-score">${sc.correct}<span class="total"> / ${sc.total}</span></div>`
+        : `<div class="summary-score">📝</div>`
+      }
+      <div class="summary-sub">${msg}</div>
+    </div>
+    <div class="review-list">${review}</div>
+    <div class="action-row">
+      ${nextBtn}
+      <button class="btn-secondary" onclick="startModule(${S.modIdx}, 0)">Retry Module</button>
+    </div>
+  `;
+  showScreen('screen-summary');
+  window.scrollTo(0, 0);
+  updateGlobalProgress();
+}
+
+/* ═══════════════════════════════════════════════════════
+   FINAL RESULTS
+═══════════════════════════════════════════════════════ */
+function showFinal() {
+  const sc = getTotalScore();
+  const pct = sc.total > 0 ? Math.round(sc.correct / sc.total * 100) : 0;
+  let emoji, msg;
+  if (pct === 100) { emoji = '🏆'; msg = 'Outstanding! You\'ve mastered the fundamentals of social science research methods.'; }
+  else if (pct >= 80) { emoji = '⭐'; msg = 'Excellent work! You have a strong grasp of social science methods.'; }
+  else if (pct >= 65) { emoji = '👍'; msg = 'Good job! Review the explanations for missed questions to strengthen your understanding.'; }
+  else if (pct >= 50) { emoji = '📚'; msg = 'Keep studying! Go back and review the module explanations — you\'re on the right track.'; }
+  else { emoji = '💪'; msg = 'Practice makes perfect. Review the slides and try each module again.'; }
+
+  const breakdown = MODULES.map(mod => {
+    const s = getModuleScore(mod);
+    const p = s.total > 0 ? (s.correct / s.total * 100) : 0;
+    return `<div class="breakdown-row">
+      <span class="breakdown-icon">${mod.icon}</span>
+      <span class="breakdown-name">${mod.title}</span>
+      <div class="breakdown-bar-wrap"><div class="breakdown-bar" style="width:${p}%"></div></div>
+      <span class="breakdown-score">${s.total > 0 ? s.correct+'/'+s.total : '—'}</span>
+    </div>`;
+  }).join('');
+
+  document.getElementById('screen-final').innerHTML = `
+    <div class="final-card">
+      <div class="final-icon">${emoji}</div>
+      <div class="final-title">Quiz Complete!</div>
+      <div class="final-score">${sc.correct}<span class="of"> / ${sc.total}</span></div>
+      <div class="final-message">${msg}</div>
+      <div class="module-breakdown">${breakdown}</div>
+      <div class="action-row" style="justify-content:center">
+        <button class="btn-primary" onclick="restartAll()">Start Over</button>
+        <button class="btn-secondary" onclick="showHome()">← Module View</button>
+      </div>
+    </div>
+  `;
+  showScreen('screen-final');
+  window.scrollTo(0, 0);
+}
+
+function restartAll() {
+  S.results = {};
+  S.moduleScores = {};
+  updateGlobalProgress();
+  showHome();
+}
+
+/* ═══════════════════════════════════════════════════════
+   UTILS
+═══════════════════════════════════════════════════════ */
+function shuffleArr(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+let flashTimer;
+function flash(msg) {
+  clearTimeout(flashTimer);
+  let el = document.getElementById('flash-msg');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'flash-msg';
+    el.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1b3564;color:#fff;padding:10px 20px;border-radius:8px;font-size:.88rem;font-weight:600;z-index:999;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:opacity .3s';
+    document.body.appendChild(el);
+  }
+  el.textContent = msg;
+  el.style.opacity = '1';
+  flashTimer = setTimeout(() => { el.style.opacity = '0'; }, 2200);
+}
+
+/* ═══════════════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════════════ */
+showHome();
+</script>
+</body>
+</html>
