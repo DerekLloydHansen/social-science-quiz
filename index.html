@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    :root {
-      padding-top: env(safe-area-inset-top, 0px);
-      padding-bottom: env(safe-area-inset-bottom, 0px);
-    }
-    body { margin: 0; font-size: 14px; }
-    img { max-width: 100%; }
-    [hidden] { display: none !important; }
-</style>
-  <title>Social Science Methods Quiz</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Science Methods Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
 /* ─── Token system ─────────────────────────────────────── */
 :root {
   --bg:        #edf1f7;
@@ -43,6 +37,7 @@
   --m3: #1a7f5a;
   --m4: #b5601a;
   --m5: #2d6e9e;
+  --m6: #9b2335;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -742,6 +737,8 @@ a { color: var(--blue); }
   .match-select { width: 100%; }
 }
 </style>
+
+
 </head>
 <body>
 <div id="root">
@@ -1056,6 +1053,69 @@ const MODULES = [
         keywords:['measur','survey','scale','rating','observable','operationaliz','quantif','empirical','score','instrument'],
         modelAnswer:'To operationalize a construct means to translate an abstract theoretical concept into a concrete, observable, empirical measure that can be recorded in a study. For example, "trust in online sources" could be operationalized as participants\' average agreement rating on a 7-point Likert scale for statements like "I trust the news content I see on social media" and "I believe the information shared by my online contacts is accurate." Alternatively, it could be operationalized behaviorally — measuring how often a participant shares a news article without clicking through to verify its source.',
         exp:'Operationalization is the bridge between the <strong>theoretical plane</strong> (where constructs like "trust" live as abstract ideas) and the <strong>empirical plane</strong> (where things can be measured and tested). Every construct in a positivist study must be operationalized before a hypothesis can be tested.'
+      },
+    ]
+  },
+  {
+    id: 'theory',
+    title: 'Social Science Theory',
+    icon: '📚',
+    color: '#9b2335',
+    desc: 'Theory types, building blocks, grand & mid-range theories',
+    questions: [
+      {
+        id:'th1', type:'mc',
+        q:'A PhD student is told she must "ground her research in theory." Her advisor explains that theory is not the same as a personal opinion or a loose hypothesis. In social science, what is the primary purpose of a <strong>theory</strong>?',
+        opts:[
+          'To collect and organize raw observational data from the field',
+          'To explain <em>why</em> or <em>how</em> a phenomenon occurs, helping researchers understand, predict, and build cumulative knowledge',
+          'To provide a statistical method for testing research hypotheses',
+          'To describe the philosophical worldview the researcher brings to their work'
+        ],
+        correct:1,
+        exp:'A <strong>theory</strong> is a systematic explanation of <em>why</em> or <em>how</em> something occurs. Unlike an opinion or a hypothesis, a theory builds cumulative knowledge by specifying concepts, the relationships between them, the mechanisms that drive those relationships, and the conditions under which they apply. Good theories allow us to understand, explain, and predict phenomena beyond a single study.'
+      },
+      {
+        id:'th2', type:'mc',
+        q:'Which of the following is <strong>NOT</strong> typically considered a core building block of a social science theory?',
+        opts:[
+          'Concepts — the abstract terms used to label and categorize phenomena',
+          'Relationships between concepts — how variables are expected to connect',
+          'Mechanisms — the underlying process that explains why a relationship exists',
+          'The researcher\'s personal biography and prior lived experience'
+        ],
+        correct:3,
+        exp:'The core building blocks of theory are: (1) <strong>concepts</strong> — abstract labels for phenomena; (2) <strong>relationships</strong> between concepts — how they are connected; (3) <strong>mechanisms</strong> — the causal or interpretive process that explains <em>why</em> relationships hold; and (4) <strong>conditions of applicability</strong> — the scope under which the theory holds. A researcher\'s personal biography may inspire their interests, but it is not a structural element of the theory itself.'
+      },
+      {
+        id:'th3', type:'mc',
+        q:'A researcher develops a theory that explains how algorithmic amplification causes political polarization on social media. She derives falsifiable, testable predictions from it and uses large-scale datasets to test them statistically. Which <strong>type</strong> of theory is this?',
+        opts:[
+          'Interpretive theory — it seeks to understand meaning and lived experience',
+          'Explanatory theory — it makes falsifiable causal claims aligned with the positivist paradigm',
+          'Idiographic theory — it fully explains one unique historical case',
+          'Grand theory — it makes sweeping claims about all of social life'
+        ],
+        correct:1,
+        exp:'An <strong>explanatory theory</strong> operates within the positivist paradigm: it makes falsifiable causal or correlational predictions that can be tested empirically. The hallmarks here — causal claims, testable hypotheses, statistical testing — all signal an explanatory theory. An <em>interpretive theory</em>, by contrast, aims to understand meaning and is not necessarily falsifiable in the same way.'
+      },
+      {
+        id:'th6', type:'matching',
+        q:'Match each <strong>grand theory</strong> to its core claim.',
+        pairs:[
+          {L:'Rational Choice', R:'People weigh costs and benefits, choosing the option that maximizes personal utility'},
+          {L:'Social Constructionism', R:'Reality, identity, and knowledge are built through social interaction, language, and shared culture'},
+          {L:'Marxism / Neo-Marxism', R:'Society is structured by class conflict; dominant groups shape institutions to maintain power'},
+          {L:'Post-Structuralism', R:'Truth and identity are fluid constructions shaped by language and power relations'},
+        ],
+        exp:'Grand theories make sweeping claims about the nature of social life. <strong>Rational Choice</strong>: humans are utility-maximizers. <strong>Social Constructionism</strong>: reality is socially constructed through interaction. <strong>Marxism</strong>: class conflict and economic structure shape society. <strong>Post-Structuralism</strong>: meaning, truth, and identity are unstable and produced through power and language.'
+      },
+      {
+        id:'th7', type:'short',
+        q:'Garrett Hardin\'s <em>Tragedy of the Commons</em> explains how individuals acting rationally in their own self-interest can collectively destroy a shared resource — such as a fishery, a shared pasture, or a public bandwidth network. In 2–3 sentences, explain what makes this a <strong>mid-range</strong> theory, and how mid-range theories differ from <strong>grand theories</strong> such as Rational Choice Theory or Marxism.',
+        keywords:['scope','specific','class','broad','limited','phenomena','general','range','narrow','sweeping','particular','bounded','all social','universal'],
+        modelAnswer:'Mid-range theories explain a specific class of phenomena rather than all of social life. The Tragedy of the Commons is mid-range because it addresses one particular type of social problem — collective action dilemmas involving shared resources — not human behavior across all domains. Grand theories like Rational Choice Theory or Marxism, by contrast, make sweeping, all-encompassing claims about the fundamental nature of human decision-making or social structure that are meant to apply universally across every domain of social life.',
+        exp:'<strong>Mid-range theories</strong> have a bounded, specific scope — they explain a class of situations or problems without trying to account for all of social reality. <strong>Grand theories</strong> (like Rational Choice Theory, Marxism, or Post-Structuralism) make broad, sweeping claims about the fundamental nature of <em>all</em> social life. Mid-range theories are often more directly testable precisely because their scope is limited and their predictions are concrete.'
       },
     ]
   }
@@ -1620,5 +1680,6 @@ function flash(msg) {
 ═══════════════════════════════════════════════════════ */
 showHome();
 </script>
+
 </body>
 </html>
