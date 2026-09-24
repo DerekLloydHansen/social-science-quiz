@@ -38,6 +38,7 @@
   --m4: #b5601a;
   --m5: #2d6e9e;
   --m6: #9b2335;
+  --m7: #2e7d5e;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -1116,6 +1117,119 @@ const MODULES = [
         keywords:['scope','specific','class','broad','limited','phenomena','general','range','narrow','sweeping','particular','bounded','all social','universal'],
         modelAnswer:'Mid-range theories explain a specific class of phenomena rather than all of social life. The Tragedy of the Commons is mid-range because it addresses one particular type of social problem — collective action dilemmas involving shared resources — not human behavior across all domains. Grand theories like Rational Choice Theory or Marxism, by contrast, make sweeping, all-encompassing claims about the fundamental nature of human decision-making or social structure that are meant to apply universally across every domain of social life.',
         exp:'<strong>Mid-range theories</strong> have a bounded, specific scope — they explain a class of situations or problems without trying to account for all of social reality. <strong>Grand theories</strong> (like Rational Choice Theory, Marxism, or Post-Structuralism) make broad, sweeping claims about the fundamental nature of <em>all</em> social life. Mid-range theories are often more directly testable precisely because their scope is limited and their predictions are concrete.'
+      },
+    ]
+  },
+  /* ── Module 7 ── Research Methods ─────────────────────────────── */
+  {
+    id: 'methods',
+    title: 'Research Methods',
+    icon: '🔬',
+    color: '#2e7d5e',
+    desc: 'Qualitative, quantitative & mixed methods; causation; choosing the right method',
+    questions: [
+      {
+        id:'rm1', type:'mc',
+        q:'A researcher finds that cities with more coffee shops per capita also have higher rates of tech startup formation. She concludes that "coffee shops <em>cause</em> entrepreneurship." What is the critical flaw in her reasoning?',
+        opts:[
+          'Correlation does not establish causation — both may be driven by a third variable (e.g., urban density or wealth)',
+          'Her sample size is too small — she needs data from more cities',
+          'Coffee shops are a qualitative variable and cannot be used in quantitative analysis',
+          'Field experiments would have the same limitation, so the method choice is fine'
+        ],
+        correct:0,
+        exp:'<strong>Correlation does not imply causation.</strong> A correlational study can show that two variables move together, but it cannot rule out confounds — third variables that drive both. Here, wealthier or denser cities might independently attract both coffee shops and startups. Establishing causation typically requires random assignment (as in a <strong>lab experiment</strong>) that controls for all other differences between conditions.'
+      },
+      {
+        id:'rm2', type:'mc',
+        q:'Which research design is <em>best</em> suited to establishing a <strong>causal</strong> relationship between an independent and dependent variable?',
+        opts:[
+          'A large-scale survey with thousands of respondents',
+          'A laboratory experiment with random assignment to conditions',
+          'A correlational analysis of archival economic data',
+          'An ethnographic study embedded in a community over two years'
+        ],
+        correct:1,
+        exp:'<strong>Laboratory experiments</strong> with random assignment are the gold standard for causal inference. Random assignment ensures that the only systematic difference between groups is the manipulated variable, so any observed difference in outcomes can be attributed to it. Surveys, correlational analyses, and ethnographies are valuable for other purposes — description, exploration, depth — but they do not control for confounds the way random assignment does.'
+      },
+      {
+        id:'rm3', type:'mc',
+        q:'A public health team wants to test whether a new anti-smoking advertisement actually <em>reduces</em> smoking rates in the real world — not just in a controlled setting. They randomly assign counties to receive the ad campaign or not, then track smoking rates over six months. This is best described as a:',
+        opts:[
+          'Laboratory experiment — because random assignment is used',
+          'Field experiment — because random assignment occurs in a real-world setting',
+          'Correlational study — because the outcome is measured, not directly controlled',
+          'Ethnography — because behavior is observed in its natural context'
+        ],
+        correct:1,
+        exp:'A <strong>field experiment</strong> applies random assignment in a real-world (naturalistic) setting rather than a controlled lab. This gives it the causal power of an experiment while maintaining higher external validity — the results reflect how the treatment works in actual conditions. Lab experiments have tighter internal control but may not generalize as well to the real world.'
+      },
+      {
+        id:'rm4', type:'mc',
+        q:'A researcher wants to understand the lived experience of undocumented immigrants navigating the U.S. healthcare system — the fears, workarounds, and moments of trust or distrust they encounter. Which approach is most appropriate?',
+        opts:[
+          'Quantitative — a large national survey with Likert-scale items about healthcare access',
+          'Qualitative — in-depth interviews or ethnographic observation to capture rich, contextual meaning',
+          'Experimental — a field experiment randomly assigning clinics to a new intake protocol',
+          'Econometric — regression analysis of hospital billing records by immigration status'
+        ],
+        correct:1,
+        exp:'When the goal is to understand meaning, lived experience, and context — especially for a population whose experiences are complex and sensitive — <strong>qualitative</strong> methods (interviews, ethnography) are most appropriate. They allow participants to speak in their own words and let the researcher follow unexpected threads. A survey would flatten nuance; an experiment would be impractical and ethically fraught; econometrics would miss the experiential dimension entirely.'
+      },
+      {
+        id:'rm5', type:'mc',
+        q:'A team studying teen social media use combines a national survey (to measure prevalence and demographic patterns) with follow-up focus groups (to explore the <em>why</em> behind the survey findings). This design is best described as:',
+        opts:[
+          'Purely quantitative, because the survey data drives the conclusions',
+          'Purely qualitative, because focus groups provide the richest data',
+          'Mixed methods, because it integrates quantitative and qualitative data to answer complementary questions',
+          'Experimental, because the two phases are compared against each other'
+        ],
+        correct:2,
+        exp:'<strong>Mixed methods</strong> research deliberately combines quantitative and qualitative approaches to answer questions that neither could address as well alone. Here, the survey establishes "what" and "how many," while focus groups illuminate "why" and "how." The integration of both types of data — not just running them side by side — is the defining feature of a mixed-methods design.'
+      },
+      {
+        id:'rm6', type:'matching',
+        q:'Match each <strong>research scenario</strong> to the method that best fits it.',
+        pairs:[
+          {L:'A researcher embeds with a street-level bureaucracy for a year, attending meetings and shadowing caseworkers to understand how policy gets translated into practice', R:'Ethnography'},
+          {L:'A team codes 10,000 tweets to measure how often climate change is framed as a hoax vs. a crisis across partisan accounts', R:'Content analysis'},
+          {L:'A researcher gathers 12 community members to discuss reactions to a proposed new park — probing their shared meanings and disagreements', R:'Focus group'},
+          {L:'A team uses census records, tax filings, and employment data to model the wage effects of a minimum-wage increase', R:'Econometrics'},
+          {L:'A researcher conducts one-on-one conversations with survivors of workplace harassment to explore how they made sense of the experience', R:'Interviews'},
+        ],
+        exp:'Each method fits a different purpose: <strong>ethnography</strong> captures culture and practice from the inside over time; <strong>content analysis</strong> systematically counts or codes patterns in texts or media at scale; <strong>focus groups</strong> surface shared meanings through group interaction; <strong>econometrics</strong> models relationships in large numerical datasets; <strong>interviews</strong> go deep into individual experience and meaning.'
+      },
+      {
+        id:'rm7', type:'mc',
+        q:'A researcher is studying how low-income families decide which foods to buy at the grocery store. She wants to observe the actual decision-making process as it happens, without intervening or asking questions. Which method fits best?',
+        opts:[
+          'Survey — ask families to report their food-buying decisions after the fact',
+          'Lab experiment — simulate a grocery store and manipulate price tags',
+          'Direct observation — watch shoppers in the store as they make decisions',
+          'Content analysis — analyze grocery store advertisements for nutritional messaging'
+        ],
+        correct:2,
+        exp:'<strong>Observation</strong> is ideal when the researcher wants to see behavior <em>as it naturally occurs</em> — without the distortions of self-report (surveys ask people to remember or describe behavior, which introduces bias) or the artificiality of a lab. In this case, watching shoppers in real time captures the actual decision process, including hesitations, comparisons, and reactions to prices, in a way no other method could.'
+      },
+      {
+        id:'rm8', type:'mc',
+        q:'In qualitative research, the researcher is often described as the "<strong>research instrument</strong>." What does this mean, and what practice follows from it?',
+        opts:[
+          'The researcher must use validated psychological scales rather than open-ended questions',
+          'Because the researcher\'s own perceptions, background, and biases shape what they observe and interpret, they should reflect on and disclose those biases — and ideally work with multiple researchers to check their interpretations',
+          'The researcher should remain fully objective by avoiding any direct contact with participants',
+          'The researcher must quantify their observations so they can be verified by others'
+        ],
+        correct:1,
+        exp:'In qualitative research, there is no neutral recording device — the researcher\'s identity, prior experiences, and theoretical commitments shape what they notice, how they interpret it, and what they consider significant. This is called <strong>positionality</strong>. Because of this, qualitative researchers are expected to practice <strong>reflexivity</strong>: acknowledging their own background and potential biases (often in writing), and building in checks such as working with multiple coders or researchers, conducting member checks with participants, and keeping an audit trail of their analytic decisions.'
+      },
+      {
+        id:'rm9', type:'short',
+        q:'A solo researcher conducts 20 interviews with survivors of a natural disaster to understand how community ties shaped recovery. She codes all the interviews herself and writes up themes she found compelling. A reviewer raises concerns about her findings. Identify <strong>two specific practices</strong> she could have used to counter the risk that her own background and assumptions shaped her interpretations — and explain why each one matters.',
+        keywords:['reflexiv','positionality','bias','background','second','multiple','coder','member check','audit','triangul','inter-rater','peer','disclose','transparency','another researcher','two researchers','team'],
+        modelAnswer:'(1) She could have used a second coder — having another researcher independently code the same interviews and then comparing results. This checks whether the themes reflect patterns in the data or her own interpretations. (2) She could have written a positionality statement disclosing her own background and potential biases, making her analytic lens transparent to readers. Other valid answers: member checks (sharing interpretations with participants to verify accuracy), keeping an analytic memo trail, or peer debriefing.',
+        exp:'Qualitative researchers are the instrument of data collection and analysis, so their subjectivity is always present. Key strategies to manage this include: <strong>reflexivity / positionality statements</strong> (making your standpoint and assumptions explicit); <strong>multiple coders / inter-rater checks</strong> (comparing interpretations across researchers); <strong>member checks</strong> (verifying interpretations with participants); and <strong>audit trails</strong> (documenting analytic decisions so others can evaluate them). None of these "removes" subjectivity — they make it accountable.'
       },
     ]
   }
