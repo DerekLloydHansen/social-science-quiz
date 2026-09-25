@@ -809,6 +809,7 @@ const MODULES = [
     icon: '🔭',
     color: '#2666cf',
     desc: 'Positivist, interpretive, critical & design',
+    draw: 4,
     questions: [
       {
         id:'p1', type:'mc',
@@ -849,6 +850,27 @@ const MODULES = [
         ],
         exp:'Each paradigm has a distinct goal and method. Positivist: empirical hypothesis testing. Interpretive: rich qualitative understanding. Critical: power and social justice analysis. Design: creating and evaluating solutions.'
       },
+      {
+        id:'p6', type:'mc',
+        q:'A researcher spends eight months conducting in-depth interviews with undocumented immigrants to understand how they interpret and experience seeking healthcare — the fears they carry, the informal networks they rely on, and the meanings they attach to "safety." Which paradigm is this?',
+        opts:['Positivist','Interpretive','Critical','Design'],
+        correct:1,
+        exp:'The <strong>interpretive paradigm</strong> centers on understanding lived experience, meaning-making, and how people understand their world. In-depth interviews aimed at a "rich, nuanced understanding" of a community\'s experience are quintessentially interpretive. There is no hypothesis being tested and no intervention being designed.'
+      },
+      {
+        id:'p7', type:'mc',
+        q:'A UX research team designs a browser extension that highlights potentially misleading headlines. They pilot it with 60 users, collect feedback through usability tests and interviews, revise the design based on what they learn, and run another pilot. Which paradigm does this represent?',
+        opts:['Positivist','Interpretive','Critical','Design'],
+        correct:3,
+        exp:'The <strong>design paradigm</strong> is defined by an iterative, problem-solving orientation: build a tool or intervention, test it with users, learn, and improve. The cycle of prototype → feedback → revision → re-test is the signature of design research.'
+      },
+      {
+        id:'p8', type:'mc',
+        q:'A researcher surveys 1,200 college students asking them to rate their trust in legacy media versus social media on validated 5-point scales. She runs regression analysis to identify which demographic variables (age, political identity, prior media literacy education) significantly predict trust levels. Which paradigm is this?',
+        opts:['Positivist','Interpretive','Critical','Design'],
+        correct:0,
+        exp:'The <strong>positivist paradigm</strong> emphasizes objective measurement, representative sampling, and statistical analysis. A survey instrument using validated scales and regression to identify predictors fits squarely in the positivist tradition of seeking generalizable patterns through empirical data.'
+      },
     ]
   },
   {
@@ -857,6 +879,7 @@ const MODULES = [
     icon: '🔍',
     color: '#7b3fb5',
     desc: 'Exploratory, descriptive, explanatory & inductive/deductive',
+    draw: 5,
     questions: [
       {
         id:'rt1', type:'mc',
@@ -904,6 +927,27 @@ const MODULES = [
         ],
         exp:'Exploratory research opens new territory with open-ended methods. Descriptive research documents with surveys and case studies. Explanatory research establishes cause with experiments. Inductive research builds theory from observations.'
       },
+      {
+        id:'rt7', type:'mc',
+        q:'Researchers are among the first to study AI-generated deepfake videos as a vehicle for political disinformation. No established theory or framework exists yet for this phenomenon. They monitor online communities where deepfakes circulate and interview people who create and share them, aiming to develop initial concepts and insights. What type of research is this?',
+        opts:['Exploratory','Descriptive','Explanatory'],
+        correct:0,
+        exp:'<strong>Exploratory research</strong> is the right choice when a phenomenon is new, understudied, or poorly understood. The goal is to open up the territory — to develop concepts, categories, and initial insights — not to test hypotheses or precisely measure prevalence. Open-ended observation and interviews in a new domain are classic exploratory methods.'
+      },
+      {
+        id:'rt8', type:'mc',
+        q:'A communications scholar pulls data from 18 countries to document what percentage of adults regularly get their news from social media, broken down by platform, age group, and educational level. She produces a "State of Social Media News" report with detailed charts and tables. What type of research is this?',
+        opts:['Exploratory','Descriptive','Explanatory'],
+        correct:1,
+        exp:'<strong>Descriptive research</strong> answers "what, who, where, and how much" — it carefully and systematically documents the current state of a phenomenon. A cross-national report that measures and characterizes patterns across demographics is a textbook example of descriptive research. No causal claims are made; no hypotheses are tested.'
+      },
+      {
+        id:'rt9', type:'mc',
+        q:'Drawing on Social Identity Theory, a researcher proposes that people who spend more hours per day on social media will report more extreme political views, because algorithms serve content that reinforces in-group identity. She tests this specific prediction on a nationally representative sample using regression analysis. Is this inductive or deductive?',
+        opts:['Inductive (theory-building)','Deductive (theory-testing)'],
+        correct:1,
+        exp:'<strong>Deductive research</strong> flows from theory → hypothesis → data. The researcher starts with an existing theory (Social Identity Theory), derives a specific, falsifiable prediction from it, and tests it empirically. This top-down logic — theory first, test second — is deductive. Inductive logic works the opposite direction: observations first, theory emerges second.'
+      },
     ]
   },
   {
@@ -912,6 +956,7 @@ const MODULES = [
     icon: '📐',
     color: '#1a7f5a',
     desc: 'Independent/dependent variables, hypotheses, constructs',
+    draw: 4,
     questions: [
       {
         id:'v1', type:'mc',
@@ -957,6 +1002,32 @@ const MODULES = [
         ],
         correct:1,
         exp:'A <strong>construct</strong> is an abstract, theoretical concept — like "trust," "convincingness," or "social capital" — that researchers use to explain phenomena. Constructs exist on the <em>theoretical plane</em>. They must be <em>operationalized</em> (given a concrete measure) to move to the <em>empirical plane</em> where they can be tested.'
+      },
+      {
+        id:'v6', type:'mc',
+        q:'A researcher hypothesizes: <em>"Students who participate in group study sessions at least twice per week will score higher on midterm exams than students who study alone."</em> What is the <strong>dependent variable</strong>?',
+        opts:['Whether the student studies in a group or alone','Midterm exam scores','The number of study sessions per week','The student\'s GPA before the study began'],
+        correct:1,
+        exp:'The <strong>dependent variable</strong> is the outcome — the variable that "depends on" (is caused or predicted by) the independent variable. Exam scores are what the researcher is trying to explain or predict. Group vs. solo studying is the independent variable — the predictor. The number of sessions per week is part of how the IV is operationalized, and prior GPA would be a control variable.'
+      },
+      {
+        id:'v7', type:'mc',
+        q:'A political scientist proposes: <em>"Social media users who frequently encounter partisan political content will be more likely to vote in local elections than those who rarely encounter such content."</em> Which option correctly identifies both variables?',
+        opts:[
+          'IV: likelihood of voting in local elections; DV: frequency of partisan content exposure',
+          'IV: frequency of partisan political content exposure; DV: likelihood of voting in local elections',
+          'IV: social media platform used; DV: political content type',
+          'IV: voter turnout rates; DV: social media use overall'
+        ],
+        correct:1,
+        exp:'The <strong>independent variable</strong> (IV) is the cause or predictor — here, how often someone sees partisan political content. The <strong>dependent variable</strong> (DV) is the outcome — voting behavior. The hypothesis says X (content exposure) predicts Y (voting likelihood), so content exposure is IV and voting is DV.'
+      },
+      {
+        id:'v8', type:'mc',
+        q:'A researcher wants to study "civic engagement" — an abstract concept that could mean many things. Before collecting data, she defines civic engagement as <em>the number of times a participant voted, attended a community meeting, or signed a petition in the past 12 months</em>. This process of converting an abstract concept into something measurable is called:',
+        opts:['Theorizing','Operationalization','Randomization','Triangulation'],
+        correct:1,
+        exp:'<strong>Operationalization</strong> is the process of defining exactly how an abstract concept (a <em>construct</em>) will be measured in practice. It moves a concept from the <strong>theoretical plane</strong> to the <strong>empirical plane</strong> by specifying concrete indicators. Without operationalization, constructs like "civic engagement," "trust," or "wellbeing" cannot be measured or tested.'
       },
     ]
   },
@@ -1063,6 +1134,7 @@ const MODULES = [
     icon: '📚',
     color: '#9b2335',
     desc: 'Theory types, building blocks, grand & mid-range theories',
+    draw: 4,
     questions: [
       {
         id:'th1', type:'mc',
@@ -1118,6 +1190,42 @@ const MODULES = [
         modelAnswer:'Mid-range theories explain a specific class of phenomena rather than all of social life. The Tragedy of the Commons is mid-range because it addresses one particular type of social problem — collective action dilemmas involving shared resources — not human behavior across all domains. Grand theories like Rational Choice Theory or Marxism, by contrast, make sweeping, all-encompassing claims about the fundamental nature of human decision-making or social structure that are meant to apply universally across every domain of social life.',
         exp:'<strong>Mid-range theories</strong> have a bounded, specific scope — they explain a class of situations or problems without trying to account for all of social reality. <strong>Grand theories</strong> (like Rational Choice Theory, Marxism, or Post-Structuralism) make broad, sweeping claims about the fundamental nature of <em>all</em> social life. Mid-range theories are often more directly testable precisely because their scope is limited and their predictions are concrete.'
       },
+      {
+        id:'th8', type:'mc',
+        q:'An interpretive researcher studying conspiracy theory communities is conducting in-depth interviews to understand how members make sense of world events. Which of the following is she <em>NOT</em> primarily trying to do?',
+        opts:[
+          'Build a rich account of how community members construct a shared social reality',
+          'Understand the meanings and stories that give conspiracy beliefs their appeal',
+          'Derive falsifiable numerical predictions and test them with statistical analysis',
+          'Trace the cultural and linguistic context in which these beliefs are formed'
+        ],
+        correct:2,
+        exp:'<strong>Interpretive theories</strong> aim to understand meaning, experience, and social construction — not to make falsifiable numerical predictions. Deriving statistical predictions and testing them is the goal of <strong>explanatory (positivist) theories</strong>. An interpretive researcher asks "what does this mean to participants?" not "does variable X cause variable Y?"'
+      },
+      {
+        id:'th9', type:'mc',
+        q:'A political scientist develops a theory that legislative polarization increases in countries with two-party electoral systems compared to those with proportional representation. She tests this prediction with data from 40 democracies. This is best described as:',
+        opts:[
+          'A grand theory — it makes sweeping claims about the nature of all political life',
+          'A mid-range theory — it explains a specific class of political phenomena with bounded, testable scope',
+          'An interpretive theory — it seeks to understand the meaning of polarization to citizens',
+          'An idiographic explanation — it fully explains one unique country\'s political history'
+        ],
+        correct:1,
+        exp:'A <strong>mid-range theory</strong> addresses a specific class of phenomena — here, the relationship between electoral systems and legislative polarization — rather than making sweeping claims about all of social or political life. It is testable and has bounded scope. Grand theories (like Rational Choice or Marxism) purport to explain <em>all</em> human behavior or society as a whole.'
+      },
+      {
+        id:'th10', type:'mc',
+        q:'Which of the following is the <strong>best</strong> example of a grand theory?',
+        opts:[
+          'Agenda-Setting Theory, which explains how media shapes which issues the public thinks are important',
+          'The Tragedy of the Commons, which explains collective action failures around shared resources',
+          'Rational Choice Theory, which claims that all human behavior across every domain can be explained by utility-maximizing decision-making',
+          'Social Network Theory, which explains how the structure of social ties influences information spread'
+        ],
+        correct:2,
+        exp:'<strong>Grand theories</strong> make sweeping, all-encompassing claims about the fundamental nature of human behavior or social structure — applicable across every domain of social life. <strong>Rational Choice Theory</strong> is paradigmatically grand: it claims that <em>everything</em> humans do can be explained by rational utility maximization. The others are <strong>mid-range theories</strong>: each explains a specific, bounded class of phenomena (agenda-setting, collective action, network diffusion) rather than all of social life.'
+      },
     ]
   },
   /* ── Module 7 ── Research Methods ─────────────────────────────── */
@@ -1127,6 +1235,7 @@ const MODULES = [
     icon: '🔬',
     color: '#2e7d5e',
     desc: 'Qualitative, quantitative & mixed methods; causation; choosing the right method',
+    draw: 6,
     questions: [
       {
         id:'rm1', type:'mc',
@@ -1231,6 +1340,37 @@ const MODULES = [
         modelAnswer:'(1) She could have used a second coder — having another researcher independently code the same interviews and then comparing results. This checks whether the themes reflect patterns in the data or her own interpretations. (2) She could have written a positionality statement disclosing her own background and potential biases, making her analytic lens transparent to readers. Other valid answers: member checks (sharing interpretations with participants to verify accuracy), keeping an analytic memo trail, or peer debriefing.',
         exp:'Qualitative researchers are the instrument of data collection and analysis, so their subjectivity is always present. Key strategies to manage this include: <strong>reflexivity / positionality statements</strong> (making your standpoint and assumptions explicit); <strong>multiple coders / inter-rater checks</strong> (comparing interpretations across researchers); <strong>member checks</strong> (verifying interpretations with participants); and <strong>audit trails</strong> (documenting analytic decisions so others can evaluate them). None of these "removes" subjectivity — they make it accountable.'
       },
+      {
+        id:'rm10', type:'mc',
+        q:'A journalist wants to know how many Americans have personally experienced online harassment in the past year, and whether rates differ by gender, age, and race. Which research method is best suited to producing a nationally representative answer?',
+        opts:[
+          'In-depth interviews with a diverse group of harassment survivors',
+          'Ethnographic observation of online spaces where harassment occurs',
+          'A large random-sample survey with standardized closed-ended questions',
+          'A focus group with 10 people recruited from social media'
+        ],
+        correct:2,
+        exp:'When the goal is to estimate <em>how many</em> people in a population have had a particular experience — and to break that down by demographics — a <strong>large random-sample survey</strong> is the right tool. Only a survey with a sufficiently large, representative sample can produce reliable national estimates. Interviews and focus groups go deeper but cannot tell you about population-level rates; ethnography describes a specific context, not a national prevalence.'
+      },
+      {
+        id:'rm11', type:'mc',
+        q:'A researcher downloads ten years of front-page New York Times articles and codes each one for how climate change is framed: (1) as settled scientific consensus, (2) as a political debate, or (3) as an economic threat. She counts the frequency of each frame across years and across different editorial regimes. Which method is this?',
+        opts:['Ethnography','Content analysis','Survey research','Field experiment'],
+        correct:1,
+        exp:'<strong>Content analysis</strong> is a systematic method for analyzing texts, images, or other recorded communication — coding and quantifying patterns in existing material. Systematically categorizing and counting frames in newspaper articles over time is a classic application. Ethnography involves embedding with a community; surveys collect self-reports; field experiments apply a manipulation in the real world.'
+      },
+      {
+        id:'rm12', type:'mc',
+        q:'A researcher is studying how young men talk about body image pressures from fitness influencers on Instagram. She could use either individual interviews or a focus group. What is the main reason she might prefer a <strong>focus group</strong> for this particular topic?',
+        opts:[
+          'Focus groups produce more statistically generalizable data than interviews',
+          'Focus groups are better at protecting participant anonymity on sensitive topics',
+          'Focus groups allow her to observe how participants collectively construct meaning — how they agree, challenge, or normalize each other\'s views in real time',
+          'Focus groups are faster and cheaper, so they are always preferred over interviews'
+        ],
+        correct:2,
+        exp:'The key methodological advantage of a <strong>focus group</strong> is that it captures <em>group dynamics</em> — how people talk about a topic <em>with each other</em>, not just to a researcher. For a topic like body image norms, the social interaction itself is part of the data: watching how young men negotiate, challenge, or reinforce each other\'s views reveals something that individual interviews — where there is no peer audience — cannot. Generalizability is actually a weakness of focus groups, not a strength.'
+      },
     ]
   }
 ];
@@ -1241,20 +1381,27 @@ const MODULES = [
 let S = {
   modIdx: 0,
   qIdx: 0,
-  questionOrder: [], // shuffled indices into mod.questions for the current module
+  questionOrder: [], // shuffled drawn indices into mod.questions for the current module
   submitted: false,
   curAnswer: null,   // for mc: number; for matching: {0:v,1:v,...}; for short: string
   results: {},       // { 'p1': {correct:true|false|null(short)} }
   moduleScores: {},  // { 'paradigms': {correct:2, total:5} }
+  moduleDraws: {},   // { 'paradigms': ['p1','p3','p5','p2'] } — drawn question IDs per module
 };
 
 /* ═══════════════════════════════════════════════════════
    HELPERS
 ═══════════════════════════════════════════════════════ */
+// Returns the drawn question objects for a module (or all questions if never started)
+function drawnQuestions(mod) {
+  const ids = S.moduleDraws[mod.id];
+  if (!ids) return mod.questions;
+  return ids.map(id => mod.questions.find(q => q.id === id)).filter(Boolean);
+}
 function getTotalScore() {
   let c = 0, t = 0;
   MODULES.forEach(m => {
-    m.questions.forEach(q => {
+    drawnQuestions(m).forEach(q => {
       if (q.type === 'short') return;
       const r = S.results[q.id];
       if (r !== undefined) { t++; if (r.correct) c++; }
@@ -1264,7 +1411,7 @@ function getTotalScore() {
 }
 function getModuleScore(mod) {
   let c = 0, t = 0;
-  mod.questions.forEach(q => {
+  drawnQuestions(mod).forEach(q => {
     if (q.type === 'short') return;
     const r = S.results[q.id];
     if (r !== undefined) { t++; if (r.correct) c++; }
@@ -1272,11 +1419,17 @@ function getModuleScore(mod) {
   return { correct: c, total: t };
 }
 function isModuleComplete(mod) {
-  return mod.questions.every(q => S.results[q.id] !== undefined);
+  const drawn = S.moduleDraws[mod.id];
+  if (!drawn) return false;
+  return drawn.every(id => S.results[id] !== undefined);
 }
 function updateGlobalProgress() {
-  let answered = Object.keys(S.results).length;
-  let total = MODULES.reduce((a, m) => a + m.questions.length, 0);
+  const drawn = MODULES.flatMap(m => S.moduleDraws[m.id] || []);
+  let answered = drawn.filter(id => S.results[id] !== undefined).length;
+  let total = MODULES.reduce((a, m) => {
+    const d = S.moduleDraws[m.id];
+    return a + (d ? d.length : (m.draw || m.questions.length));
+  }, 0);
   const pct = total > 0 ? (answered / total * 100) : 0;
   document.getElementById('global-progress').style.width = pct + '%';
   const sc = getTotalScore();
@@ -1307,15 +1460,16 @@ function renderModuleGrid() {
   MODULES.forEach((mod, i) => {
     const done = isModuleComplete(mod);
     const sc = getModuleScore(mod);
-    const answered = mod.questions.filter(q => S.results[q.id] !== undefined).length;
-    const pct = mod.questions.length > 0 ? answered / mod.questions.length * 100 : 0;
+    const dq = drawnQuestions(mod);
+    const answered = dq.filter(q => S.results[q.id] !== undefined).length;
+    const pct = dq.length > 0 ? answered / dq.length * 100 : 0;
 
     const card = document.createElement('button');
     card.className = 'module-card' + (done ? ' completed-mod' : '');
     card.setAttribute('aria-label', 'Start module: ' + mod.title);
     card.onclick = () => startModule(i);
 
-    const scoreText = sc.total > 0 ? sc.correct + '/' + sc.total : answered + '/' + mod.questions.length;
+    const scoreText = sc.total > 0 ? sc.correct + '/' + sc.total : answered + '/' + dq.length;
 
     card.innerHTML = `
       <div class="m-accent" style="background:${mod.color}"></div>
@@ -1335,9 +1489,15 @@ function renderModuleGrid() {
 function startModule(modIdx, qIdx = 0) {
   S.modIdx = modIdx;
   S.qIdx = qIdx;
-  // Shuffle question order fresh each time a module is started
   const mod = MODULES[modIdx];
-  S.questionOrder = shuffleArr(mod.questions.map((_, i) => i));
+  // Clear previous results for this module so a retake starts fresh
+  mod.questions.forEach(q => { delete S.results[q.id]; });
+  // Draw a random subset (mod.draw questions from the full pool)
+  const allIndices = shuffleArr(mod.questions.map((_, i) => i));
+  const drawCount = mod.draw || mod.questions.length;
+  S.questionOrder = allIndices.slice(0, drawCount);
+  // Record which question IDs were drawn
+  S.moduleDraws[mod.id] = S.questionOrder.map(i => mod.questions[i].id);
   S.submitted = false;
   S.curAnswer = null;
   updateModuleStrip();
@@ -1355,7 +1515,7 @@ function updateModuleStrip() {
 
   const dots = document.getElementById('ms-dots');
   dots.innerHTML = '';
-  mod.questions.forEach((q, i) => {
+  S.questionOrder.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.className = 'ms-dot' +
       (i < S.qIdx ? ' done' : '') +
@@ -1375,7 +1535,7 @@ function renderQuestion() {
 
   // counter
   document.getElementById('q-counter').textContent =
-    'Q ' + (S.qIdx + 1) + ' of ' + mod.questions.length;
+    'Q ' + (S.qIdx + 1) + ' of ' + S.questionOrder.length;
   const sc = getModuleScore(mod);
   document.getElementById('q-score-badge').textContent =
     sc.total > 0 ? '✦ ' + sc.correct + '/' + sc.total : '✦ —';
@@ -1414,7 +1574,7 @@ function renderQuestion() {
     showFeedback(q);
     submitBtn.hidden = true;
     nextBtn.hidden = false;
-    nextBtn.textContent = S.qIdx < mod.questions.length - 1 ? 'Next Question →' : 'See Results →';
+    nextBtn.textContent = S.qIdx < S.questionOrder.length - 1 ? 'Next Question →' : 'See Results →';
   } else {
     submitBtn.hidden = false;
     submitBtn.disabled = false;
@@ -1598,7 +1758,7 @@ function submitAnswer() {
   const nextBtn = document.getElementById('next-btn');
   submitBtn.hidden = true;
   nextBtn.hidden = false;
-  nextBtn.textContent = S.qIdx < mod.questions.length - 1 ? 'Next Question →' : 'See Results →';
+  nextBtn.textContent = S.qIdx < S.questionOrder.length - 1 ? 'Next Question →' : 'See Results →';
   updateGlobalProgress();
 }
 
@@ -1638,8 +1798,7 @@ function showFeedback(q) {
    NEXT
 ═══════════════════════════════════════════════════════ */
 function nextQuestion() {
-  const mod = MODULES[S.modIdx];
-  if (S.qIdx < mod.questions.length - 1) {
+  if (S.qIdx < S.questionOrder.length - 1) {
     S.qIdx++;
     S.submitted = false;
     S.curAnswer = null;
@@ -1665,7 +1824,7 @@ function showModuleSummary() {
   else if (pct >= 50) { emoji = '📚'; msg = 'Good effort — review the explanations to strengthen your understanding.'; }
   else { emoji = '💪'; msg = 'Keep practicing! Read through the explanations carefully.'; }
 
-  const review = mod.questions.map(q => {
+  const review = drawnQuestions(mod).map(q => {
     const r = S.results[q.id];
     let cls, icon, note;
     if (q.type === 'short') {
@@ -1707,7 +1866,7 @@ function showModuleSummary() {
     <div class="review-list">${review}</div>
     <div class="action-row">
       ${nextBtn}
-      <button class="btn-secondary" onclick="startModule(${S.modIdx}, 0)">Retry Module</button>
+      <button class="btn-secondary" onclick="startModule(${S.modIdx}, 0)">Retake with New Questions 🔀</button>
     </div>
   `;
   showScreen('screen-summary');
@@ -1759,6 +1918,7 @@ function showFinal() {
 function restartAll() {
   S.results = {};
   S.moduleScores = {};
+  S.moduleDraws = {};
   updateGlobalProgress();
   showHome();
 }
