@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Social Science Methods Quiz</title>
+<title>UNIV 218R 009 Practice Questions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -39,6 +39,7 @@
   --m5: #2d6e9e;
   --m6: #9b2335;
   --m7: #2e7d5e;
+  --m8: #5c4db1;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -738,14 +739,12 @@ a { color: var(--blue); }
   .match-select { width: 100%; }
 }
 </style>
-
-
 </head>
 <body>
 <div id="root">
   <header class="site-header">
-    <h1>Social Science Methods</h1>
-    <div class="header-badge" id="header-badge">Practice Quiz</div>
+    <h1>UNIV 218R 009</h1>
+    <div class="header-badge" id="header-badge">Practice Questions</div>
   </header>
   <div class="progress-bar-wrap">
     <div class="progress-bar-fill" id="global-progress" style="width:0%"></div>
@@ -754,8 +753,8 @@ a { color: var(--blue); }
   <!-- HOME -->
   <div id="screen-home" class="content">
     <div class="home-intro">
-      <h2>Research Methods Practice</h2>
-      <p>Test your understanding of social science paradigms, research types, variables, and hypotheses. Based on UNIV 118R course materials.</p>
+      <h2>UNIV 218R 009 Practice</h2>
+      <p>Test your understanding of social science research methods, theory, perception, and more. Based on UNIV 218R course materials.</p>
       <div class="overall-score-pill">
         <span>Overall score:</span>
         <span class="score-num" id="home-score">— / —</span>
@@ -1372,6 +1371,118 @@ const MODULES = [
         exp:'The key methodological advantage of a <strong>focus group</strong> is that it captures <em>group dynamics</em> — how people talk about a topic <em>with each other</em>, not just to a researcher. For a topic like body image norms, the social interaction itself is part of the data: watching how young men negotiate, challenge, or reinforce each other\'s views reveals something that individual interviews — where there is no peer audience — cannot. Generalizability is actually a weakness of focus groups, not a strength.'
       },
     ]
+  },
+  {
+    id: 'perception',
+    title: 'Perception & Reality',
+    icon: '👁️',
+    color: '#5c4db1',
+    desc: 'How biology, heuristics, and prior experience shape what we perceive',
+    draw: 5,
+    questions: [
+      {
+        id:'perc1', type:'mc',
+        q:'Which of the following best captures Takeaway #1 from the perception lecture: "Our experience of reality is constrained by our biology"?',
+        opts:[
+          'Humans perceive the world more accurately than other animals because of our larger brains',
+          'Different species — and even different people — may experience fundamentally different versions of reality because their sensory equipment differs',
+          'Biology only constrains perception in cases of disease or injury; healthy humans perceive objective reality',
+          'Our brains are wired to seek out objective truth, so biology ultimately aids accurate perception'
+        ],
+        correct:1,
+        exp:'<strong>Takeaway #1</strong> is that our sensory biology sets hard limits on what we can perceive. Humans detect less than a ten-trillionth of all light waves, while bats navigate by echolocation and dogs smell what we cannot see. No species — including humans — has privileged access to objective reality; each perceives only what its biology allows.'
+      },
+      {
+        id:'perc2', type:'mc',
+        q:'Humans can only detect a tiny fraction of the electromagnetic spectrum. What does this fact most directly illustrate?',
+        opts:[
+          'Human technology is needed to compensate for a rare biological defect',
+          'Our perceptual experience of reality is fundamentally shaped and limited by our biological sensory systems',
+          'The electromagnetic spectrum is mostly irrelevant to daily human experience',
+          'Perception is primarily a cultural and learned process rather than a biological one'
+        ],
+        correct:1,
+        exp:'The fact that humans see less than a ten-trillionth of all light waves is a vivid illustration of <strong>Takeaway #1</strong>: biology constrains perception. What we "see" is not reality in full — it is the slice of reality our eyes are built to detect. Other organisms with different biology detect entirely different slices.'
+      },
+      {
+        id:'perc3', type:'mc',
+        q:'According to Takeaway #2, why do our perceptions sometimes lead us astray — for example, when someone mistakes a stick for a snake?',
+        opts:[
+          'The person was being irrational; careful observation would have prevented the error',
+          'Perceptions are optimized heuristics (mental shortcuts) that are efficient but not always accurate — they prioritize speed over perfect fidelity to reality',
+          'The error proves that human perception is random and unreliable in all situations',
+          'Perception errors only occur when people are tired or stressed'
+        ],
+        correct:1,
+        exp:'<strong>Takeaway #2</strong>: our perceptions are <em>heuristics</em> — efficient shortcuts evolved to keep us safe quickly rather than to give us a perfectly accurate picture. Seeing a stick and perceiving "snake" is a reasonable error for a system designed to err on the side of caution. These shortcuts serve us well most of the time, but they do not present objective reality.'
+      },
+      {
+        id:'perc4', type:'mc',
+        q:'Takeaway #2 states that perceptions are "optimized heuristics." What does this mean in practice?',
+        opts:[
+          'Our perceptions are optimized to show us reality as it truly is',
+          'Our perceptual systems have been tuned for speed and survival, which means they sometimes produce inaccurate or distorted representations of the world',
+          'Heuristics only apply to expert decision-makers, not to ordinary perception',
+          'Because perception is optimized, we can trust it to give us an unbiased view of events'
+        ],
+        correct:1,
+        exp:'An <strong>optimized heuristic</strong> is a shortcut that trades perfect accuracy for speed and efficiency. Our visual and cognitive systems work this way — they make fast "good enough" judgments rather than slow, perfectly accurate ones. This is why illusions fool us and why two people can perceive the same scene differently.'
+      },
+      {
+        id:'perc5', type:'mc',
+        q:'Two eyewitnesses to the same event give conflicting accounts. According to Takeaway #3, what is the most likely explanation?',
+        opts:[
+          'One of the witnesses must be lying',
+          'Memory is random, so no two accounts will ever match',
+          'Each witness filled in ambiguous gaps in the event using their own different prior experiences and expectations',
+          'Eyewitness accounts only differ when observers are from different cultures'
+        ],
+        correct:2,
+        exp:'<strong>Takeaway #3</strong>: when stimuli are ambiguous or incomplete, we fill in the gaps using our <em>priors</em> — the background assumptions, expectations, and past experiences we bring to every situation. If two witnesses have different priors, they will literally perceive the same event differently — neither is necessarily lying; they both experienced a brain-constructed version of reality.'
+      },
+      {
+        id:'perc6', type:'mc',
+        q:'In 2015, "The Dress" went viral: millions of people disagreed sharply about whether a photo showed a blue-and-black dress or a white-and-gold dress. What does this controversy best illustrate?',
+        opts:[
+          'Color perception is completely random and varies by individual for no reason',
+          'Social media distorts images, making objective color perception impossible online',
+          'People\'s brains filled in ambiguous lighting information using different unconscious assumptions about the light source, producing genuinely different perceptual experiences',
+          'Only people with color blindness disagreed about the dress\'s colors'
+        ],
+        correct:2,
+        exp:'"The Dress" is a famous real-world example of <strong>Takeaway #3</strong>. The photograph had genuinely ambiguous lighting cues. People\'s brains resolved that ambiguity by applying different prior assumptions about whether the scene was lit by bright daylight or dim indoor light — and those different priors produced two entirely different, sincerely held perceptual experiences of the same image.'
+      },
+      {
+        id:'perc7', type:'mc',
+        q:'Gestalt principles (such as closure, proximity, and figure-ground) all demonstrate the same fundamental point about perception. What is it?',
+        opts:[
+          'The mind passively records raw sensory data without adding any interpretation',
+          'The mind actively organizes and imposes structure on raw sensory input, constructing coherent wholes from incomplete or ambiguous information',
+          'Gestalt effects only occur in controlled laboratory settings, not in everyday life',
+          'Pattern recognition is a uniquely human ability not shared by other animals'
+        ],
+        correct:1,
+        exp:'The <strong>Gestalt principles</strong> collectively show that the mind is not a passive recording device. It actively groups, completes, and organizes stimuli — seeing faces in clouds, completing broken circles, grouping nearby objects together. Perception is constructive, not merely receptive. This reinforces Takeaway #2: what we see is partly a product of what our brain creates.'
+      },
+      {
+        id:'perc8', type:'mc',
+        q:'Neil Harbisson was born completely colorblind but had an antenna implanted that converts light frequencies into sounds he can "hear" as colors. What concept from the perception lecture does his case best illustrate?',
+        opts:[
+          'Technology can give humans access to perceptual information beyond our biological defaults, expanding what reality we can experience',
+          'Color is an entirely social construct with no basis in physical reality',
+          'Sensory substitution is dangerous because it distorts objective reality',
+          'Only people with disabilities benefit from thinking about the limits of perception'
+        ],
+        correct:0,
+        exp:'Harbisson\'s case is a direct extension of <strong>Takeaway #1</strong>: biology normally constrains perception, but technology can expand those limits. He now "perceives" ultraviolet and infrared colors that no unaugmented human can detect — demonstrating that the biological boundary is not fixed forever, and that there is far more to reality than our unaided senses reveal.'
+      },
+      {
+        id:'perc9', type:'short',
+        q:'A friend says, "I know exactly what happened — I was there." Using <strong>at least two of the three takeaways</strong> from the perception lecture, explain why being physically present at an event does not guarantee that a person\'s memory of it is fully accurate.',
+        keywords:['biology','heuristic','shortcut','prior','gap','fill','constrain','construct','ambiguous','incomplete','experience','assumption'],
+        exp:'A complete answer draws on at least two takeaways: <strong>(1)</strong> Biology constrains what we can detect — even at the scene, we may miss details our senses aren\'t built to capture. <strong>(2)</strong> Perception uses heuristics, not objective recording — the brain makes quick inferences rather than a faithful transcript, introducing distortions. <strong>(3)</strong> We fill gaps with priors — any ambiguous moment gets resolved using our own background assumptions, so two people at the same event may reconstruct it very differently. "I was there" guarantees presence, not accuracy.'
+      },
+    ]
   }
 ];
 
@@ -1954,6 +2065,5 @@ function flash(msg) {
 ═══════════════════════════════════════════════════════ */
 showHome();
 </script>
-
 </body>
 </html>
