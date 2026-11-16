@@ -2500,6 +2500,7 @@ const MODULES = [
         id:'perc9', type:'short',
         q:'A friend says, "I know exactly what happened — I was there." Using <strong>at least two of the three takeaways</strong> from the perception lecture, explain why being physically present at an event does not guarantee that a person\'s memory of it is fully accurate.',
         keywords:['biology','heuristic','shortcut','prior','gap','fill','constrain','construct','ambiguous','incomplete','experience','assumption'],
+        modelAnswer:'Being there doesn\'t mean my friend recorded the event like a camera. First, perception works through heuristics: the brain makes fast, good-enough inferences rather than a faithful transcript, so some of what my friend "saw" was a quick interpretation. Second, wherever the scene was ambiguous or incomplete, my friend\'s brain filled the gaps using prior experiences and expectations, so another witness with different priors could sincerely remember it differently. (A third point also works: biology limits what our senses can detect, so some details were never taken in at all.) Being present guarantees presence, not accuracy.',
         exp:'A complete answer draws on at least two takeaways: <strong>(1)</strong> Biology constrains what we can detect — even at the scene, we may miss details our senses aren\'t built to capture. <strong>(2)</strong> Perception uses heuristics, not objective recording — the brain makes quick inferences rather than a faithful transcript, introducing distortions. <strong>(3)</strong> We fill gaps with priors — any ambiguous moment gets resolved using our own background assumptions, so two people at the same event may reconstruct it very differently. "I was there" guarantees presence, not accuracy.'
       },
     ]
@@ -2913,11 +2914,11 @@ function showFeedback(q) {
     cls = 'neutral';
     icon = '📝';
     label = hits >= 2 ? 'Good thinking!' : hits === 1 ? 'Partially there' : 'Review the model answer';
-    body = `<div class="feedback-explanation">${q.exp}</div>
+    body = `<div class="feedback-explanation">${q.exp}</div>` + (q.modelAnswer ? `
       <div class="model-answer-box">
         <div class="model-answer-label">Model Answer</div>
         <div class="model-answer-text">${q.modelAnswer}</div>
-      </div>`;
+      </div>` : '');
   } else if (result.correct) {
     cls = 'correct';
     icon = '✓';
