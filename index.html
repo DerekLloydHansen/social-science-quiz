@@ -336,17 +336,34 @@ a { color: var(--blue); }
 }
 .ms-dots {
   display: flex;
-  gap: 5px;
+  gap: 10px;
   align-items: center;
+  flex-shrink: 0;
 }
 .ms-dot {
-  width: 8px; height: 8px;
+  width: 14px; height: 14px;
+  padding: 0;
   border-radius: 50%;
   background: var(--border);
-  transition: background .25s;
+  position: relative;
+  transition: background .25s, transform .15s, box-shadow .15s;
 }
+/* larger invisible hit area so the small dot is easy to click or tap */
+.ms-dot::after { content: ''; position: absolute; inset: -5px; border-radius: 50%; }
+.ms-dot:hover { transform: scale(1.25); }
+.ms-dot:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 .ms-dot.done { background: var(--green); }
-.ms-dot.active { background: var(--module-color, var(--blue)); transform: scale(1.25); }
+.ms-dot.active {
+  background: var(--module-color, var(--blue));
+  transform: scale(1.25);
+  box-shadow: 0 0 0 3px var(--surface), 0 0 0 5px var(--module-color, var(--blue));
+}
+.ms-dot.done.active { background: var(--green); }
+@media (max-width: 600px) {
+  .module-strip { gap: 10px; padding: 12px 14px; }
+  .ms-dots { gap: 8px; }
+  .ms-dot { width: 12px; height: 12px; }
+}
 
 /* Scenario box */
 .scenario-box {
@@ -663,6 +680,8 @@ a { color: var(--blue); }
 .review-item.r-correct { border-left-color: var(--green); }
 .review-item.r-incorrect { border-left-color: var(--red); }
 .review-item.r-short { border-left-color: var(--amber); }
+.review-item.r-skipped { border-left-color: var(--text3); }
+.action-row .btn-skip { margin-left: auto; color: var(--text2); }
 .review-icon { font-size: 1rem; flex-shrink: 0; padding-top: 2px; }
 .review-q { font-size: .88rem; color: var(--text); line-height: 1.4; }
 .review-q strong { display: block; font-size: .8rem; color: var(--text3); font-weight: 600; margin-bottom: 2px; }
@@ -780,8 +799,10 @@ a { color: var(--blue); }
     <div class="question-card" id="question-card"></div>
     <div class="feedback-box" id="feedback-box" hidden></div>
     <div class="action-row" id="action-row">
+      <button class="btn-secondary" id="prev-btn" onclick="prevQuestion()" hidden>← Back</button>
       <button class="btn-primary" id="submit-btn" onclick="submitAnswer()">Check Answer</button>
       <button class="btn-secondary" id="next-btn" onclick="nextQuestion()" hidden>Next Question →</button>
+      <button class="btn-secondary btn-skip" id="skip-btn" onclick="skipQuestion()">Skip →</button>
     </div>
   </div>
 
@@ -2520,6 +2541,7 @@ let S = {
   results: {},       // { 'p1': {correct:true|false|null(short)} }
   moduleScores: {},  // { 'paradigms': {correct:2, total:5} }
   moduleDraws: {},   // { 'paradigms': ['p1','p3','p5','p2'] } — drawn question IDs per module
+  drafts: {},        // unsubmitted answers, kept when the student moves between questions
 };
 
 /* ═══════════════════════════════════════════════════════
@@ -2624,7 +2646,7 @@ function startModule(modIdx, qIdx = 0) {
   S.qIdx = qIdx;
   const mod = MODULES[modIdx];
   // Clear previous results for this module so a retake starts fresh
-  mod.questions.forEach(q => { delete S.results[q.id]; });
+  mod.questions.forEach(q => { delete S.results[q.id]; delete S.drafts[q.id]; });
   // Draw a random subset (mod.draw questions from the full pool)
   const allIndices = shuffleArr(mod.questions.map((_, i) => i));
   const drawCount = mod.draw || mod.questions.length;
@@ -2648,11 +2670,19 @@ function updateModuleStrip() {
 
   const dots = document.getElementById('ms-dots');
   dots.innerHTML = '';
-  S.questionOrder.forEach((_, i) => {
-    const dot = document.createElement('div');
+  S.questionOrder.forEach((qi, i) => {
+    const answered = S.results[mod.questions[qi].id] !== undefined;
+    const dot = document.createElement('button');
+    dot.type = 'button';
     dot.className = 'ms-dot' +
-      (i < S.qIdx ? ' done' : '') +
+      (answered ? ' done' : '') +
       (i === S.qIdx ? ' active' : '');
+    const label = 'Question ' + (i + 1) + ' of ' + S.questionOrder.length +
+      (answered ? ' (answered)' : ' (not answered yet)');
+    dot.title = label;
+    dot.setAttribute('aria-label', 'Go to ' + label);
+    if (i === S.qIdx) dot.setAttribute('aria-current', 'step');
+    dot.onclick = () => goToQuestion(i);
     dots.appendChild(dot);
   });
 }
@@ -2693,6 +2723,7 @@ function renderQuestion() {
   if (q.type === 'mc') renderMC(q, input);
   else if (q.type === 'matching') renderMatching(q, input);
   else renderShort(q, input);
+  if (!S.submitted) restoreDraft(q);
 
   // feedback
   const fb = document.getElementById('feedback-box');
@@ -2706,13 +2737,11 @@ function renderQuestion() {
     // Already answered — show feedback immediately
     showFeedback(q);
     submitBtn.hidden = true;
-    nextBtn.hidden = false;
-    nextBtn.textContent = S.qIdx < S.questionOrder.length - 1 ? 'Next Question →' : 'See Results →';
   } else {
     submitBtn.hidden = false;
     submitBtn.disabled = false;
-    nextBtn.hidden = true;
   }
+  updateNavButtons();
 
   updateModuleStrip();
 }
@@ -2896,11 +2925,10 @@ function submitAnswer() {
   S.submitted = true;
   showFeedback(q);
 
-  const submitBtn = document.getElementById('submit-btn');
-  const nextBtn = document.getElementById('next-btn');
-  submitBtn.hidden = true;
-  nextBtn.hidden = false;
-  nextBtn.textContent = S.qIdx < S.questionOrder.length - 1 ? 'Next Question →' : 'See Results →';
+  delete S.drafts[q.id];
+  document.getElementById('submit-btn').hidden = true;
+  updateNavButtons();
+  updateModuleStrip();
   updateGlobalProgress();
 }
 
@@ -2939,16 +2967,96 @@ function showFeedback(q) {
 /* ═══════════════════════════════════════════════════════
    NEXT
 ═══════════════════════════════════════════════════════ */
+function isAnsweredAt(i) {
+  const mod = MODULES[S.modIdx];
+  return S.results[mod.questions[S.questionOrder[i]].id] !== undefined;
+}
+// Index of the first unanswered question at or after `from` (-1 if none)
+function findUnanswered(from) {
+  for (let i = from; i < S.questionOrder.length; i++) {
+    if (!isAnsweredAt(i)) return i;
+  }
+  return -1;
+}
+// Remember an unsubmitted answer so it is still there when the student comes back
+function saveDraft() {
+  const mod = MODULES[S.modIdx];
+  const q = mod.questions[S.questionOrder[S.qIdx]];
+  if (!q || S.results[q.id] !== undefined) return;
+  const a = S.curAnswer;
+  const empty = a === null || a === undefined || a === '' ||
+    (typeof a === 'object' && Object.keys(a).length === 0);
+  if (empty) delete S.drafts[q.id];
+  else S.drafts[q.id] = (typeof a === 'object') ? { ...a } : a;
+}
+function restoreDraft(q) {
+  const d = S.drafts[q.id];
+  if (d === undefined) return;
+  if (q.type === 'mc') {
+    const btns = document.querySelectorAll('#q-input .mc-option');
+    if (btns[d]) { btns[d].classList.add('selected'); S.curAnswer = d; }
+  } else if (q.type === 'matching') {
+    S.curAnswer = {};
+    Object.keys(d).forEach(i => {
+      const sel = document.getElementById('match-sel-' + i);
+      if (sel) { sel.value = d[i]; if (sel.value) S.curAnswer[i] = d[i]; }
+    });
+  } else {
+    const ta = document.querySelector('#q-input .short-textarea');
+    if (ta) { ta.value = d; S.curAnswer = d; }
+  }
+}
+function goToQuestion(i) {
+  if (i < 0 || i >= S.questionOrder.length || i === S.qIdx) return;
+  saveDraft();
+  S.qIdx = i;
+  renderQuestion();
+  window.scrollTo(0, 0);
+}
+function updateNavButtons() {
+  const last = S.questionOrder.length - 1;
+  const answered = isAnsweredAt(S.qIdx);
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const skipBtn = document.getElementById('skip-btn');
+  prevBtn.hidden = S.qIdx === 0;
+  nextBtn.hidden = !answered;
+  skipBtn.hidden = answered;
+  if (answered) {
+    nextBtn.textContent = S.qIdx < last ? 'Next Question →'
+      : findUnanswered(0) !== -1 ? 'Go to Skipped Question →'
+      : 'See Results →';
+  } else {
+    skipBtn.textContent = findUnanswered(S.qIdx + 1) !== -1 ? 'Skip →' : 'Skip to Results →';
+  }
+}
+function prevQuestion() {
+  goToQuestion(S.qIdx - 1);
+}
+// Skip: jump ahead to the next unanswered question; if there is none ahead, show results
+function skipQuestion() {
+  const next = findUnanswered(S.qIdx + 1);
+  if (next !== -1) { goToQuestion(next); return; }
+  saveDraft();
+  showModuleSummary();
+}
 function nextQuestion() {
   if (S.qIdx < S.questionOrder.length - 1) {
-    S.qIdx++;
-    S.submitted = false;
-    S.curAnswer = null;
-    renderQuestion();
-    window.scrollTo(0, 0);
-  } else {
-    showModuleSummary();
+    goToQuestion(S.qIdx + 1);
+    return;
   }
+  const skipped = findUnanswered(0);
+  if (skipped !== -1) goToQuestion(skipped);
+  else showModuleSummary();
+}
+// From the results screen: return to the first question that was skipped
+function resumeSkipped() {
+  const i = findUnanswered(0);
+  if (i === -1) return;
+  S.qIdx = i;
+  renderQuestion();
+  showScreen('screen-quiz');
+  window.scrollTo(0, 0);
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -2960,7 +3068,13 @@ function showModuleSummary() {
   const pct = sc.total > 0 ? Math.round(sc.correct / sc.total * 100) : null;
   let emoji = '🎯';
   let msg = '';
-  if (pct === null) { emoji = '📝'; msg = 'Great reflection! Review the model answer above.'; }
+  const skippedCount = drawnQuestions(mod).filter(q => S.results[q.id] === undefined).length;
+  if (skippedCount > 0) {
+    emoji = '⏭️';
+    msg = 'You skipped ' + skippedCount + (skippedCount === 1 ? ' question' : ' questions') +
+      '. Your score counts only the questions you answered.';
+  }
+  else if (pct === null) { emoji = '📝'; msg = 'Great reflection! Review the model answer above.'; }
   else if (pct === 100) { emoji = '⭐'; msg = 'Perfect score! Excellent work.'; }
   else if (pct >= 75) { emoji = '👍'; msg = 'Solid understanding! Review any missed questions.'; }
   else if (pct >= 50) { emoji = '📚'; msg = 'Good effort — review the explanations to strengthen your understanding.'; }
@@ -2969,7 +3083,9 @@ function showModuleSummary() {
   const review = drawnQuestions(mod).map(q => {
     const r = S.results[q.id];
     let cls, icon, note;
-    if (q.type === 'short') {
+    if (r === undefined) {
+      cls = 'r-skipped'; icon = '⏭️'; note = 'Skipped';
+    } else if (q.type === 'short') {
       cls = 'r-short'; icon = '📝';
       note = 'Self-graded (short answer)';
     } else if (r && r.correct) {
@@ -3007,7 +3123,8 @@ function showModuleSummary() {
     </div>
     <div class="review-list">${review}</div>
     <div class="action-row">
-      ${nextBtn}
+      ${skippedCount > 0 ? `<button class="btn-primary" onclick="resumeSkipped()">Answer Skipped ${skippedCount === 1 ? 'Question' : 'Questions'} →</button>` : nextBtn}
+      ${skippedCount > 0 ? nextBtn.replace('btn-primary', 'btn-secondary') : ''}
       <button class="btn-secondary" onclick="startModule(${S.modIdx}, 0)">Retake with New Questions 🔀</button>
     </div>
   `;
@@ -3059,6 +3176,7 @@ function showFinal() {
 
 function restartAll() {
   S.results = {};
+  S.drafts = {};
   S.moduleScores = {};
   S.moduleDraws = {};
   updateGlobalProgress();
