@@ -805,77 +805,87 @@ window.EXTRA_MODULES = [
     questions: [
       {
         id:'pe1', type:'mc',
-        q:'A veterans\' organization found that adding free, personalized address labels to its donation mailings raised the response rate from about <strong>18% to 35%</strong>. Which of Cialdini\'s principles explains this?',
-        opts:['Scarcity','Authority','Reciprocation','Social validation'],
-        correct:2,
-        exp:'<strong>Reciprocation</strong>: a gift creates a felt obligation to give something back. The labels arrived first and unsolicited, so the request was no longer just "Will you donate?" — it carried a sense of debt. Class check: <em>Was the gift really free, or did it quietly create a debt?</em>'
+        q:'A veterans\' group raised its donation rate from about 18% to 35% by mailing free, personalized address labels with its request. Which change to the mailing would most likely <strong>undermine</strong> the persuasive effect of the labels?',
+        opts:[
+          'Printing the labels in plain type instead of a decorative font',
+          'Adding a letter signed by a decorated veteran general',
+          'Mentioning that many neighbors have already given',
+          'Sending the labels only after a person has already donated'
+        ],
+        correct:3,
+        exp:'The labels work through <strong>reciprocation</strong>: a gift that arrives <em>first</em> and unsolicited creates a felt obligation to give back. If the labels came only after a donation, they would be a thank-you, not a debt. The general\'s letter and the neighbors would add <em>authority</em> and <em>social validation</em> (other principles, which would likely help), and the font is irrelevant.'
       },
       {
         id:'pe2', type:'mc',
-        q:'A restaurant owner had his receptionist change "Please call if you have to change your plans" to "<strong>Will you please call</strong> if you have to change your plans?" and then pause for the customer to answer. No-shows dropped from 30% to 10%. Which principle is at work?',
-        opts:['Liking','Consistency (commitment)','Scarcity','Unity'],
-        correct:1,
-        exp:'<strong>Consistency</strong>: once we take a position, especially publicly, we prefer to act in ways that fit it. The question and pause produced a small verbal commitment ("Yes, I will"), and customers then acted consistently with what they had said.'
+        q:'A restaurant changed its reminder from "Please call if you have to change your plans" to "Will you please call if you have to change your plans?" and had the receptionist <strong>pause for an answer</strong>. No-shows fell from 30% to 10%. Why did the pause matter?',
+        opts:[
+          'It gave customers time to check their calendars before booking',
+          'It made the call feel friendlier, so customers liked the restaurant more',
+          'It got customers to state a commitment they then wanted to keep',
+          'It signaled that tables were in high demand and hard to get'
+        ],
+        correct:2,
+        exp:'This is <strong>consistency</strong>: the pause prompted customers to say "Yes, I will." Once people make even a small public commitment, they prefer to act in line with it. Friendliness (<em>liking</em>) and demand (<em>scarcity</em>) are other principles, but the change that mattered was turning a statement into a question that required a spoken promise.'
       },
       {
         id:'pe3', type:'mc',
-        q:'On a busy New York sidewalk, 1 person staring up at the sky got 4% of passersby to look up; 5 people got 18%; 15 people got 40%. Which principle does this show, and when is it strongest?',
+        q:'In the sidewalk study, more passersby looked up as the crowd of people staring at the sky grew (4% → 18% → 40%). According to Cialdini, under which conditions is this kind of <strong>social validation</strong> most powerful?',
         opts:[
-          'Social validation — strongest when the situation is uncertain or ambiguous',
-          'Authority — strongest when the people looking up wear uniforms',
-          'Reciprocation — strongest when passersby have received a favor',
-          'Scarcity — strongest when there is little time to decide'
+          'When the people we observe are experts or authority figures',
+          'When the situation is uncertain and the others seem similar to us',
+          'When we have recently received a favor from the group',
+          'When the crowd is large, whoever the people in it happen to be'
         ],
-        correct:0,
-        exp:'<strong>Social validation</strong> (social proof): when we are unsure what to do, other people\'s behavior becomes evidence of what is correct. The more people (especially people similar to us) do something, the more right it feels. Class check: <em>Are these people relevant to me, or merely numerous?</em>'
+        correct:1,
+        exp:'<strong>Social validation</strong> is strongest when we are <em>unsure</em> what to do and when the people we observe are <em>similar</em> to us. Size alone is not the point. The class check asks, "Are these people relevant to me, or merely numerous?" Expertise is <em>authority</em>, and favors are <em>reciprocation</em>.'
       },
       {
         id:'pe4', type:'mc',
-        q:'Tupperware became famous for selling through home parties hosted by a friend rather than through unknown salespeople. Which principle does this model rely on, and what question should a buyer ask?',
+        q:'What did Cialdini identify as the main reason Tupperware\'s home-party sales model worked so well?',
         opts:[
-          'Consistency — "Did I make a public promise to buy?"',
-          'Authority — "Is the host actually an expert on kitchen products?"',
-          'Scarcity — "Is this product truly limited?"',
-          'Liking — "Do I like the product, or do I like the person presenting it?"'
+          'Guests were buying from a friend, so buying felt like supporting her',
+          'Guests had committed to attending by RSVPing in advance',
+          'The host was a trained product expert who could answer questions',
+          'Guests received limited-time party pricing not offered in stores'
         ],
-        correct:3,
-        exp:'<strong>Liking</strong>: we say yes more easily to people we like or feel connected to. Buying from a friend turns a purchase into a way to support someone familiar. Cialdini also notes that attractiveness, praise, and perceived similarity increase liking.'
+        correct:0,
+        exp:'Cialdini uses Tupperware to illustrate <strong>liking</strong>: we say yes more readily to people we like. Buying from the friend who hosts the party turns a purchase into a way to support someone familiar. The class check asks: <em>Do I like the idea, or do I like the person presenting it?</em>'
       },
       {
         id:'pe5', type:'mc',
-        q:'A man increased the number of pedestrians who followed him across a street against a red light by <strong>350%</strong> just by switching from casual clothes to a suit and tie. What is the key lesson about this principle?',
+        q:'A man got 350% more pedestrians to follow him across a street against a red light just by wearing a suit and tie instead of casual clothes. What is Cialdini\'s main caution about this principle?',
         opts:[
-          'People are more likely to follow anyone who walks confidently',
-          'Formal clothing is always a sign of trustworthiness',
-          'Symbols of authority can trigger compliance even when they say nothing about real expertise, so we should check whether a source is actually qualified',
-          'Authority only works in workplace settings'
+          'Deferring to experts is usually a mistake, so we should decide for ourselves',
+          'Authority works only when the person is physically present',
+          'Authority mostly works on people who are in a hurry or distracted',
+          'Symbols of authority can prompt compliance even without real expertise'
         ],
-        correct:2,
-        exp:'<strong>Authority</strong>: credentials and symbols of expertise help us decide quickly. Real expertise can lead to good decisions, but authority <em>symbols</em> (titles, uniforms, suits) can create a misleading aura of legitimacy. Class check: <em>Is the source actually qualified, or only dressed to look credible?</em>'
+        correct:3,
+        exp:'<strong>Authority</strong> is often a useful shortcut, since genuine experts can help us decide well. The danger is that <em>symbols</em> of authority (suits, titles, uniforms) can create a false aura of legitimacy. The class check: <em>Is the source actually qualified, or only dressed to look credible?</em>'
       },
       {
         id:'pe6', type:'mc',
-        q:'Beef buyers more than doubled their orders when told about an upcoming shortage of Australian beef — and orders rose over <strong>600%</strong> when they were also told the information came from exclusive sources. Why the extra jump?',
+        q:'Beef buyers more than doubled their orders when told about a coming shortage, and orders jumped over 600% when they were also told the news came from exclusive sources. Cialdini calls this a scarcity "double whammy." What were the <strong>two</strong> scarce things?',
         opts:[
-          'The buyers trusted the salesperson more because of liking',
-          'It was a scarcity "double whammy": both the product and the information about it were presented as limited',
-          'The buyers had made an earlier public commitment',
-          'The exclusive information made the beef cheaper'
+          'The beef and the time left to place an order',
+          'The information and the salesperson\'s attention',
+          'The beef and the information about the shortage',
+          'The beef and the discount offered to early buyers'
         ],
-        correct:1,
-        exp:'<strong>Scarcity</strong>: limited availability makes things feel more valuable. Here both the beef <em>and</em> the information were framed as scarce, which multiplied the effect. Class check: <em>Is it truly scarce, or only framed that way?</em>'
+        correct:2,
+        exp:'Both the <strong>product</strong> (beef) and the <strong>information</strong> about it were presented as limited. Exclusive information feels more valuable, and it made the shortage seem more credible, which multiplied the effect. The class check: <em>Is it truly scarce, or only framed that way?</em>'
       },
       {
         id:'pe7', type:'mc',
-        q:'A student asking for charity donations on campus received noticeably more when she added, "<strong>I\'m a student here, too.</strong>" Which principle — added in Cialdini\'s later work — does this illustrate, and how is it different from liking?',
+        q:'Which of these requests relies on <strong>unity</strong> rather than <strong>liking</strong>?',
         opts:[
-          'Unity — it is about shared identity ("one of us"), not just enjoying someone\'s company',
-          'Liking — it is the same as being friends with someone',
-          'Authority — students trust other students as experts',
-          'Reciprocation — students feel they owe other students'
+          '"I really enjoyed talking with you last week. Would you help with my project?"',
+          '"As a fellow BYU Cougar, I hope you\'ll support our student fundraiser."',
+          '"Most students in your ward have already signed up. Will you join them?"',
+          '"I love your style! Would you be willing to try our new product?"'
         ],
-        correct:0,
-        exp:'<strong>Unity</strong> is the seventh principle: a shared identity makes someone feel like <em>one of us</em>. Liking is about warm feelings toward a person; unity is about belonging to the same group. Cialdini\'s ethical point: the shared identity should be real, relevant, and voluntary.'
+        correct:1,
+        exp:'<strong>Unity</strong> appeals to a shared identity, being "one of us" (like the student who added "I\'m a student here, too"). Building rapport and giving compliments increase <em>liking</em>. "Most students have signed up" is <em>social validation</em>. Cialdini says the shared identity should be real, relevant, and voluntary.'
       },
       {
         id:'pe8', type:'matching',
@@ -902,27 +912,27 @@ window.EXTRA_MODULES = [
     questions: [
       {
         id:'dc1', type:'mc',
-        q:'Vrij (2000) defines deception as "a successful or unsuccessful deliberate attempt, <em>without forewarning</em>, to create in another a belief which the communicator considers to be untrue." Which situation is <strong>NOT</strong> deception under this definition?',
+        q:'Vrij (2000) defines deception as "a successful or unsuccessful deliberate attempt, without forewarning, to create in another a belief which the communicator considers to be untrue." Which situation <strong>IS</strong> deception under this definition?',
         opts:[
-          'A scammer pretends to be your bank to get your password, but you see through it',
-          'A stage magician makes a coin "vanish" in front of an audience that came to see a magic show',
-          'A coworker invents a fake excuse for missing a deadline',
-          'A seller hides a known defect in a used car'
+          'A friend repeats a false rumor that she sincerely believes is true',
+          'An actor convincingly plays a villain in a sold-out play',
+          'A scammer poses as your bank, but you see through it immediately',
+          'A magician makes a coin vanish for an audience that bought tickets'
         ],
-        correct:1,
-        exp:'The magician\'s audience is <strong>forewarned</strong> — they know they are watching illusions, so it is not deception under Vrij\'s definition. Note that the attempt does not have to succeed: the failed bank scam is still deception because it was a deliberate attempt to create a false belief.'
+        correct:2,
+        exp:'The failed scam is still deception: the definition covers <strong>successful or unsuccessful</strong> attempts. The friend is not deceiving, because she believes the rumor is true (the communicator must consider the belief <em>untrue</em>). The actor\'s and magician\'s audiences are <strong>forewarned</strong>, since they know they are watching a performance.'
       },
       {
         id:'dc2', type:'mc',
-        q:'Timothy Levine\'s <strong>truth-default theory</strong> (from <em>Duped</em>) says we assume others are telling the truth unless something "triggers" doubt. Which statement best reflects the theory?',
+        q:'Which explanation of why most scams succeed is most consistent with Timothy Levine\'s <strong>truth-default theory</strong>?',
         opts:[
-          'The truth default is usually accurate and good for society, but it is also what deceivers exploit',
-          'The truth default is a dangerous flaw that we should replace with constant suspicion',
-          'People are naturally skilled at detecting lies from body language',
-          'Most communication is deceptive, so the truth default is usually wrong'
+          'People are poor at reading nonverbal cues like eye contact and fidgeting',
+          'People believe others by default and doubt only when something triggers suspicion',
+          'Most people are gullible because they lack education about how scams work',
+          'Scammers succeed mainly by using technology that victims don\'t understand'
         ],
-        correct:0,
-        exp:'Most communication is honest, so defaulting to truth is <strong>accurate most of the time and beneficial for society</strong> (constant suspicion would make cooperation nearly impossible). The downside is that skilled deceivers can operate under it. Research also shows people are generally <strong>bad at detecting "good" liars</strong>.'
+        correct:1,
+        exp:'Truth-default theory says we <strong>assume others are honest unless something triggers doubt</strong>. This default is accurate most of the time and good for society, but a skilled deceiver avoids setting off triggers. People are also bad at spotting "good" liars, but the theory\'s core claim is about the default to truth, not about reading body language.'
       },
       {
         id:'dc3', type:'matching',
@@ -938,58 +948,65 @@ window.EXTRA_MODULES = [
       },
       {
         id:'dc4', type:'mc',
-        q:'Persuasion is "the communicative process through which a message prompts a change in an individual or group\'s beliefs, attitudes, or behaviors." Drawing on D&amp;C 121:41–42, when does persuasion become morally problematic?',
+        q:'The lecture taught that persuasion is not wrong in itself, but it becomes a problem when the "ends" are immoral or the "means" are deceptive. Which of these is the <strong>most clearly problematic</strong> use of persuasion?',
         opts:[
-          'Whenever we try to change someone\'s mind',
-          'Only when it fails to change anyone\'s mind',
-          'Only when it is used to sell products',
-          'When the goal (the "ends") is immoral, or when the methods (the "means") are deceptive or disrespect agency'
+          'An online store showing a "sale ends in 10 minutes" timer that resets daily',
+          'A friend urging you to join a club by pointing out that all your friends joined',
+          'A public-health ad that uses graphic but accurate images of smoking damage',
+          'A missionary who shares a message earnestly and then respects your decision'
         ],
-        correct:3,
-        exp:'Persuasion is part of life and <strong>can be used for good or bad</strong>. D&amp;C 121 describes influence through "persuasion, long-suffering, gentleness and meekness, and love unfeigned… without guile." It becomes a problem when the <strong>ends</strong> are immoral or the <strong>means</strong> are deceptive or coercive.'
+        correct:0,
+        exp:'The fake countdown uses <strong>deceptive means</strong>: the scarcity it claims isn\'t real. The health ad is emotional but truthful, the friend\'s appeal to social proof is honest, and the missionary respects agency, which matches D&amp;C 121\'s "persuasion… without guile." Emotional or social appeals are not wrong in themselves; deception and coercion are.'
       },
       {
         id:'dc5', type:'mc',
-        q:'A school cafeteria places fruit at eye level near the register and moves desserts to a lower shelf, but students can still choose anything they want. In the behavioral economics lens, what is this called?',
+        q:'A state requires voters to re-register in person each year at offices open only on weekday mornings, with the goal of lowering turnout among groups that tend to vote for the opposing party. In the behavioral economics lens, this is best described as:',
         opts:[
-          'Sludge — adding friction to discourage something',
-          'Coercion — forcing students to eat fruit',
-          'A nudge reflecting libertarian paternalism — designing the environment to steer people toward good choices while preserving freedom of choice',
-          'A dark pattern — hiding information from students'
+          'A nudge, because it changes the choice environment without banning voting',
+          'Libertarian paternalism, because citizens are still free to register',
+          'Obligation, because citizens feel a duty to comply with the law',
+          'Sludge, because it adds friction to discourage a behavior'
         ],
-        correct:2,
-        exp:'Behavioral economics focuses on <strong>designing environments</strong> that work with people\'s predictable tendencies. A <strong>nudge</strong> steers behavior without removing options, which reflects <strong>libertarian paternalism</strong>. <em>Sludge</em> is the opposite: using friction to discourage something (such as making it harder to vote).'
+        correct:3,
+        exp:'<strong>Sludge</strong> uses friction and inconvenience to discourage something the designer doesn\'t want to support. A <em>nudge</em> (libertarian paternalism) also shapes the environment, but it steers people toward choices that benefit <em>them</em> while keeping options easy. Sludge is the same toolkit turned against the chooser.'
       },
       {
         id:'dc6', type:'mc',
-        q:'As a child, Bruce Schneier noticed that an ant farm came with an order form for live ants to be mailed to any address — so he could send ants to his friends. This example illustrates the <strong>adversarial mindset</strong>. Which of the following is <strong>NOT</strong> one of the "laws" of the attacker mindset discussed with the <em>Catch Me If You Can</em> clip?',
+        q:'As a boy, Bruce Schneier noticed that an ant farm came with an order form to have live ants mailed to any address, so he could mail ants to his friends. Why is this a good example of the <strong>adversarial mindset</strong>?',
         opts:[
-          'Relentless, persistent focus on the objective',
-          'Following the system\'s rules exactly as intended',
-          'Being creative, clever, and unexpected',
-          'Exploiting information, people, and technology'
+          'He spotted a manufacturing defect the company had overlooked',
+          'He reported a flaw to the company so it could be fixed',
+          'He used the system\'s own rules for an unintended purpose at others\' expense',
+          'He persuaded friends to order their own ant farms using social proof'
         ],
-        correct:1,
-        exp:'The attacker mindset <strong>subverts</strong> the rules or norms of a system — using the system in ways its designers did not expect, like mailing ants to someone else. The four laws: relentless focus on the objective; exploiting information, people, and technology; being creative and unexpected; and subverting rules or norms.'
+        correct:2,
+        exp:'Adversarial thinking means seeing how a system\'s own rules can be used in ways its designers didn\'t intend. Nothing was broken; he <strong>subverted the rules</strong> creatively at someone else\'s (harmless) expense. The attacker mindset\'s four laws: relentless focus on the objective; exploiting information, people, and technology; creativity; and subverting rules or norms.'
       },
       {
         id:'dc7', type:'mc',
-        q:'A caller says she works at your company\'s IT help desk. She uses the right technical jargon, knows your manager\'s name, and sounds exactly like a real help-desk worker. Which influence tactic is she relying on?',
-        opts:['Pretexting','Concession','Scarcity','Reciprocity'],
-        correct:0,
-        exp:'<strong>Pretexting</strong> is creating a believable false scenario and identity — "She sounds and acts like the real thing." Other influence tactics include authority, commitment and consistency, concession, liking, obligation, reciprocity, scarcity, social proof, and incentives. Attackers often combine several.'
+        q:'A caller says she is from your company\'s IT help desk. She uses the right jargon, mentions your manager by name, and sounds exactly like the real help desk, but she doesn\'t claim to be anyone\'s boss. Which influence tactic is she <strong>mainly</strong> relying on?',
+        opts:['Authority','Pretexting','Social proof','Concession'],
+        correct:1,
+        exp:'<strong>Pretexting</strong> means building a believable false identity and scenario ("She sounds and acts like the real thing"). <em>Authority</em> ("OK, you\'re the boss") would rely on rank or power, and <em>social proof</em> on what others are doing. Pretexting is often the setup that makes other tactics work.'
       },
       {
         id:'dc8', type:'mc',
-        q:'BYU studies of AI-generated phishing were discussed in class. Which summary of the findings is accurate?',
+        q:'A suspicious target says, "How do I know this isn\'t a scam?" The caller replies, "You\'re absolutely right to ask. Honestly, I\'d be suspicious too," and then continues with the request. Which influence tactic is the caller using?',
+        opts:['Concession','Reciprocity','Liking','Commitment and consistency'],
+        correct:0,
+        exp:'<strong>Concession</strong>: "Well, he conceded that I\'m right, so he must be trustworthy." Agreeing with the target\'s doubt makes the caller seem honest and lowers the target\'s guard. It may also build some liking, but the key move is conceding a point to win trust.'
+      },
+      {
+        id:'dc9', type:'mc',
+        q:'Based on the AI spear-phishing study (Study 2) discussed in class, which change would most likely make an AI-generated phishing email <strong>more</strong> convincing?',
         opts:[
-          'People easily spotted AI-written text messages, and personalization made no difference',
-          'Voice cloning had no effect because students never answer unknown numbers',
-          'AI-generated messages were always less convincing than human-written ones',
-          'Targets could not tell AI-written smishing messages from human-written ones, and more personalized AI spear-phishing emails were more convincing'
+          'Rewriting it in more formal, grammatically flawless language',
+          'Adding more technical detail about the software being promoted',
+          'Sending it from a generic "IT Department" address instead of a person',
+          'Mentioning the target\'s real coworker and a project they did together'
         ],
         correct:3,
-        exp:'<strong>Study 1</strong>: targets could not detect when a smishing message was written by AI. <strong>Study 2</strong>: more personalization (real name, organization, job details, real coworker, real project) made AI spear-phishing emails more convincing. <strong>Study 3</strong> tested texts and cloned professor voices to request student ID numbers. Generative AI makes personalized deception cheap and scalable.'
+        exp:'Study 2 found that <strong>more personalization made emails more convincing</strong>: the real organization, the target\'s name, job details, a real coworker, and a real shared project. Study 1 found that targets couldn\'t tell AI-written smishing from human-written messages. With generative AI, this kind of personalized deception is cheap to produce at scale.'
       },
     ]
   },
@@ -1004,10 +1021,10 @@ window.EXTRA_MODULES = [
     questions: [
       {
         id:'hcd1', type:'mc',
-        q:'Before sketching a single idea for a new campus parking app, a design team spends a week riding along with commuting students, interviewing them, and watching where they get frustrated. Which IDEO human-centered design mindset does this <strong>most directly</strong> reflect?',
-        opts:['Optimism','Creative confidence','Iterate','Empathy'],
-        correct:3,
-        exp:'<strong>Empathy</strong> means looking at the problem and the solution through the <em>user\'s</em> lens, not our own. Spending time with commuters to understand their frustrations firsthand is the heart of empathy — and it comes before ideation so the team solves the right problem.'
+        q:'A designer building a study-planning app says, "I\'m a college student too, so I already know what students need," and skips user interviews. Which IDEO human-centered design mindset is she <strong>most</strong> neglecting?',
+        opts:['Empathy','Embrace ambiguity','Creative confidence','Learn from failure'],
+        correct:0,
+        exp:'<strong>Empathy</strong> means seeing the problem and solution through the <em>user\'s</em> lens, not our own. Being similar to users can make designers overconfident that their own experience represents everyone\'s. She may also be avoiding ambiguity, but the core error is substituting her own view for real users\' perspectives.'
       },
       {
         id:'hcd2', type:'matching',
@@ -1023,60 +1040,65 @@ window.EXTRA_MODULES = [
       },
       {
         id:'hcd3', type:'mc',
-        q:'IDEO\'s human-centered design process moves through Inspiration, Ideation, and Implementation, repeatedly alternating between <strong>diverging</strong> and <strong>converging</strong>. What does this alternation mean?',
+        q:'During ideation, a team brainstorms 60 possible solutions, then votes to choose 3 to prototype. In IDEO\'s process model, these two steps are, respectively:',
         opts:[
-          'Diverging means splitting the team up; converging means bringing the team back together for a meeting',
-          'Diverging means ignoring user feedback; converging means finally listening to users',
-          'Diverging means opening up to generate many possibilities; converging means narrowing down to the most promising choices',
-          'Diverging happens only at the start of a project; converging happens only at the end'
+          'Converging, then diverging',
+          'Empathizing, then defining',
+          'Inspiration, then implementation',
+          'Diverging, then converging'
         ],
-        correct:2,
-        exp:'In HCD, <strong>diverging</strong> expands the space of options (many problems, people, needs, or solution ideas), and <strong>converging</strong> narrows them down to the best ones to test and learn from. The process cycles through this pattern several times — in inspiration, ideation, and implementation — rather than doing it just once.'
+        correct:3,
+        exp:'<strong>Diverging</strong> opens up the space (many ideas); <strong>converging</strong> narrows it to the most promising options. IDEO\'s process cycles through diverge–converge several times, during inspiration, ideation, and implementation, rather than once. Here both steps happen within the <em>ideation</em> phase.'
       },
       {
         id:'hcd4', type:'mc',
         q:'Which sequence correctly lists the five stages of the <strong>design thinking</strong> model shown in class?',
         opts:[
-          'Ideate → Empathize → Prototype → Define → Test',
+          'Empathize → Ideate → Define → Prototype → Test',
+          'Define → Empathize → Ideate → Prototype → Test',
           'Empathize → Define → Ideate → Prototype → Test',
-          'Define → Ideate → Empathize → Test → Prototype',
-          'Prototype → Test → Empathize → Define → Ideate'
+          'Empathize → Define → Prototype → Ideate → Test'
         ],
-        correct:1,
-        exp:'Design thinking moves through <strong>Empathize</strong> (learn about the audience) → <strong>Define</strong> (sharpen key questions) → <strong>Ideate</strong> (brainstorm solutions) → <strong>Prototype</strong> (build representations of ideas) → <strong>Test</strong> (try ideas and gain user feedback). In practice, teams loop back to earlier stages as they learn.'
+        correct:2,
+        exp:'<strong>Empathize</strong> (learn about the audience) → <strong>Define</strong> (sharpen key questions) → <strong>Ideate</strong> (brainstorm solutions) → <strong>Prototype</strong> (build representations of ideas) → <strong>Test</strong> (try ideas and get user feedback). You define the problem <em>after</em> learning about users and <em>before</em> generating solutions. In practice, teams loop back as they learn.'
       },
       {
         id:'hcd5', type:'mc',
-        q:'A team has finished its interviews and observations. Now they are interpreting findings, sorting sticky notes into themes, identifying key insights, and writing a clear "design challenge." In the <em>Discover → Define → Develop → Deliver → Evolve</em> model, which phase are they in?',
-        opts:['Define','Discover','Develop','Deliver'],
-        correct:0,
-        exp:'<strong>Define</strong> is where teams make sense of what they learned in Discover: interpret findings, find meaning, identify themes, sort and condense, frame opportunities, and set the design challenge. <em>Discover</em> is the research itself (interviews, immersion), <em>Develop</em> is brainstorming and prototyping, and <em>Deliver</em> is making, testing, and getting feedback.'
+        q:'A team has finished its interviews. Now they are sorting sticky notes into themes, identifying key insights, and writing a clear "design challenge." In the <em>Discover → Define → Develop → Deliver → Evolve</em> model, which phase are they in?',
+        opts:['Discover','Define','Develop','Deliver'],
+        correct:1,
+        exp:'<strong>Define</strong> is where teams make sense of what they learned: interpret findings, find themes, sort and condense, frame opportunities, and set the design challenge. <em>Discover</em> is the research itself (immersion, interviews, observation). <em>Develop</em> is brainstorming and prototyping, and <em>Deliver</em> is making, testing, and getting feedback.'
       },
       {
         id:'hcd6', type:'mc',
-        q:'A software warning reads: <em>"Proceeding with the operation \'Delete\' will erase the contents of your hard drive. What do you wish to do?"</em> The only two buttons are <strong>Proceed</strong> and <strong>Delete</strong>. From a human-centered design perspective, what is the core problem?',
+        q:'A software warning reads: <em>"Proceeding with the operation \'Delete\' will erase the contents of your hard drive. What do you wish to do?"</em> The only two buttons are <strong>Proceed</strong> and <strong>Delete</strong>. What is the most serious human-centered design problem?',
         opts:[
-          'The message is too short to be legally binding',
-          'The buttons should be in alphabetical order',
-          'Warning dialogs should never be used in software',
-          'The design reflects how the system works rather than what the user needs — it offers no safe way out and both options lead to the same harmful outcome'
+          'Both buttons lead to the destructive action, so users can\'t back out',
+          'It uses a red error icon for what may be a routine action',
+          'It doesn\'t say clearly enough which files will be erased',
+          'It asks the user a question instead of giving a clear instruction'
         ],
-        correct:3,
-        exp:'This "bad user experience" example fails the user because it was not designed through the user\'s eyes. A user who wants to back out has no <em>Cancel</em> option — both buttons destroy their data. Human-centered design starts with <strong>empathy</strong>: what does the person at this moment need, and what could go wrong for them?'
+        correct:0,
+        exp:'A user who wants to stop has <strong>no safe way out</strong>: both choices erase the drive. The other issues are minor or not really problems. Designing from the user\'s point of view (<strong>empathy</strong>) means asking what the person at this moment might want, including changing their mind.'
       },
       {
         id:'hcd7', type:'mc',
-        q:'Elder Ballard\'s counsel on being innovative in our callings ends with: "To innovate does not necessarily mean to expand; very often it means to ______." Which word completes the quote?',
-        opts:['Delegate','Measure','Simplify','Modernize'],
-        correct:2,
-        exp:'"To innovate does not necessarily mean to expand; very often it means to <strong>simplify</strong>." The lecture connects this to design thinking: good design often removes complexity rather than adding features, and the same approach can be applied to our own pursuit of growth and improvement.'
+        q:'Elder Ballard taught: "To innovate does not necessarily mean to expand; very often it means to simplify." Which action <strong>best</strong> applies this counsel to a ward or campus program?',
+        opts:[
+          'Adding new activities so the program meets every possible need',
+          'Following the handbook exactly, with no adaptation to local needs',
+          'Copying a program that worked elsewhere without testing it locally',
+          'Removing steps that don\'t actually help the people being served'
+        ],
+        correct:3,
+        exp:'Ballard\'s point is that innovation often <strong>simplifies</strong>: it removes what doesn\'t serve people. He also said handbook guidelines should be followed, but that <em>within</em> that framework there is room to think creatively. Copying without testing skips the human-centered steps of empathy and iteration.'
       },
       {
         id:'hcd8', type:'mc',
-        q:'In the <strong>Sketchventor</strong> activity, a student draws the "Printing Press" invention card plus a prompt card, and redesigns the press so it can secretly print counterfeit documents. Which prompt card did they most likely draw?',
-        opts:['Anachronize','Villify','Combine','Reverse'],
-        correct:1,
-        exp:'<strong>Villify</strong> asks you to modify your invention for a nefarious purpose. The other prompts work differently: <em>Anachronize</em> imagines the invention in an earlier time, <em>Combine</em> merges two inventions, <em>Reverse</em> switches the invention to its opposite, <em>Exaggerate</em> amplifies one part, and <em>Adapt</em> transforms it for another use. Prompts like these are tools for diverging during ideation.'
+        q:'In the <strong>Sketchventor</strong> activity, a student draws the "Telegraph" invention card and redesigns it so it can be played as a musical instrument. Which prompt card did they most likely draw?',
+        opts:['Combine','Exaggerate','Adapt','Reverse'],
+        correct:2,
+        exp:'<strong>Adapt</strong> means transforming your invention for another use or function. <em>Combine</em> merges two inventions, <em>Exaggerate</em> amplifies one part, <em>Reverse</em> switches it to its opposite, <em>Anachronize</em> imagines it in an earlier time, and <em>Villify</em> modifies it for a nefarious purpose. Prompts like these help teams <strong>diverge</strong> during ideation.'
       },
     ]
   },
@@ -1091,89 +1113,89 @@ window.EXTRA_MODULES = [
     questions: [
       {
         id:'cb1', type:'mc',
-        q:'Ariely (2008) defines a <strong>cognitive bias</strong> as "a systematic (non-random) error in thinking…" Why is the word <em>systematic</em> so important in this definition?',
+        q:'Ariely (2008) defines a <strong>cognitive bias</strong> as "a systematic (non-random) error in thinking…" Why does the word <em>systematic</em> matter?',
         opts:[
-          'Because biases only affect people who think in systematic, logical ways',
-          'Because biases are deliberate choices people make to mislead others',
-          'Because biases can only be detected with formal statistical systems',
-          'Because the errors are predictable — they push judgment in a consistent direction rather than scattering randomly'
+          'Because the errors are predictable: they push judgment in a consistent direction',
+          'Because biases come from one brain system (System 1) and never from System 2',
+          'Because biases are learned through formal systems such as schooling and culture',
+          'Because the errors occur in every judgment a person makes, without exception'
         ],
-        correct:3,
-        exp:'A cognitive bias is <strong>systematic</strong>: it deviates from logic or accepted norms in a consistent, predictable direction. That is what makes us "predictably irrational." Random errors would cancel out over many judgments; systematic biases do not — which also means others can anticipate and exploit them.'
+        correct:0,
+        exp:'<strong>Systematic</strong> means the errors are <em>predictable</em> and lean in a consistent direction. Random errors would tend to cancel out across many judgments; biases don\'t. That predictability is what makes us "predictably irrational" and lets others anticipate and exploit our biases. Biases are not limited to System 1, and they don\'t affect every judgment.'
       },
       {
         id:'cb2', type:'mc',
-        q:'You glance at a friend\'s face and instantly know they are upset. Later, you carefully work through a tricky loan comparison with a calculator. Which statement correctly describes these two kinds of thinking?',
+        q:'Which statement about <strong>System 1</strong> and <strong>System 2</strong> thinking is most accurate?',
         opts:[
-          'The first is System 2 (slow, effortful); the second is System 1 (fast, automatic)',
-          'Both use System 1, because both are everyday decisions',
-          'The first is System 1 (fast, unconscious, automatic); the second is System 2 (slow, conscious, effortful)',
-          'Both use System 2, because both involve reaching a conclusion'
+          'System 1 is error-prone, so careful thinkers try to avoid relying on it for any decision',
+          'System 2 works unconsciously but more reliably, so it takes over complex decisions',
+          'Experts switch to System 2 automatically, which is why they rarely show cognitive biases',
+          'Most everyday decisions run on System 1; biases arise when it handles System 2 tasks'
         ],
-        correct:2,
-        exp:'<strong>System 1</strong> is fast, unconscious, automatic, handles everyday decisions, and is more <em>error-prone</em>. <strong>System 2</strong> is slow, conscious, effortful, handles complex decisions, and is more <em>reliable</em>. Many cognitive biases arise when System 1 handles a judgment that really needs System 2.'
+        correct:3,
+        exp:'<strong>System 1</strong> is fast, unconscious, automatic, and handles everyday decisions, so we couldn\'t function without it. It is more error-prone, though, and biases appear when it handles judgments that need <strong>System 2</strong>, which is slow, <em>conscious</em>, effortful, and more reliable. Experts are subject to biases too.'
       },
       {
         id:'cb3', type:'mc',
         q:'Which of the following was <strong>NOT</strong> listed as a common cause of cognitive bias?',
         opts:[
           'Limits on the mind\'s attention',
-          'Low intelligence or lack of education',
-          'Social pressure and emotions',
-          'Mental shortcuts called "heuristics"'
+          'Individual motivations',
+          'Below-average intelligence',
+          'Social pressure'
         ],
-        correct:1,
-        exp:'Common causes of cognitive bias include <strong>limits on attention</strong>, <strong>individual motivations</strong>, <strong>heuristics</strong> (mental shortcuts), <strong>social pressure</strong>, and <strong>emotions</strong>. Biases are a feature of how all human minds work — highly intelligent and educated people are subject to them too.'
+        correct:2,
+        exp:'The listed causes are <strong>limits on attention</strong>, <strong>individual motivations</strong>, <strong>heuristics</strong> (mental shortcuts), <strong>social pressure</strong>, and <strong>emotions</strong>. Biases come from how <em>all</em> human minds work, so highly intelligent and educated people are subject to them too, sometimes more so, because they are better at rationalizing.'
       },
       {
         id:'cb4', type:'mc',
-        q:'Tversky and Kahneman\'s 1974 paper <em>"Judgment under Uncertainty: Heuristics and Biases"</em> is credited with helping launch which field, where "psychology meets economics"?',
-        opts:['Behavioral economics','Econometrics','Cognitive neuroscience','Game theory'],
-        correct:0,
-        exp:'<strong>Behavioral economics</strong> grew from showing that people do not behave like the perfectly rational actors assumed by classical economics. Instead, they rely on heuristics that lead to systematic biases. Books like <em>Thinking, Fast and Slow</em> (Kahneman) and <em>Nudge</em> (Thaler &amp; Sunstein) popularized this work.'
+        q:'Tversky and Kahneman\'s "Judgment under Uncertainty: Heuristics and Biases" (1974) helped launch behavioral economics. Which assumption of classical economics did this work most directly challenge?',
+        opts:[
+          'That prices are set by supply and demand in competitive markets',
+          'That people make rational choices that maximize their own interests',
+          'That money is the main motivator of most economic behavior',
+          'That people\'s preferences differ widely from person to person'
+        ],
+        correct:1,
+        exp:'Classical economics assumed people are <strong>rational actors</strong> who maximize their interests. Tversky and Kahneman showed that people rely on heuristics that produce <em>systematic</em> errors. Behavioral economics holds that people are "predictably irrational" and that, although preferences vary, people are fundamentally similar in how they decide.'
       },
       {
         id:'cb5', type:'mc',
-        q:'In class, students placed a slider from 0 (lowest-ranked student) to 50 (top student) to predict their own rank. The class average was about <strong>39</strong>. What does this result illustrate?',
+        q:'In class, students used a slider from 0 (lowest-ranked student) to 50 (top student) to predict their own rank. The class average was about <strong>39</strong>. Which bias does this most directly show?',
         opts:[
-          'Confirmation bias — students looked for evidence that they are good students',
-          'Nothing unusual — a class average of 39 is mathematically expected',
-          'Framing effect — the slider made students feel more confident',
-          'Illusory superiority — if estimates were accurate, the average would be near 25, but most students rated themselves above average'
+          'Illusory superiority: most students placed themselves well above the middle',
+          'Optimism bias: students expect good things to happen to them in the future',
+          'Anchoring: the slider\'s 0–50 range pulled everyone\'s estimates upward',
+          'Confirmation bias: students recalled only their past academic successes'
         ],
-        correct:3,
-        exp:'<strong>Illusory superiority</strong> is the tendency to overestimate our own abilities relative to others. In any class, the average rank must fall at the midpoint (about 25 on a 0–50 scale). An average estimate of 39 means many students believe they are above average — which cannot be true for all of them.'
+        correct:0,
+        exp:'In any class, the average rank has to fall at the midpoint, about 25 on a 0–50 scale. An average self-estimate of 39 means many students believe they are <strong>above average</strong> compared with their peers, which is <strong>illusory superiority</strong>. Optimism bias concerns future events, not ranking yourself against others.'
       },
       {
         id:'cb6', type:'mc',
-        q:'Writer Oobah Butler turned his backyard shed into a fake "restaurant" that became the #1 rated restaurant in London on TripAdvisor. Guests who came for a meal left believing it really could be the best restaurant in London. Which bias best explains their reaction?',
-        opts:[
-          'Sunk cost fallacy — guests had paid a lot of money',
-          'Illusory superiority — guests believed they were better food critics than others',
-          'Framing effect — the top rating set up how guests perceived and judged the experience',
-          'Gambler\'s fallacy — guests expected their luck to change'
-        ],
-        correct:2,
-        exp:'A <strong>framing effect</strong> occurs when the way information is presented shapes our judgment. The #1 TripAdvisor rating framed the experience before guests arrived, so ordinary conditions (a few chairs outside a shed) were interpreted as exclusive and exciting rather than suspicious.'
+        q:'Writer Oobah Butler turned his backyard shed into a fake restaurant that became #1 in London on TripAdvisor. Diners served in a makeshift setup left believing it really could be the best restaurant in London. Which bias was the lecture using this to illustrate?',
+        opts:['Illusory superiority','Sunk cost fallacy','Optimism bias','Framing effect'],
+        correct:3,
+        exp:'This is a <strong>framing effect</strong>: how information is presented shapes judgment. The #1 rating framed the experience before diners arrived, so odd conditions (a few chairs outside a shed) seemed exclusive and charming rather than suspicious. Sunk cost could make people reluctant to admit a bad meal, but the lecture used this example for framing.'
       },
       {
         id:'cb7', type:'mc',
-        q:'After hearing a rumor about a political figure, Jordan reads three articles that support the rumor and quickly dismisses two others that contradict it as "obviously biased." Which bias is Jordan most clearly showing?',
-        opts:['Illusory superiority','Confirmation bias','Framing effect','Anchoring bias'],
-        correct:1,
-        exp:'<strong>Confirmation bias</strong> is the tendency to seek out, favor, and remember information that confirms what we already believe while discounting evidence that challenges it. It affects people across the political spectrum and is one reason the same news event can be understood so differently by different audiences.'
+        q:'Two students with opposite views on a campus policy read the <strong>same</strong> study, which has mixed results. Each says the study clearly supports their own side. Which bias best explains this?',
+        opts:['Framing effect','Anchoring bias','Confirmation bias','Illusory superiority'],
+        correct:2,
+        exp:'<strong>Confirmation bias</strong> covers what we seek out and also how we <em>interpret</em> evidence: we treat findings that fit our views as strong and dismiss the rest. Because the study was identical for both students, the framing didn\'t differ; the difference came from their prior beliefs.'
       },
       {
         id:'cb8', type:'mc',
-        q:'In the spear-phishing reflection, one email claimed to be from "Sadie Winters, Desiree Winters\' daughter," mentioned a past research project, and asked the professor to review a project link. Why are personalized messages like this more effective than generic phishing?',
+        q:'One spear-phishing email in the class reflection claimed to be from "Sadie Winters, Desiree Winters\' daughter," mentioned a past research project, and asked the professor to review a link. Why are personalized messages like this especially effective?',
         opts:[
-          'Familiar names, plausible details, and a social connection trigger quick System 1 trust, so the reader is less likely to stop and scrutinize the link',
-          'They are always sent from verified university email addresses',
-          'Personalized emails are longer, so readers get tired and click without reading',
-          'They contain no links, so security filters cannot detect them'
+          'Personalized messages slip past spam filters, so they reach many more inboxes',
+          'Familiar details make the request feel routine, so fast System 1 trust takes over',
+          'Recipients feel obligated to reply because the sender seems to have done them a favor',
+          'Long, detailed emails look more professional, which signals authority and expertise'
         ],
-        correct:0,
-        exp:'Spear phishing exploits cognitive shortcuts. Familiar names, references to real courses or projects, and a sense of personal connection make the request feel normal, so <strong>System 1</strong> accepts it before <strong>System 2</strong> checks the red flags (an unexpected link, an urgent or flattering request, an unverifiable sender).'
+        correct:1,
+        exp:'Familiar names, a plausible connection, and real details make the message feel routine, so <strong>System 1</strong> accepts it before <strong>System 2</strong> checks the red flags (an unexpected link, an unverifiable sender). The email offered no favor, so reciprocity doesn\'t apply, and what makes it work is psychological, not technical.'
       },
     ]
   },
@@ -1188,58 +1210,58 @@ window.EXTRA_MODULES = [
     questions: [
       {
         id:'lf1', type:'mc',
-        q:'Which of the following is an <strong>argument</strong> (not just a claim)?',
+        q:'Which of the following is an <strong>argument</strong>, not just one or more claims?',
         opts:[
-          '"Jeff likes pickles."',
-          '"If the weather is nice, I will go outside. The weather is nice. Therefore, I will go outside."',
-          '"Robert has seen an alien."',
-          '"Pickles are the best food in the world."'
+          '"If it rains this afternoon, the soccer game will be canceled."',
+          '"Most people like pickles, and Jeff is a person who lives in Provo."',
+          '"The game will be canceled. It\'s raining, and rain cancels games."',
+          '"Robert says he saw an alien last night, and he says it was green."'
         ],
-        correct:1,
-        exp:'A <strong>claim</strong> is a single statement or assertion (fact or opinion, true or false). An <strong>argument</strong> is two or more claims (<em>premises</em>) organized to support another claim (the <em>conclusion</em>). Only option C has premises leading to a conclusion.'
+        correct:2,
+        exp:'An <strong>argument</strong> is two or more claims (premises) arranged to support another claim (the conclusion). In the rain example, "It\'s raining" and "rain cancels games" support "The game will be canceled," even though the conclusion comes first. A conditional ("If it rains…") is a single claim, and the pickles and alien statements list claims without drawing a conclusion.'
       },
       {
         id:'lf2', type:'mc',
-        q:'In the conditional statement "<em>If the weather is nice, then I will go outside</em>," what is the <strong>antecedent</strong>?',
-        opts:['"The weather is nice"','"I will go outside"','"If… then…"','"Therefore"'],
-        correct:0,
-        exp:'In "If P, then Q," the <strong>antecedent</strong> is P, the first half ("the weather is nice"). The <strong>consequent</strong> is Q, the second half ("I will go outside").'
+        q:'In the statement "<em>I will go outside if the weather is nice</em>," what is the <strong>antecedent</strong>?',
+        opts:['"I will go outside"','"the weather is nice"','"if"','The entire sentence'],
+        correct:1,
+        exp:'The <strong>antecedent</strong> is the condition, the "P" in "If P, then Q," wherever it appears in the sentence. Rewritten, this is "If the weather is nice, then I will go outside," so the antecedent is "the weather is nice" and the <strong>consequent</strong> is "I will go outside." Word order doesn\'t change which part is the condition.'
       },
       {
         id:'lf3', type:'mc',
-        q:'<em>Premise: If a pet has fur, I am allergic to it. Premise: All pets have fur. Conclusion: Therefore, I am allergic to all pets.</em> How should this argument be evaluated?',
+        q:'<em>Premise: All BYU students are humans. Premise: Some humans are from Utah. Conclusion: Therefore, some BYU students are from Utah.</em> How should this argument be evaluated?',
         opts:[
-          'Valid and sound',
-          'Neither valid nor sound, because it is an inductive argument',
-          'Sound but not valid',
-          'Valid but not sound — the conclusion follows from the premises, but a premise is false'
+          'Not valid, since the conclusion doesn\'t follow, so it can\'t be sound',
+          'Valid but not sound, because one of the premises is false',
+          'Valid and sound, since both premises and the conclusion are true',
+          'Sound but not valid, because the premises are true'
         ],
-        correct:3,
-        exp:'A deductive argument is <strong>valid</strong> when the conclusion is guaranteed by the premises — and this one is. It is <strong>sound</strong> only if it is valid <em>and</em> all premises are true. "All pets have fur" is false (fish, lizards), so the argument is valid but not sound.'
+        correct:0,
+        exp:'A valid argument <strong>guarantees</strong> its conclusion. Here, the Utah humans could all be people who aren\'t BYU students, so the premises don\'t guarantee the conclusion. The argument is <strong>invalid</strong>, even though the conclusion happens to be true. Soundness requires validity <em>plus</em> true premises, so an invalid argument can\'t be sound.'
       },
       {
         id:'lf4', type:'mc',
-        q:'What is the key difference between <strong>deductive</strong> and <strong>inductive</strong> arguments?',
+        q:'"Every swan I have ever seen has been white, so the next swan I see will be white." How should this argument be classified?',
         opts:[
-          'Deductive arguments are always true; inductive arguments are always false',
-          'Inductive arguments use premises; deductive arguments do not',
-          'Deductive conclusions are deduced through formal logic and are airtight; inductive conclusions are inferred through informal logic and are not airtight',
-          'There is no difference; the terms mean the same thing'
+          'Deductive and valid, because the conclusion follows from the premise',
+          'Deductive but unsound, because the premise might be false',
+          'Not an argument, because it has only one premise',
+          'Inductive: the premise makes the conclusion likely but doesn\'t guarantee it'
         ],
-        correct:2,
-        exp:'<strong>Deductive</strong> arguments are judged as valid/sound: when valid, the conclusion follows with certainty (airtight). <strong>Inductive</strong> arguments are judged as strong/cogent: the premises make the conclusion more or less likely, but never guarantee it.'
+        correct:3,
+        exp:'This conclusion is <strong>inferred</strong> from past observations using informal logic. It can be likely, but it isn\'t airtight (black swans exist). That makes it <strong>inductive</strong>, judged as strong or cogent rather than valid or sound. Deductive arguments are airtight: if valid with true premises, the conclusion must be true.'
       },
       {
         id:'lf5', type:'mc',
         q:'<em>Premise: Sneezing near fur is a symptom of allergies. Premise: I once sneezed when I came near an animal with fur. Conclusion: Therefore, I am allergic to fur.</em> How should this inductive argument be evaluated?',
         opts:[
-          'Strong and cogent',
-          'Not strong — one sneeze gives little support for the conclusion — and therefore not cogent either',
-          'Strong but not cogent',
-          'Valid and sound'
+          'Strong and cogent, because both premises are true',
+          'Strong but not cogent, because a premise is likely false',
+          'Neither strong nor cogent, since one sneeze is weak evidence',
+          'Valid but not sound, because the conclusion might be false'
         ],
-        correct:1,
-        exp:'An inductive argument is <strong>strong</strong> if the premises give real support to the conclusion. One sneeze is weak evidence (it could be dust or a cold). A <strong>cogent</strong> argument must be strong <em>and</em> have premises likely to be true, so an argument that isn\'t strong can\'t be cogent. "Valid" and "sound" apply to deductive arguments.'
+        correct:2,
+        exp:'An inductive argument is <strong>strong</strong> only if the premises give real support to the conclusion. A single sneeze is weak evidence (it could be dust or a cold). A <strong>cogent</strong> argument must be strong <em>and</em> have likely-true premises, so true premises can\'t rescue a weak argument. "Valid" and "sound" apply only to deductive arguments.'
       },
       {
         id:'lf6', type:'matching',
@@ -1255,22 +1277,22 @@ window.EXTRA_MODULES = [
       },
       {
         id:'lf7', type:'mc',
-        q:'What is a <strong>logical fallacy</strong>?',
+        q:'Can an argument contain a <strong>logical fallacy</strong> and still reach a true conclusion?',
         opts:[
-          'A faulty or badly constructed argument, often divided into formal and informal fallacies',
-          'Any argument whose conclusion turns out to be false',
-          'A strongly held opinion',
-          'A premise that has not yet been tested'
+          'No: a fallacy always leads to a false conclusion, even if premises are true',
+          'Yes: a fallacy is a flaw in the reasoning, not proof the conclusion is false',
+          'Only if it is an informal fallacy, since formal fallacies break the logic',
+          'Only when all of its premises are false, which cancels out the error'
         ],
-        correct:0,
-        exp:'A <strong>logical fallacy</strong> is a faulty or badly constructed argument. <em>Formal</em> fallacies are errors in the logical structure; <em>informal</em> fallacies are errors in content or reasoning (e.g., ad hominem, straw man). An argument can reach a true conclusion and still be fallacious.'
+        correct:1,
+        exp:'A <strong>logical fallacy</strong> is a faulty or badly constructed argument, an error in the <em>reasoning</em>. The conclusion may still be true by coincidence; the argument just fails to establish it. Rejecting a claim only because someone argued for it badly is itself a mistake (sometimes called the "fallacy fallacy").'
       },
       {
         id:'lf8', type:'mc',
-        q:'A spiritual fallacy is "a false message designed to destroy our faith" — a belief that feels right intuitively but isn\'t. A friend says, "Our ward is doing great; there\'s really nothing we need to work on." Which <strong>Satan\'s Playbook</strong> card (from 2 Nephi 28) does this most resemble?',
-        opts:['Miracles have ceased','Eat, drink, and be merry','Sin now, repent later','All is well in Zion'],
-        correct:3,
-        exp:'"<strong>All is well in Zion</strong>" (2 Nephi 28:21) describes being lulled into complacency, feeling there is no need to grow or be watchful. The other cards describe different false messages: that God no longer works miracles, that we can sin now and repent later, or that we should live only for today.'
+        q:'A spiritual fallacy is "a false message designed to destroy our faith," a belief that feels right intuitively but isn\'t. A friend says, "Our ward is in great shape. There isn\'t really anything we need to work on." Which <strong>Satan\'s Playbook</strong> card from 2 Nephi 28 does this most resemble?',
+        opts:['All is well in Zion','Sin now, repent later','Miracles have ceased','Eat, drink, and be merry'],
+        correct:0,
+        exp:'"<strong>All is well in Zion</strong>" (2 Nephi 28:21) describes being lulled into complacency, feeling there is no need to grow or stay watchful. "Eat, drink, and be merry" and "sin now, repent later" excuse wrongdoing, and "miracles have ceased" denies God\'s power today.'
       },
     ]
   },
@@ -1285,10 +1307,15 @@ window.EXTRA_MODULES = [
     questions: [
       {
         id:'gd1', type:'mc',
-        q:'Salen &amp; Zimmerman define a game as "a system in which players engage in an artificial conflict, defined by rules, that results in a quantifiable outcome." Which of the following is <strong>NOT</strong> an element of this definition?',
-        opts:['Artificial conflict','Rules','A story with a hero and a villain','A quantifiable outcome'],
-        correct:2,
-        exp:'The definition includes a <strong>system</strong>, <strong>players</strong>, <strong>artificial conflict</strong>, <strong>rules</strong>, and a <strong>quantifiable outcome</strong>. Many games have stories, but narrative is not required — chess or tic-tac-toe are games without one. As the lecture noted, no definition is perfect.'
+        q:'Salen &amp; Zimmerman define a game as "a system in which players engage in an artificial conflict, defined by rules, that results in a quantifiable outcome." Which activity fits this definition <strong>least</strong> well?',
+        opts:[
+          'A game of solitaire played against the deck',
+          'A footrace between friends to the end of the block',
+          'A round of Werewolf at a youth activity',
+          'Friends taking turns adding to a story, with no winner or score'
+        ],
+        correct:3,
+        exp:'Open-ended collaborative storytelling has rules and players but no <strong>quantifiable outcome</strong> (and arguably no conflict). Solitaire has a conflict against the system and a clear win or loss; a footrace and Werewolf have rules, conflict, and winners. As the lecture noted, no definition is perfect, but this one gives clear criteria.'
       },
       {
         id:'gd2', type:'matching',
@@ -1302,60 +1329,77 @@ window.EXTRA_MODULES = [
       },
       {
         id:'gd3', type:'mc',
-        q:'In a typical compulsion loop (core game loop), a player buys improved gear, uses it to fight monsters, and earns gold and loot to buy more gear. Which stage of the loop was associated with <strong>dopamine</strong>?',
-        opts:['Challenge','Anticipation','Reward','None — dopamine is not involved in games'],
-        correct:1,
-        exp:'The loop runs <strong>Anticipation → Challenge → Reward</strong> and back again. Dopamine was linked to <strong>anticipation</strong> — looking forward to what the new gear will let you do — which helps explain why core loops can be so compelling (and sometimes compulsive).'
+        q:'A designer wants Werewolf players to feel more <strong>tension</strong> during the day phase. According to the MDA framework, what can she change most directly?',
+        opts:[
+          'The dynamics, by instructing players to bluff and accuse more often',
+          'The aesthetics, by telling players the game is supposed to feel tense',
+          'The mechanics, for example by adding a strict timer to the voting step',
+          'Nothing, since how players feel depends only on who is playing'
+        ],
+        correct:2,
+        exp:'Designers work <strong>mechanics → dynamics → aesthetics</strong>: they can only directly change the rules (mechanics). Dynamics emerge from how players interact with those rules, and aesthetics are the feelings that result. A timer changes the mechanics, which can create rushed accusations (dynamics) and tension (aesthetics). Players experience the game in the reverse order, starting with how it feels.'
       },
       {
         id:'gd4', type:'mc',
-        q:'A designer wants players to keep playing because they enjoy getting better at the game, not because of external rewards. Which motivator should she focus on?',
-        opts:['Mastery','Badges','Leaderboards','Points'],
-        correct:0,
-        exp:'<strong>Mastery</strong> is an <em>intrinsic</em> motivator — along with belonging, autonomy, meaning, learning, and fun. Points, levels, badges, leaderboards, prizes, and progress bars are <em>extrinsic</em> motivators: rewards that come from outside the activity itself.'
+        q:'In a typical compulsion loop (core game loop), a player buys improved gear, uses it to fight monsters, and earns gold and loot to buy more gear. In the diagram shown in class, which stage of the loop was associated with <strong>dopamine</strong>?',
+        opts:['Reward (earning gold and loot)','Anticipation (buying improved gear)','Challenge (fighting monsters)','Failure (losing a fight)'],
+        correct:1,
+        exp:'The loop runs <strong>Anticipation → Challenge → Reward</strong> and around again, and dopamine was linked to <strong>anticipation</strong>: looking forward to what the new gear will let you do. Many people assume dopamine is mainly about the reward itself, but anticipation is what keeps players coming back to the loop.'
       },
       {
         id:'gd5', type:'mc',
-        q:'A team argues that building a quick paper prototype is a waste of time because "low-fidelity prototypes don\'t teach you much." According to the lecture, what is the best response?',
+        q:'A fitness app added points, badges, and a leaderboard. Users loved it for two weeks, then most quit. Which change would best tap <strong>intrinsic</strong> motivation?',
         opts:[
-          'They are right — only high-fidelity prototypes produce meaningful feedback',
-          'Paper prototypes are only useful for board games, not for apps',
-          'Fidelity doesn\'t matter at all, so the team should skip prototyping and launch',
-          'Low fidelity doesn\'t mean you learn less; you learn different things. Build each prototype to answer a specific question'
+          'Letting users set their own goals and see their skills improve',
+          'Offering small cash prizes to the top ten users each month',
+          'Adding rarer badge tiers and new quests to unlock',
+          'Adding a progress bar that fills as users reach new levels'
         ],
-        correct:3,
-        exp:'Prototypes should be built to <strong>answer questions</strong>. A low-fidelity sketch can quickly test a core idea or flow; a high-fidelity version tests things like visual polish or timing. <strong>Mixed-fidelity</strong> prototypes (like the Floracaching study) combine levels and work especially well for games.'
+        correct:0,
+        exp:'<strong>Intrinsic</strong> motivators come from the activity itself: <strong>autonomy</strong> (choosing your own goals), <strong>mastery</strong> (getting better), belonging, meaning, learning, and fun. Badges, quests, prizes, money, levels, and progress bars are all <strong>extrinsic</strong>, and they are exactly what users had already grown tired of.'
       },
       {
         id:'gd6', type:'mc',
-        q:'One usability test with 8 users found 5 problems. Two smaller tests with 3 users each found 9 problems. What best explains why the two smaller tests found more?',
+        q:'A team says, "Let\'s skip the paper prototype. Low-fidelity versions don\'t teach you much." Which response best reflects the lecture?',
         opts:[
-          'Smaller groups always give more honest feedback',
-          'The second group of users was more experienced',
-          'After fixing the biggest problems from the first round, the second round could uncover problems that had been hidden behind them',
-          'It was random chance; the number of tests does not matter'
+          'They\'re right; low fidelity is only worth it when you\'re very short on time',
+          'Always match the final product\'s fidelity so that tester feedback transfers',
+          'Build the high-fidelity version first so testers take the game more seriously',
+          'Low fidelity teaches different things; build each prototype to answer a question'
         ],
-        correct:2,
-        exp:'"<strong>Find and fix the biggest problems first.</strong>" Users in a single large test tend to hit the same major problems, which can block them from finding others. Testing, fixing, and testing again reveals new layers of problems — another argument for iterating.'
+        correct:3,
+        exp:'"Low-fidelity doesn\'t mean we learn less. We learn different things." A rough version can quickly test a core idea or flow, while high fidelity can test feel and polish. <strong>Build prototypes to answer questions.</strong> Mixed-fidelity prototypes, like those in the Floracaching study, work especially well for games.'
       },
       {
         id:'gd7', type:'mc',
-        q:'Which action <strong>violates</strong> the playtest protocol taught in class?',
+        q:'One usability test with 8 users found 5 problems. Two smaller tests with 3 users each, with fixes in between, found 9. What best explains the difference?',
         opts:[
-          'Telling players, "We\'re testing our imperfect game, not you"',
-          'Starting with a detailed explanation of why your game is important and how it is supposed to be played',
-          'Watching players\' body language as they play',
-          'Asking afterward what frustrated them and what their favorite part was'
+          'Groups of 8 create groupthink that discourages people from mentioning problems',
+          'Smaller groups give each tester more time to talk, so each finds more problems',
+          'Fixing the big problems first let the next round reveal problems they had hidden',
+          'The second group happened to include more critical, experienced testers'
         ],
-        correct:1,
-        exp:'The protocol says: <strong>don\'t introduce your game or why it\'s important — stop talking and listen.</strong> Have a plan, set the stage, observe body language, and afterward ask the core questions (FFWWDD): what was <em>Frustrating</em>, your <em>Favorite</em> part, what you <em>Wanted</em> to do but couldn\'t, what you\'d change with a magic <em>Wand</em>, what you were <em>Doing</em>, and how you would <em>Describe</em> the game.'
+        correct:2,
+        exp:'"<strong>Find and fix the biggest problems first.</strong>" In one big test, most users hit the same major problems, which can block them from reaching others. Testing, fixing, and testing again uncovers the next layer of problems, which is a strong argument for iterating with small groups.'
       },
       {
         id:'gd8', type:'mc',
-        q:'After three rounds of playtesting, players consistently say the trading mechanic is confusing. The designer keeps it anyway, saying, "We\'ve already spent weeks building those cards." Which bias from "Biases, meets Design!" is this?',
-        opts:['Sunk cost fallacy','Pro-innovation bias','Anchoring bias','Self-serving bias'],
+        q:'During a playtest of your card game, which of these actions <strong>goes against</strong> the playtest protocol taught in class?',
+        opts:[
+          'Staying silent while a player struggles to understand a rule',
+          'Starting with a short pitch explaining why your game matters',
+          'Recording the session on video so you can review it later',
+          'Asking afterward what they\'d change if they had a magic wand'
+        ],
+        correct:1,
+        exp:'The protocol says: <strong>don\'t introduce your game or why it\'s important. Shut up and listen.</strong> Staying silent may feel awkward, but it shows you where the rules are unclear. Set the stage ("We\'re testing the game, not you"), observe body language, record if possible, and ask the FFWWDD questions afterward.'
+      },
+      {
+        id:'gd9', type:'mc',
+        q:'A design team sketches six "new" versions of its game, but each is a small variation on its very first prototype. No one considers a fundamentally different design. Which bias from "Biases, meets Design!" fits <strong>best</strong>?',
+        opts:['Anchoring bias','Sunk cost fallacy','Confirmation bias','Pro-innovation bias'],
         correct:0,
-        exp:'The <strong>sunk cost fallacy</strong> means sticking with an idea because of past investment (or sheer inertia) rather than its current value. Other design biases include <em>confirmation bias</em> (only hearing feedback that supports your idea), <em>anchoring</em> (being limited by early designs), <em>optimism bias</em> (ignoring negative comments), and <em>pro-innovation bias</em> (assuming new is always better).'
+        exp:'<strong>Anchoring bias</strong> means being unduly influenced by initial designs, which then limit the alternatives you consider. The <em>sunk cost fallacy</em> is sticking with an idea <em>because of what you\'ve already invested</em>, and <em>confirmation bias</em> is listening only to feedback that supports your idea. Here the first design limits imagination, so anchoring fits best.'
       },
     ]
   },
@@ -1365,103 +1409,92 @@ window.EXTRA_MODULES = [
     title: 'Conspiracy Theories',
     icon: '🕵️',
     color: '#a16207',
-    desc: 'Definitions, conspiratorial thinking, measurement, cults',
+    desc: 'Definitions, conspiratorial thinking, measurement, narratives',
     draw: 6,
     questions: [
       {
         id:'ct1', type:'mc',
         q:'Which claim best fits the academic definition of a <strong>conspiracy theory</strong> used in class?',
         opts:[
-          'A city council quietly voted to raise parking fees during a public meeting that few people attended',
-          'A company made an honest accounting mistake that hurt its shareholders',
-          'A secret alliance of powerful actors deliberately caused an economic crisis to take away ordinary people\'s savings and rights',
-          'A scientist proposed a new hypothesis that has not yet been tested'
+          'A lone hacker secretly planted malware that disrupted a national election',
+          'Several companies openly agreed on new industry safety standards for workers',
+          'A large corporation publicly lobbied Congress for a tax break for itself',
+          'A few powerful officials secretly coordinated a crisis that harmed citizens'
         ],
-        correct:2,
-        exp:'Conspiracy theories explain significant social or political events through <strong>secret plots by two or more powerful actors</strong>, and they involve <strong>secret deeds that disadvantage or infringe on the rights of others</strong>. A public vote, an honest mistake, or an untested hypothesis lacks the element of a hidden, malicious plot.'
+        correct:3,
+        exp:'A conspiracy theory claims a <strong>secret plot by two or more powerful actors</strong> that <strong>disadvantages or infringes on the rights of others</strong>. The hacker acted alone; the companies and the corporation acted openly. Only the claim about officials has all the elements: multiple powerful actors, secrecy, and harm.'
       },
       {
         id:'ct2', type:'mc',
-        q:'Researchers distinguish specific conspiracy theories from <strong>conspiratorial thinking</strong>. What is conspiratorial thinking, and why does it matter?',
+        q:'How does <strong>conspiratorial thinking</strong> differ from belief in a particular conspiracy theory, and why does the difference matter to researchers?',
         opts:[
-          'It is belief in one particular conspiracy; it matters because each conspiracy must be studied separately',
-          'It is a general predisposition to interpret major events as the product of malevolent conspiracies; it predicts belief better than the content of any single theory',
-          'It is the process of investigating real conspiracies, like a journalist would',
-          'It is a mental illness diagnosed by psychologists'
+          'It\'s healthy skepticism toward official accounts, and it predicts better critical-thinking skills',
+          'It\'s belief in one specific theory, and it matters because each theory attracts a different kind of person',
+          'It\'s a general tendency to see events as malevolent plots, and it predicts belief better than any one theory\'s content',
+          'It\'s knowledge of real historical conspiracies, and it explains why some people are more suspicious'
         ],
-        correct:1,
-        exp:'<strong>Conspiratorial thinking</strong> is a general predisposition to see salient events as the product of malevolent conspiracies. Research suggests this general tendency is more important for understanding believers than the specific topic — people who believe one conspiracy theory often believe others, even contradictory ones.'
+        correct:2,
+        exp:'<strong>Conspiratorial thinking</strong> is a general predisposition to interpret events as the product of malevolent conspiracies. Research suggests this general tendency matters more than the content of any specific theory, which is why people who believe one theory often believe others, sometimes even contradictory ones. Believers, by contrast, tend to say it\'s all about the specific topic.'
       },
       {
         id:'ct3', type:'mc',
-        q:'A researcher collects five years of letters to the editor and social media posts and codes each one for conspiratorial language. Which of the three measurement approaches discussed in class is this?',
+        q:'A researcher gives participants a questionnaire with general statements, such as "Groups of scientists manipulate evidence to deceive the public," that don\'t refer to any specific event. Responses are averaged into one score. Which measurement approach is this?',
         opts:[
+          'A survey about specific conspiracies',
+          'A survey measuring conspiratorial thinking',
           'Content analysis',
-          'Surveys that measure conspiratorial thinking',
-          'Surveys about specific conspiracies',
-          'A randomized field experiment'
+          'A field experiment'
         ],
-        correct:0,
-        exp:'Researchers measure conspiracy belief in three main ways: <strong>surveys about specific conspiracies</strong> (e.g., the JFK assassination or aliens), <strong>surveys that measure general conspiratorial thinking</strong> (like the scale the class took), and <strong>content analysis</strong> of existing texts such as letters to the editor or social media posts.'
+        correct:1,
+        exp:'Because the items are <strong>general</strong> rather than about specific events (like the JFK assassination), this measures the underlying predisposition, <strong>conspiratorial thinking</strong>. This is the kind of scale the class took. <em>Content analysis</em> would code existing texts, such as letters to the editor or social media posts, rather than survey responses.'
       },
       {
         id:'ct4', type:'mc',
-        q:'The CIA mind-control experiments, the Tuskegee syphilis study, and Big Tobacco\'s cover-up of smoking dangers were all discussed. What point were these examples meant to raise?',
+        q:'A student argues: "The Tuskegee syphilis study and the CIA mind-control experiments were real conspiracies, so this new theory I read online is probably true too." Which response best reflects the lecture?',
         opts:[
-          'That all conspiracy theories eventually turn out to be true',
-          'That conspiracy theories only involve medical topics',
-          'That government agencies cannot be trusted under any circumstances',
-          'That some conspiracies are real, which raises the question of whether "conspiracy theory" should always be used as a dismissive label'
+          'The label shouldn\'t settle it either way; judge each claim on its own evidence',
+          'Disagree: real conspiracies are so rare that new claims can be dismissed',
+          'Agree: real conspiracies show most theories turn out to be true',
+          'Disagree: those were government programs, not actual conspiracies'
         ],
-        correct:3,
-        exp:'<strong>Some conspiracies are real.</strong> Following Hayward (2021), the lecture asked whether there is room for the term "conspiracy theory" to be less pejorative. Recognizing real conspiracies does not mean every claim is true; it means each claim should be judged on its evidence.'
+        correct:0,
+        exp:'<strong>Some conspiracies are real</strong>, which is why Hayward (2021) asks whether "conspiracy theory" should always be a dismissive label. But one real conspiracy doesn\'t make a different claim true, and dismissing every claim automatically is also a mistake. Tuskegee and the CIA experiments <em>were</em> secret plots by powerful actors that harmed others.'
       },
       {
         id:'ct5', type:'mc',
-        q:'An independent-samples t-test comparing conspiratorial-thinking scores between UNIV 218R students and Honors students found <strong>t(229) = 5.044, p &lt; 0.001</strong>. What is the correct interpretation?',
+        q:'In the "create a conspiracy theory" activity, Step 2 asked groups to generate supporting "evidence" by establishing a <strong>motive</strong> and the <strong>means</strong>. Using the activity\'s false narrative (that the Church secretly helps rule the world), which of these is an example of establishing the <strong>means</strong>?',
         opts:[
-          'Fewer than 0.1% of UNIV students believe in conspiracy theories',
-          'UNIV students believe in exactly 5.044 more conspiracy theories than Honors students',
-          'The difference in average scores between the two groups is statistically significant — very unlikely to be due to chance alone',
-          'The test proves that taking UNIV 218R causes conspiratorial thinking'
+          'Claiming the Church profits financially whenever world conflicts break out',
+          'Casting believers as underdogs who can see what everyone else is missing',
+          'Setting up private chat groups where members can swap new "evidence"',
+          'Citing its worldwide missionary network as a way to gather intelligence'
         ],
-        correct:2,
-        exp:'A p-value below 0.001 means a difference this large would be very unlikely if the two groups really had the same average. So the difference is <strong>statistically significant</strong>. It does <em>not</em> show causation (students were not randomly assigned to courses), and the t-statistic is not a count of beliefs.'
+        correct:3,
+        exp:'The <strong>means</strong> is <em>how</em> the supposed plot could be carried out, typically by twisting a real, unique fact (like a worldwide missionary network) into "evidence." The profit claim establishes a <strong>motive</strong> (also Step 2). Casting believers as underdogs is Step 3 (the Hero\'s Journey), and private chat groups are Step 4 (building a community). Seeing these steps from the inside helps you recognize them when others use them.'
       },
       {
         id:'ct6', type:'mc',
-        q:'"<strong>Birds Aren\'t Real</strong>" — the movement claiming birds are government surveillance drones — was discussed under "fighting lunacy with lunacy." What is it?',
+        q:'Why was the "<strong>Birds Aren\'t Real</strong>" movement discussed under "fighting lunacy with lunacy"?',
         opts:[
-          'A sincere conspiracy theory that went viral among Gen Z',
-          'A parody of conspiracy theories that mimics their style to highlight how absurd misinformation can be',
-          'A government campaign to promote bird conservation',
-          'A scientific study of drone technology'
+          'It was a real conspiracy movement that researchers joined in order to study it',
+          'It was a government campaign that used humor to reduce trust in conspiracies',
+          'It\'s a parody that copies conspiracy theories\' narratives and community-building',
+          'It showed that absurd claims can\'t spread online when they\'re obviously false'
+        ],
+        correct:2,
+        exp:'Birds Aren\'t Real is a <strong>parody</strong> of conspiracy theories. It mimics their style, "evidence," and community-building to show how misinformation spreads and to poke fun at it. Its rapid spread, including people who took it seriously, shows that even obviously absurd claims <em>can</em> catch on.'
+      },
+      {
+        id:'ct7', type:'mc',
+        q:'In the "create a conspiracy theory" activity, Step 3 used the <strong>Hero\'s Journey</strong> to help new believers "feel special." What makes this narrative pattern so effective for spreading a conspiracy theory?',
+        opts:[
+          'It supplies a clear villain, which the definition of a conspiracy theory requires',
+          'It casts believers as underdog heroes "in the know," tying the belief to identity',
+          'It presents the theory as a story, which makes its claims easier to fact-check',
+          'It limits membership to a chosen few, which works mainly through scarcity'
         ],
         correct:1,
-        exp:'Birds Aren\'t Real is a <strong>parody</strong>. It copies the narratives, "evidence," and community-building of real conspiracy movements to expose and poke fun at how misinformation spreads. Thinking about why a parody can feel convincing also shows the techniques real conspiracy theories use.'
-      },
-      {
-        id:'ct7', type:'matching',
-        q:'Match each element of <strong>cults</strong> (and cult-like conspiracy communities) to its description.',
-        pairs:[
-          {L:'Transcendent belief system', R:'Claims to be the only truth and tells members their special role'},
-          {L:'Systems of control', R:'Rules on how to live, eat, and associate that strip individuality'},
-          {L:'Systems of influence', R:'Peer pressure, guilt, shame, and fear in a closed information system'},
-          {L:'Charismatic leader', R:'A revered figure who holds power over members and must be trusted'},
-        ],
-        exp:'Cults (and cult-like conspiracy communities) combine a <strong>transcendent belief system</strong> (the only truth, us vs. them), <strong>systems of control</strong> (rules that strip individuality), <strong>systems of influence</strong> (emotional manipulation, peer pressure, high-arousal events, closed information), and a <strong>charismatic leader</strong>. Contrast these with persuasion, long-suffering, love, and respect for agency.'
-      },
-      {
-        id:'ct8', type:'mc',
-        q:'In the "create a conspiracy theory" activity, Step 3 asked groups to use the <strong>Hero\'s Journey</strong> to help new members feel special. Why is this narrative pattern so effective for spreading conspiracy theories?',
-        opts:[
-          'It casts the believer as an underdog hero "in the know," with mentors, villains, and a call to adventure, which makes the belief part of their identity',
-          'It provides strong empirical evidence for the theory',
-          'It encourages believers to seek out opposing viewpoints',
-          'It makes the theory simpler to fact-check'
-        ],
-        correct:0,
-        exp:'The <strong>Hero\'s Journey</strong> gives believers a role in a meaningful story: a call to adventure, mentors who reveal "hidden truths," a villain, and transformation. Feeling like a special underdog who sees what others miss makes the belief emotionally rewarding and tied to identity, which makes it hard to change with evidence alone.'
+        exp:'The <strong>Hero\'s Journey</strong> gives believers a meaningful role: a call to adventure, mentors who reveal "hidden truths," a villain, and transformation. Feeling like a special underdog who sees what others miss makes the belief emotionally rewarding and part of a person\'s <strong>identity</strong>, which makes it hard to change with evidence alone.'
       },
     ]
   },
@@ -1476,53 +1509,53 @@ window.EXTRA_MODULES = [
     questions: [
       {
         id:'nb1', type:'mc',
-        q:'According to the lecture, which statement describes what <strong>most news IS</strong>?',
+        q:'The lecture contrasted what most news <em>is</em> with what it <em>isn\'t</em>. Which of these was listed as something most news <strong>is NOT</strong>?',
         opts:[
-          'Focused on current, noteworthy events, designed to make money, and targeted at a specific audience',
-          'Designed to objectively inform the general population',
+          'Designed to make money',
           'Focused on the most important issues in the world',
-          'Created by journalists with plenty of time to fact-check every detail'
+          'Targeted at a specific audience',
+          'Focused on current, noteworthy events as they unfold'
         ],
-        correct:0,
-        exp:'Most news is <strong>focused on current, noteworthy events</strong>, <strong>designed to make money</strong>, created by <strong>overworked and underpaid journalists</strong>, and <strong>targeted at a specific audience</strong>. It usually is <em>not</em> focused on the most important issues, designed to objectively inform, thoroughly fact-checked, or aimed at the general population.'
+        correct:1,
+        exp:'Most news <strong>is</strong> focused on current, noteworthy events; designed to make money; made by overworked, underpaid journalists; and targeted at a specific audience. It is generally <strong>not</strong> focused on the <em>most important</em> issues, designed to objectively inform, thoroughly fact-checked, or aimed at the general population. "Noteworthy" and "important" are not the same thing.'
       },
       {
         id:'nb2', type:'mc',
-        q:'Over a month, one cable network runs dozens of stories about crime by immigrants while another barely covers that topic and focuses on climate stories instead. Each individual story may be accurate. Which media bias mechanism is this?',
-        opts:['Neither — accurate stories cannot be biased','Distortion','Fabrication','Filtering'],
-        correct:3,
-        exp:'<strong>Filtering</strong> is bias in <em>which stories</em> an outlet chooses to cover. It is the <strong>most common</strong> type of bias in mainstream media, and it can shape audience perceptions even when every story is factually accurate. <strong>Distortion</strong> (exaggerating, showing one side, twisting facts) is less common in mainstream outlets.'
+        q:'Over a month, one network runs dozens of stories about crimes committed by immigrants, while another barely covers that topic and focuses on climate stories. Every individual story is accurate. Which media bias mechanism does this illustrate?',
+        opts:['Filtering','Distortion','Trading up the chain','Click-bait'],
+        correct:0,
+        exp:'<strong>Filtering</strong> is bias in <em>which stories</em> get covered. It is the <strong>most common</strong> form of bias in mainstream media, and it shapes perceptions even when every story is accurate. <strong>Distortion</strong> is bias in <em>how</em> a story is told (exaggerating, showing one side) and is less common in mainstream outlets.'
       },
       {
         id:'nb3', type:'mc',
-        q:'A news site reports on a new study but exaggerates its findings, quotes only critics of the study, and leaves out the researchers\' own caveats. Which mechanism of media bias is this?',
-        opts:['Filtering','Gate-keeping','Distortion','Audience bias'],
-        correct:2,
-        exp:'<strong>Distortion</strong> is bias in <em>how</em> a story is told: exaggerating, cherry-picking, showing only one side, or misrepresenting facts. According to the lecture, it is less common in mainstream media than filtering, but it is more obviously misleading.'
+        q:'A news site runs the headline "Scrolling Causes Teen Depression, Study Finds." The study found a small correlation, and its authors stated it could not show causation. Which mechanism of bias does the <strong>headline</strong> show?',
+        opts:['Filtering','Gate-keeping','Trading up the chain','Distortion'],
+        correct:3,
+        exp:'<strong>Distortion</strong> means misrepresenting how a story is told: exaggerating, overstating, or leaving out important qualifications. Turning a small correlation into "causes" distorts the findings. Choosing to cover the study at all would be a <em>filtering</em> decision, and <em>gate-keeping</em> is a way researchers <em>measure</em> filtering.'
       },
       {
         id:'nb4', type:'mc',
-        q:'A 2025 Pew-Knight survey found that about <strong>70% of adults ages 18–29</strong> mostly get political news because they <em>happen to come across it</em>, not because they look for it. What is the most important implication?',
+        q:'A 2025 Pew-Knight survey found that about <strong>70%</strong> of adults ages 18–29 mostly get political news because they <em>happen to come across it</em>, compared with 38% of adults 65 and older. What is the most important implication?',
         opts:[
-          'Young adults are not exposed to any political news',
-          'What young adults see depends heavily on algorithms, feeds, and what others share — making filtering by platforms especially powerful',
-          'Young adults trust local news more than any other age group',
-          'Older adults are more likely to come across news by accident'
+          'Young adults are much less interested in politics than older adults',
+          'Young adults distrust social media, so incidental news has little effect on them',
+          'Feeds, algorithms, and friends\' shares strongly filter what young adults see',
+          'Young adults rely more on national news organizations than older adults do'
         ],
-        correct:1,
-        exp:'If most political news reaches young adults incidentally, then <strong>feeds, algorithms, and social sharing</strong> act as powerful filters on what they see. Pew also found younger adults trust information from social media sites nearly as much as from national news organizations — while older adults show the opposite pattern (61% of those 65+ mostly look for their news).'
+        correct:2,
+        exp:'If most political news reaches young adults by chance, then <strong>feeds, algorithms, and social sharing act as powerful filters</strong> on what they see. Pew also found that younger adults trust information from social media almost as much as from national news organizations, so claims of distrust or heavy reliance on national outlets don\'t follow. Coming across news isn\'t the same as lacking interest.'
       },
       {
         id:'nb5', type:'mc',
-        q:'In <em>Trust Me, I\'m Lying</em>, Ryan Holiday notes that "the most powerful predictor of virality is how much anger an article evokes." Which media manipulation technique does this finding encourage?',
+        q:'A marketer gets a misleading story posted on a small blog. A bigger website picks it up and cites the blog, and then a national outlet reports that "multiple sites are reporting" it. Which media manipulation technique from <em>Trust Me, I\'m Lying</em> is this?',
         opts:[
-          'Sowing seeds of conflict, outrage, and anger',
-          'Trading up the chain',
-          'Bribing influencers with free products',
-          'Peer review by editors'
+          'Tell them what they want to hear',
+          'Trade up the chain',
+          'Use click-bait headlines',
+          'Sow seeds of conflict and outrage'
         ],
-        correct:0,
-        exp:'Because anger drives clicks and shares, manipulators <strong>sow seeds of conflict, outrage, and anger</strong>. Other techniques include trading up the chain, telling outlets what they want to hear, click-bait headlines, cherry-picking or lying, and simplifying the world into heroes and villains. As one editor put it: "Getting it right is expensive, getting it first is cheap."'
+        correct:1,
+        exp:'<strong>Trading up the chain</strong> means starting a story in a small outlet with low standards and letting bigger outlets pick it up, gaining credibility at each step. It works because, as one tech editor put it, "Getting it right is expensive, getting it first is cheap." Holiday also notes that the strongest predictor of virality is how much <em>anger</em> a story provokes.'
       },
       {
         id:'nb6', type:'matching',
@@ -1538,27 +1571,27 @@ window.EXTRA_MODULES = [
       },
       {
         id:'nb7', type:'mc',
-        q:'The Ad Fontes Media Bias Chart places each news outlet on <strong>two</strong> dimensions. What are they?',
+        q:'The Ad Fontes Media Bias Chart places each outlet on <strong>two</strong> dimensions. What are they?',
         opts:[
-          'Number of readers and revenue',
-          'Print vs. digital and national vs. local',
-          'Age of the outlet and number of journalists',
-          'Political bias (left to right) and news value / reliability'
+          'Political bias, and news value and reliability',
+          'Political bias, and how much readers say they trust the outlet',
+          'Reliability, and the share of opinion versus news content',
+          'Political bias, and the size of the outlet\'s audience'
         ],
-        correct:3,
-        exp:'The Ad Fontes chart plots outlets horizontally by <strong>political bias</strong> (most extreme left to most extreme right) and vertically by <strong>news value and reliability</strong> (from original fact reporting down to inaccurate or fabricated information). An outlet can be centrist but unreliable, or partisan but mostly accurate — the two dimensions are separate.'
+        correct:0,
+        exp:'Ad Fontes plots <strong>political bias</strong> horizontally (most extreme left to most extreme right) and <strong>news value and reliability</strong> vertically (from original fact reporting down to inaccurate or fabricated information). Opinion versus analysis is part of the reliability scale, not a separate axis. Because the two dimensions are separate, an outlet can be centrist but unreliable, or partisan but mostly accurate.'
       },
       {
         id:'nb8', type:'mc',
-        q:'Which of the following was <strong>NOT</strong> listed as a force that reduces bias in the news?',
+        q:'Which of these was <strong>NOT</strong> listed as a force that reduces bias in the news?',
         opts:[
           'News agencies lose viewers if their reputation is tarnished',
-          'Professionalization of journalism (ethics and standards)',
-          'Government officials must approve stories before publication',
-          'Articles are often reviewed by editors or other journalists'
+          'Journalists can lose their jobs if they are purposely deceptive',
+          'Articles are often reviewed by editors or other journalists',
+          'Social media algorithms show users a balanced mix of perspectives'
         ],
-        correct:2,
-        exp:'Forces that reduce bias include <strong>reputation</strong> (losing viewers), <strong>professional ethics and standards</strong>, <strong>job consequences</strong> for purposely deceptive journalists, and <strong>peer review</strong> by editors or other journalists. Government pre-approval of stories would be censorship, not a check on bias.'
+        correct:3,
+        exp:'The listed forces are <strong>reputation</strong> (losing viewers), <strong>professionalization</strong> (ethics and standards), <strong>job consequences</strong> for purposely deceptive journalists, and <strong>peer review</strong> by editors. Algorithms were discussed as a filtering force, and they typically show people more of what they already engage with, not a balanced mix.'
       },
     ]
   },
@@ -1573,99 +1606,99 @@ window.EXTRA_MODULES = [
     questions: [
       {
         id:'sd1', type:'mc',
-        q:'Which option best matches the definition of <strong>self-deception</strong> used in class?',
+        q:'Self-deception is "the process by which an individual maintains or adopts a belief known to be false through cognitive biases or motivational influences." Which is the <strong>best</strong> example?',
         opts:[
-          'Intentionally lying to another person for personal gain',
-          'The process by which an individual maintains or adopts a belief known to be false through cognitive biases or motivational influences',
-          'Forgetting information because of normal memory limits',
-          'Being tricked by a scam or phishing email'
+          'A student honestly misremembers the exam date and misses the test',
+          'A student tells his roommate he studied for hours when he didn\'t',
+          'A student who skipped most readings keeps telling herself the exam was unfair',
+          'A student believes a classmate\'s false rumor that the exam was canceled'
         ],
-        correct:1,
-        exp:'<strong>Self-deception</strong> is the process by which an individual maintains or adopts a belief <em>known to be false</em> through cognitive biases or motivational influences. Unlike lying to others, the person deceived is ourselves, often to protect how we see ourselves.'
+        correct:2,
+        exp:'She knows she skipped the readings, yet she maintains a comforting belief that protects her self-image. That is <strong>self-deception</strong>. Misremembering is an honest memory error; lying to a roommate deceives <em>someone else</em>; and believing a rumor means being deceived by <em>others</em>.'
       },
       {
         id:'sd2', type:'mc',
-        q:'In the Arbinger model, self-betrayal and self-justification are shown as two halves of one circle. What is the relationship between them?',
+        q:'In the Arbinger model, self-betrayal and self-justification are drawn as two halves of one circle. What is the relationship between them?',
         opts:[
-          'Self-betrayal means ignoring our conscience, and self-justification means rationalizing that choice — "betraying oneself and blaming others are two aspects of a single act"',
-          'They are unrelated; one happens at work and the other at home',
-          'Self-justification always comes first and causes self-betrayal',
-          'Self-betrayal is a cognitive bias, while self-justification is a healthy coping strategy'
+          'Self-justification comes first: we convince ourselves something is fine, then act against conscience',
+          'Self-betrayal is ignoring our conscience, and self-justification rationalizes it, two parts of a single act',
+          'Self-betrayal is a moral failing, while self-justification is an unrelated cognitive bias',
+          'Self-betrayal is a deliberate choice, while self-justification is an emotion we can\'t influence'
         ],
-        correct:0,
-        exp:'<strong>Self-betrayal</strong> is failing to do what we sense is right (ignoring conscience). We then <strong>self-justify</strong> that choice with rationalization and emotions like anger or resentment. Arbinger says: "Betraying oneself and blaming others are two aspects of a single act."'
+        correct:1,
+        exp:'<strong>Self-betrayal</strong> is failing to do what we sense is right. We then <strong>self-justify</strong> that choice through rationalization and emotions such as anger or resentment. Arbinger: "Betraying oneself and blaming others are two aspects of a single act." The order matters: the betrayal comes first, and the justification follows to cover it.'
       },
       {
         id:'sd3', type:'mc',
-        q:'At night, David hears the baby cry and has a sense that he should get up so his wife Nancy can sleep. He doesn\'t. Soon he sees himself as hardworking, a victim, and a good dad, and sees Nancy as lazy and inconsiderate. What is happening?',
+        q:'At night, David hears the baby cry and senses he should get up so his wife Nancy can sleep. He doesn\'t. Soon he sees himself as hardworking and a victim, and sees Nancy as lazy and inconsiderate. What is happening?',
         opts:[
-          'David is accurately noticing Nancy\'s faults for the first time',
-          'David is making a rational cost–benefit decision',
-          'David is showing illusory superiority about his parenting skills',
-          'After betraying his own sense of what was right, David distorts his view of himself and Nancy to justify his choice'
+          'After betraying his own sense of what was right, his view of Nancy shifts to justify it',
+          'He is finally noticing real problems in the relationship that he had ignored',
+          'Emotional reasoning: he feels exhausted, so he concludes he truly deserves rest',
+          'Confirmation bias: he is recalling only the times Nancy didn\'t help'
         ],
-        correct:3,
-        exp:'This is the self-betrayal cycle: <strong>sense → choice → betrayal → self-justification</strong>. Once David betrays his sense, he needs to feel justified, so he inflates his own virtues and magnifies Nancy\'s faults. At scale, this way of seeing others leads to conflict, lack of trust, and poor teamwork.'
+        correct:0,
+        exp:'This is the cycle: <strong>sense → choice → self-betrayal → self-justification</strong>. Once David betrays his sense, he needs to feel justified, so he inflates his own virtues and magnifies Nancy\'s faults. He may also recall selectively, but the lecture\'s point is that the distorted view <em>results from</em> the betrayal.'
       },
       {
         id:'sd4', type:'mc',
-        q:'<strong>Misperception 1</strong> says we often believe that accusing, self-excusing feelings (anger, frustration, bitterness, self-pity) are signals that we are in the right. What does the lecture suggest these feelings actually signal?',
+        q:'<strong>Misperception 1</strong>: we tend to believe that accusing, self-excusing feelings (anger, frustration, bitterness, self-pity) show we are in the right. What does the lecture suggest these feelings often signal instead?',
         opts:[
-          'That the other person has wronged us and should apologize',
-          'That we need more rest and should avoid the other person',
-          'That we may have betrayed ourselves and are justifying it with emotion — a sign to look in the mirror',
-          'Nothing; feelings carry no useful information'
+          'That the other person has wronged us and needs to be confronted',
+          'That we are tired or stressed and should rest before responding',
+          'That we should push the emotion down until it passes',
+          'That we may have betrayed ourselves and are justifying it'
         ],
-        correct:2,
-        exp:'Accusing, self-excusing feelings can be <strong>road signs</strong> that we have betrayed ourselves and are now justifying it emotionally. Instead of treating them as proof that we are right, we can use them as a cue to look in the mirror and identify our own self-betrayal.'
+        correct:3,
+        exp:'Accusing, self-excusing feelings can be <strong>road signs</strong> that we have betrayed ourselves and are justifying it emotionally. Instead of treating them as proof that we are right (or simply suppressing them), we can use them as a cue to look in the mirror and identify our own self-betrayal.'
       },
       {
         id:'sd5', type:'mc',
-        q:'<strong>Misperception 2</strong> is believing our self-justifying feelings are "true," such as "You\'re making me angry." According to the lecture, what is more likely going on?',
+        q:'<strong>Misperception 2</strong> is believing that self-justifying feelings are "true," as in "You\'re making me angry." According to the lecture, what is often really going on?',
         opts:[
-          'The other person is fully responsible for my emotions',
-          'The feelings are real, but they rest on a lie — more likely I am angry because I am mistreating the other person, not the other way around',
-          'Anger is always a sign of a healthy relationship',
-          'Feelings are always an accurate picture of reality'
+          'The feelings aren\'t real; I\'m only acting angry so I can get my way',
+          'The feelings are accurate, but I should hide them to keep the peace',
+          'They\'re real but rest on a lie: I may be angry because I\'m mistreating you',
+          'The other person really is responsible, but I should forgive them anyway'
         ],
-        correct:1,
-        exp:'The feelings are real, but they are not "true" in the sense of accurately describing the relationship, because they are based on self-deception. Often <strong>I am angry because I am misusing you</strong>, and the anger helps me avoid seeing my own part.'
+        correct:2,
+        exp:'The feelings are <strong>real</strong>, but they aren\'t "true" in the sense of accurately describing the relationship, because they rest on self-deception. Often <strong>I am angry because I am misusing you</strong>, not the other way around, and the anger keeps me from seeing my own part.'
       },
       {
         id:'sd6', type:'mc',
-        q:'Viktor Frankl wrote: "Between stimulus and response there is space. In that space is our power to choose our response." How does this connect to self-betrayal?',
+        q:'Viktor Frankl wrote: "Between stimulus and response there is space. In that space is our power to choose our response." How does this connect to the self-betrayal model?',
         opts:[
-          'It shows that in the moment we sense what is right, we have the freedom to honor that sense instead of betraying it',
-          'It suggests our reactions are automatic and cannot be controlled',
-          'It argues that we should always respond as quickly as possible',
-          'It means that emotions should be suppressed entirely'
+          'We should delay emotional responses until we\'ve analyzed them logically',
+          'When we sense what\'s right, we\'re free to honor that sense or betray it',
+          'Because past experience shapes our reactions, real change takes years',
+          'Since others\' actions trigger our responses, we should choose better company'
         ],
-        correct:0,
-        exp:'Frankl\'s "space" is where the <strong>choice</strong> happens in the self-betrayal model. We can <em>honor</em> what we sense is right, or <em>betray</em> it and then justify ourselves. Recognizing that space is where "our growth and our freedom" lie.'
+        correct:1,
+        exp:'Frankl\'s "space" is where the <strong>choice</strong> happens in the self-betrayal model: we can <em>honor</em> what we sense is right, or <em>betray</em> it and then justify ourselves. The point isn\'t to delay emotion or blame circumstances, but to recognize that we are free to choose, which is where "our growth and our freedom" lie.'
       },
       {
         id:'sd7', type:'mc',
-        q:'The lecture asked, "Where do the things we \'know\' come from?" It explained that "understanding is contagious." What does this mean?',
+        q:'The lecture asked, "Where do the things we \'know\' come from?" and explained that "understanding is contagious." What does this mean?',
         opts:[
-          'We personally verify most of what we know through direct evidence',
-          'People can only understand what they have experienced themselves',
-          'Knowledge spreads only through formal education',
-          'When others sound certain, we become certain too — often trusting people who themselves are trusting others — so our "knowledge" largely comes from our communities'
+          'We pick up certainty from confident people, who are often trusting others in turn',
+          'We believe most things because we have reasoned through the evidence ourselves',
+          'Understanding spreads mainly through formal schooling, so experts rarely disagree',
+          'People resist ideas from their own community, so beliefs spread slowly'
         ],
-        correct:3,
-        exp:'Most of what we "know" we have not verified ourselves. We trust what others say, and they trust others in turn. So when we say we know something, we are often <strong>channeling our communities of knowledge</strong>. This is one way self-deception scales from individuals to whole societies.'
+        correct:0,
+        exp:'Most of what we "know" we haven\'t verified ourselves. When people around us sound certain, we become certain too, but they are usually trusting others as well. When we say we know something, we are often <strong>channeling our communities of knowledge</strong>. This is one way self-deception scales from individuals to whole societies.'
       },
       {
         id:'sd8', type:'mc',
-        q:'The lecture closed with the question <strong>"Lord, is it I?"</strong> and a mirror. What habit does this encourage as a remedy for self-deception?',
+        q:'The lecture closed with a mirror and the question <strong>"Lord, is it I?"</strong> What habit does this encourage as a remedy for self-deception?',
         opts:[
-          'Assuming that other people are usually the source of conflict',
-          'Avoiding all relationships where conflict might happen',
-          'Humbly asking first whether we are part of the problem, acting on the answer, and using an iterative, design-thinking approach to our own growth',
-          'Waiting for others to point out our weaknesses'
+          'Assuming every conflict is our own fault and taking all of the blame',
+          'Waiting for trusted friends to point out our weaknesses for us',
+          'Focusing on others\' needs so that we don\'t dwell on ourselves',
+          'Humbly asking whether we\'re part of the problem, then acting on the answer'
         ],
-        correct:2,
-        exp:'Asking "Lord, is it I?" takes the <strong>humility</strong> to look in the mirror before blaming others, then act on what we learn. The lecture reminded students that it\'s OK to be imperfect: repentance and growth are iterative, much like using the design thinking process on ourselves.'
+        correct:3,
+        exp:'"Lord, is it I?" takes the <strong>humility</strong> to look in the mirror before blaming others, and then to act on what we learn. That isn\'t the same as taking all the blame. The lecture reminded students that it\'s OK to be imperfect: repentance and growth are iterative, like applying the design thinking process to ourselves.'
       },
     ]
   },
@@ -1693,80 +1726,80 @@ window.EXTRA_MODULES = [
         id:'ih2', type:'mc',
         q:'Which sequence correctly describes Adam Grant\'s <strong>overconfidence cycle</strong>?',
         opts:[
-          'Pride → Conviction → Confirmation &amp; desirability bias → Validation',
           'Humility → Doubt → Curiosity → Discovery',
-          'Curiosity → Pride → Doubt → Validation',
-          'Conviction → Humility → Discovery → Pride'
+          'Pride → Conviction → Confirmation &amp; desirability bias → Validation',
+          'Conviction → Pride → Validation → Confirmation &amp; desirability bias',
+          'Pride → Validation → Conviction → Doubt'
         ],
-        correct:0,
-        exp:'In the <strong>overconfidence cycle</strong>, pride leads to conviction, conviction leads us to seek confirming evidence (confirmation and desirability bias), and that evidence gives us validation, which feeds more pride. The <strong>rethinking cycle</strong> runs the other way: humility → doubt → curiosity → discovery.'
+        correct:1,
+        exp:'In the <strong>overconfidence cycle</strong>, pride leads to conviction, conviction leads us to seek confirming evidence (confirmation and desirability bias), and that evidence brings validation, which feeds more pride. "Humility → Doubt → Curiosity → Discovery" is the <strong>rethinking cycle</strong>: humility → doubt → curiosity → discovery.'
       },
       {
         id:'ih3', type:'mc',
-        q:'Maria believes in her own ability to learn and handle challenges, but she isn\'t sure her current methods are the best ones, so she keeps testing them. On Grant\'s 2×2 grid (belief in yourself × belief in your tools), where does Maria fall?',
-        opts:['Blind arrogance','Debilitating doubt','Obsessive inferiority','Confident humility'],
-        correct:3,
-        exp:'<strong>Confident humility</strong> combines being <em>secure</em> in yourself with being <em>uncertain</em> about your current tools and knowledge. Secure + certain = blind arrogance; insecure + uncertain = debilitating doubt; insecure + certain = obsessive inferiority. Humility is openness to change; confidence is how much you believe in yourself — and they can go together.'
+        q:'Jake doubts his own abilities and often feels he doesn\'t measure up, yet he is rigidly certain his study method is the only right one and refuses to try others. On Grant\'s 2×2 grid (belief in yourself × belief in your tools), where does Jake fall?',
+        opts:['Obsessive inferiority','Debilitating doubt','Blind arrogance','Confident humility'],
+        correct:0,
+        exp:'<strong>Obsessive inferiority</strong> is <em>insecure</em> in yourself but <em>certain</em> about your tools. The other quadrants: secure + certain = blind arrogance; insecure + uncertain = debilitating doubt; secure + uncertain = <strong>confident humility</strong>, the goal. Humility (openness to change) and confidence (belief in yourself) are separate dimensions.'
       },
       {
         id:'ih4', type:'mc',
-        q:'A first-year student who just learned a little coding claims he could easily build a better operating system than Microsoft. Meanwhile, a highly skilled senior engineer worries she isn\'t good enough. Which ideas do these two cases illustrate?',
+        q:'A first-year student who just learned some coding says he could easily build a better operating system than Microsoft. A highly skilled senior engineer worries she isn\'t good enough for her job. Which ideas do these two cases illustrate?',
         opts:[
-          'The novice shows impostor syndrome; the expert shows the Dunning-Kruger effect',
-          'Both show confident humility',
-          'The novice shows the Dunning-Kruger effect (overestimating ability); the expert shows impostor syndrome (underestimating ability)',
-          'Both show the sunk cost fallacy'
+          'Novice: impostor syndrome. Expert: the Dunning-Kruger effect',
+          'Both show impostor syndrome, since neither judges ability accurately',
+          'Both show the Dunning-Kruger effect, at different skill levels',
+          'Novice: the Dunning-Kruger effect. Expert: impostor syndrome'
         ],
-        correct:2,
-        exp:'In the <strong>Dunning-Kruger effect</strong>, people with low ability tend to overestimate it because they don\'t know enough to see what they\'re missing. <strong>Impostor syndrome</strong> is the opposite: capable people underestimate themselves. The goal is to move toward the <strong>confident humility zone</strong>, where perceived ability tracks actual ability.'
+        correct:3,
+        exp:'In the <strong>Dunning-Kruger effect</strong>, people with low ability overestimate it because they don\'t yet know what they\'re missing. <strong>Impostor syndrome</strong> is the reverse: capable people underestimate themselves. The goal is the <strong>confident humility zone</strong>, where perceived ability tracks actual ability.'
       },
       {
         id:'ih5', type:'mc',
         q:'Which of the following was <strong>NOT</strong> listed as a reason for replication failures in psychology?',
         opts:[
           'Falsified results',
-          'Too many studies used qualitative interviews instead of experiments',
-          'Findings that do not generalize across people or time',
-          'Small sample sizes combined with a bias toward publishing positive results'
+          'Small samples plus a bias toward publishing positive results',
+          'Overreliance on qualitative interviews instead of experiments',
+          'Findings that don\'t generalize across people or time'
         ],
-        correct:1,
-        exp:'Reasons for replication failures include <strong>falsified results</strong>, <strong>small sample sizes</strong> (statistical false positives plus publication bias toward positive results), <strong>findings that don\'t generalize</strong> across people or time, and <strong>poorly conducted replication studies</strong>. The replication crisis is mainly about quantitative, experimental findings.'
+        correct:2,
+        exp:'The listed reasons are <strong>falsified results</strong>, <strong>small sample sizes</strong> (false positives plus publication bias), <strong>findings that don\'t generalize</strong> across people or time, and <strong>poorly conducted replication studies</strong>. The replication crisis mainly concerns quantitative, experimental findings, not qualitative interviews.'
       },
       {
         id:'ih6', type:'mc',
-        q:'A UC San Diego study found that papers that <strong>fail to replicate</strong> are cited about 153 times more than papers that do. Why is this especially concerning?',
+        q:'A UC San Diego study found that papers that <strong>fail to replicate</strong> are cited about 153 times more than papers that replicate. What is the most likely explanation, and why does it matter?',
         opts:[
-          'Because "interesting" but less reliable findings spread further, so the scientific community may build on claims that aren\'t true',
-          'Because citation counts are always inaccurate',
-          'Because replicable studies are too boring to publish',
-          'Because it proves that most science is fraudulent'
+          'Researchers cite failed studies mainly to criticize them, so the counts overstate their influence',
+          'Surprising findings attract attention even when less reliable, so shaky claims spread further',
+          'Non-replicable papers tend to be older, so they have simply had more time to collect citations',
+          'Journals require authors to cite failed studies as warnings, which inflates their counts'
         ],
-        correct:0,
-        exp:'Surprising, interesting findings attract attention and citations, even when they are less likely to be true. That means shaky claims can spread further than solid ones. This is a strong reason for <strong>intellectual humility</strong>: even published, widely cited findings can be wrong, and we should be willing to rethink them.'
+        correct:1,
+        exp:'Findings that seem more <strong>interesting</strong> get more attention and citations, even when they are less likely to be true, so shaky claims can spread further than solid ones. Most citations of non-replicating papers don\'t even mention the failure. This is a strong reason for <strong>intellectual humility</strong> about even widely cited findings.'
       },
       {
         id:'ih7', type:'mc',
         q:'In the class survey, students scored on two dimensions: <strong>seeker</strong> and <strong>skeptic</strong>. Which statement is most accurate?',
         opts:[
-          'Seekers carefully vet information and rarely adopt new ideas',
-          'Skeptics value new perspectives and readily adopt different worldviews',
-          'It is impossible to score high on both dimensions',
-          'Seekers find valuable new ideas but may adopt inaccurate ones; skeptics avoid bad ideas but may reject valuable ones — ideally you score high on both'
+          'Seekers find valuable ideas but may adopt bad ones; skeptics avoid bad ideas but may reject good ones',
+          'Skeptics are the better thinkers, because avoiding false beliefs matters more than finding new ideas',
+          'Seeker and skeptic are opposite ends of one scale, so scoring high on one means scoring low on the other',
+          'Seekers welcome new perspectives, so they are protected against bias and don\'t need to vet ideas'
         ],
-        correct:3,
-        exp:'<strong>Seekers</strong> look for new ideas and perspectives, which helps them discover valuable ideas but risks adopting inaccurate ones. <strong>Skeptics</strong> carefully vet ideas before believing them, which helps them avoid bad ideas but risks rejecting good ones. The ideal is to be <strong>high on both</strong>: open to new ideas and careful about which ones you accept.'
+        correct:0,
+        exp:'<strong>Seekers</strong> look for new ideas and perspectives, which helps them discover good ideas but risks adopting inaccurate ones. <strong>Skeptics</strong> vet ideas carefully, which helps them avoid bad ideas but risks rejecting valuable ones. They are <em>separate</em> dimensions, and the ideal is to score <strong>high on both</strong>.'
       },
       {
         id:'ih8', type:'mc',
-        q:'Which statement reflects the <strong>scout mindset</strong> rather than the soldier mindset?',
+        q:'Which statement reflects Julia Galef\'s <strong>scout mindset</strong> rather than the soldier mindset?',
         opts:[
-          '"Can I believe this?" or "Must I believe this?", depending on my motives',
-          '"Finding out I\'m wrong means suffering a defeat."',
-          '"Is this true? Finding out I\'m wrong means revising my map."',
-          '"I need evidence to fortify and defend my beliefs."'
+          '"Can I believe this?" Looking for permission to accept a claim I like',
+          '"Must I believe this?" Looking for a reason to reject a claim I dislike',
+          '"How can I defend this?" Strengthening my position against objections',
+          '"Is this true?" Updating my map when I find out I\'m wrong'
         ],
-        correct:2,
-        exp:'In the <strong>soldier mindset</strong>, reasoning is like defensive combat: we look for evidence to defend our beliefs, and being wrong feels like defeat. In the <strong>scout mindset</strong>, reasoning is like mapmaking: we ask "Is this true?", and finding out we\'re wrong just means revising the map to make it more accurate.'
+        correct:3,
+        exp:'For the <strong>soldier</strong>, reasoning is defensive combat: "Can I believe this?" or "Must I believe this?" depending on our motives, and being wrong feels like defeat. For the <strong>scout</strong>, reasoning is mapmaking: ask "Is this true?" and treat being wrong as a chance to make the map more accurate.'
       },
     ]
   },
