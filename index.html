@@ -359,8 +359,8 @@ a { color: var(--blue); }
   transform: scale(1.45);
 }
 @media (max-width: 600px) {
-  .module-strip { gap: 10px; padding: 12px 14px; }
-  .ms-dots { gap: 8px; }
+  .module-strip { gap: 10px; padding: 12px 14px; flex-wrap: wrap; }
+  .ms-dots { gap: 9px; width: 100%; flex-wrap: wrap; row-gap: 12px; padding: 4px 2px 2px; }
   .ms-dot { width: 12px; height: 12px; }
 }
 
@@ -787,7 +787,7 @@ a { color: var(--blue); }
   <!-- QUIZ -->
   <div id="screen-quiz" class="content" hidden>
     <div class="quiz-nav-bar">
-      <button class="back-btn" id="back-btn" onclick="showHome()">← Modules</button>
+      <button class="back-btn" id="back-btn" onclick="leaveQuiz()">← Modules</button>
       <span class="q-counter" id="q-counter"></span>
       <span class="q-score-badge" id="q-score-badge"></span>
     </div>
@@ -2542,43 +2542,47 @@ const MODULES = [
 let S = {
   modIdx: 0,
   qIdx: 0,
-  questionOrder: [], // shuffled drawn indices into mod.questions for the current module
+  questionOrder: [], // indices into mod.questions for the current module (all questions, fixed order)
   submitted: false,
   curAnswer: null,   // for mc: number; for matching: {0:v,1:v,...}; for short: string
   results: {},       // { 'p1': {correct:true|false|null(short)} }
   moduleScores: {},  // { 'paradigms': {correct:2, total:5} }
-  moduleDraws: {},   // { 'paradigms': ['p1','p3','p5','p2'] } — drawn question IDs per module
+  moduleDraws: {},   // { 'paradigms': ['p1','p2',...] } — question IDs of each module opened so far
   drafts: {},        // unsubmitted answers, kept when the student moves between questions
 };
 
 /* ═══════════════════════════════════════════════════════
    HELPERS
 ═══════════════════════════════════════════════════════ */
-// Returns the drawn question objects for a module (or all questions if never started)
+// Returns the question objects for a module (all of them)
 function drawnQuestions(mod) {
   const ids = S.moduleDraws[mod.id];
   if (!ids) return mod.questions;
   return ids.map(id => mod.questions.find(q => q.id === id)).filter(Boolean);
 }
+function isModuleStarted(mod) {
+  return mod.questions.some(q => S.results[q.id] !== undefined || S.drafts[q.id] !== undefined);
+}
+// Overall score: correct answers out of all scored questions in the modules started so far
 function getTotalScore() {
   let c = 0, t = 0;
   MODULES.forEach(m => {
-    drawnQuestions(m).forEach(q => {
-      if (q.type === 'short') return;
-      const r = S.results[q.id];
-      if (r !== undefined) { t++; if (r.correct) c++; }
-    });
+    const sc = getModuleScore(m);
+    if (sc.answered > 0) { c += sc.correct; t += sc.total; }
   });
   return { correct: c, total: t };
 }
+// Module score: correct answers out of every scored question in the module
+// (short-answer questions are self-graded and not counted)
 function getModuleScore(mod) {
-  let c = 0, t = 0;
-  drawnQuestions(mod).forEach(q => {
+  let c = 0, t = 0, a = 0;
+  mod.questions.forEach(q => {
     if (q.type === 'short') return;
+    t++;
     const r = S.results[q.id];
-    if (r !== undefined) { t++; if (r.correct) c++; }
+    if (r !== undefined) { a++; if (r.correct) c++; }
   });
-  return { correct: c, total: t };
+  return { correct: c, total: t, answered: a };
 }
 function isModuleComplete(mod) {
   const drawn = S.moduleDraws[mod.id];
@@ -2589,8 +2593,7 @@ function updateGlobalProgress() {
   const drawn = MODULES.flatMap(m => S.moduleDraws[m.id] || []);
   let answered = drawn.filter(id => S.results[id] !== undefined).length;
   let total = MODULES.reduce((a, m) => {
-    const d = S.moduleDraws[m.id];
-    return a + (d ? d.length : (m.draw || m.questions.length));
+    return a + m.questions.length;
   }, 0);
   const pct = total > 0 ? (answered / total * 100) : 0;
   document.getElementById('global-progress').style.width = pct + '%';
@@ -2628,8 +2631,8 @@ function renderModuleGrid() {
 
     const card = document.createElement('button');
     card.className = 'module-card' + (done ? ' completed-mod' : '');
-    card.setAttribute('aria-label', 'Start module: ' + mod.title);
-    card.onclick = () => startModule(i);
+    card.setAttribute('aria-label', 'Open module: ' + mod.title);
+    card.onclick = () => openModule(i);
 
     const scoreText = sc.total > 0 ? sc.correct + '/' + sc.total : answered + '/' + dq.length;
 
@@ -2648,18 +2651,43 @@ function renderModuleGrid() {
   });
 }
 
-function startModule(modIdx, qIdx = 0) {
+// Point the quiz screen at a module: every question, in its fixed order
+function loadModule(modIdx) {
+  const mod = MODULES[modIdx];
   S.modIdx = modIdx;
+  S.questionOrder = mod.questions.map((_, i) => i);
+  S.moduleDraws[mod.id] = mod.questions.map(q => q.id);
+}
+// Open a module from the home screen: start it if untouched, otherwise pick up where the student left off
+function openModule(modIdx) {
+  const mod = MODULES[modIdx];
+  if (!isModuleStarted(mod)) { startModule(modIdx); return; }
+  loadModule(modIdx);
+  const next = findUnanswered(0);
+  if (next === -1) { showModuleSummary(); return; }
+  S.qIdx = next;
+  renderQuestion();
+  showScreen('screen-quiz');
+  window.scrollTo(0, 0);
+}
+// Results screen → look back through the questions and explanations
+function reviewModule() {
+  S.qIdx = 0;
+  renderQuestion();
+  showScreen('screen-quiz');
+  window.scrollTo(0, 0);
+}
+// Leave the quiz screen for the module list, keeping any half-finished answer
+function leaveQuiz() {
+  saveDraft();
+  showHome();
+}
+// Start a module from scratch: erases its answers and scores
+function startModule(modIdx, qIdx = 0) {
   S.qIdx = qIdx;
   const mod = MODULES[modIdx];
-  // Clear previous results for this module so a retake starts fresh
   mod.questions.forEach(q => { delete S.results[q.id]; delete S.drafts[q.id]; });
-  // Draw a random subset (mod.draw questions from the full pool)
-  const allIndices = shuffleArr(mod.questions.map((_, i) => i));
-  const drawCount = mod.draw || mod.questions.length;
-  S.questionOrder = allIndices.slice(0, drawCount);
-  // Record which question IDs were drawn
-  S.moduleDraws[mod.id] = S.questionOrder.map(i => mod.questions[i].id);
+  loadModule(modIdx);
   S.submitted = false;
   S.curAnswer = null;
   updateModuleStrip();
@@ -3079,7 +3107,7 @@ function showModuleSummary() {
   if (skippedCount > 0) {
     emoji = '⏭️';
     msg = 'You skipped ' + skippedCount + (skippedCount === 1 ? ' question' : ' questions') +
-      '. Your score counts only the questions you answered.';
+      '. Answer ' + (skippedCount === 1 ? 'it' : 'them') + ' to finish this module.';
   }
   else if (pct === null) { emoji = '📝'; msg = 'Great reflection! Review the model answer above.'; }
   else if (pct === 100) { emoji = '⭐'; msg = 'Perfect score! Excellent work.'; }
@@ -3113,7 +3141,7 @@ function showModuleSummary() {
   const allDone = MODULES.every(m => isModuleComplete(m));
   const nextBtn = isLast || allDone
     ? `<button class="btn-primary" onclick="showFinal()">View Final Results →</button>`
-    : `<button class="btn-primary" onclick="startModule(${S.modIdx + 1})">Next Module: ${MODULES[S.modIdx + 1] ? MODULES[S.modIdx + 1].title : ''} →</button>`;
+    : `<button class="btn-primary" onclick="openModule(${S.modIdx + 1})">Next Module: ${MODULES[S.modIdx + 1] ? MODULES[S.modIdx + 1].title : ''} →</button>`;
 
   document.getElementById('screen-summary').innerHTML = `
     <div class="quiz-nav-bar">
@@ -3131,8 +3159,8 @@ function showModuleSummary() {
     <div class="review-list">${review}</div>
     <div class="action-row">
       ${skippedCount > 0 ? `<button class="btn-primary" onclick="resumeSkipped()">Answer Skipped ${skippedCount === 1 ? 'Question' : 'Questions'} →</button>` : nextBtn}
-      ${skippedCount > 0 ? nextBtn.replace('btn-primary', 'btn-secondary') : ''}
-      <button class="btn-secondary" onclick="startModule(${S.modIdx}, 0)">Retake with New Questions 🔀</button>
+      ${skippedCount > 0 ? nextBtn.replace('btn-primary', 'btn-secondary') : '<button class="btn-secondary" onclick="reviewModule()">Review Questions</button>'}
+      <button class="btn-secondary" onclick="startModule(${S.modIdx}, 0)">Erase Scores and Retake</button>
     </div>
   `;
   showScreen('screen-summary');
@@ -3160,7 +3188,7 @@ function showFinal() {
       <span class="breakdown-icon">${mod.icon}</span>
       <span class="breakdown-name">${mod.title}</span>
       <div class="breakdown-bar-wrap"><div class="breakdown-bar" style="width:${p}%"></div></div>
-      <span class="breakdown-score">${s.total > 0 ? s.correct+'/'+s.total : '—'}</span>
+      <span class="breakdown-score">${s.answered > 0 ? s.correct+'/'+s.total : '—'}</span>
     </div>`;
   }).join('');
 
