@@ -829,7 +829,6 @@ window.EXTRA_MODULES = [
     icon: '🤝',
     color: '#0f766e',
     desc: 'Cialdini\'s seven principles behind a "yes"',
-    draw: 6,
     questions: [
       {
         id:'pe1', type:'mc',
@@ -854,18 +853,6 @@ window.EXTRA_MODULES = [
         ],
         correct:2,
         exp:'This is <strong>consistency</strong>: the pause prompted customers to say "Yes, I will." Once people make even a small public commitment, they prefer to act in line with it. Friendliness (<em>liking</em>) and demand (<em>scarcity</em>) are other principles, but the change that mattered was turning a statement into a question that required a spoken promise.'
-      },
-      {
-        id:'pe3', type:'mc',
-        q:'In the sidewalk study, more passersby looked up as the crowd of people staring at the sky grew (4% → 18% → 40%). According to Cialdini, under which conditions is this kind of <strong>social validation</strong> most powerful?',
-        opts:[
-          'When the people we observe are experts or authority figures',
-          'When the situation is uncertain and the others seem similar to us',
-          'When we have recently received a favor from the group',
-          'When the crowd is very large, regardless of who the people in it are'
-        ],
-        correct:1,
-        exp:'<strong>Social validation</strong> is strongest when we are <em>unsure</em> what to do and when the people we observe are <em>similar</em> to us. Size alone is not the point. The class check asks, "Are these people relevant to me, or merely numerous?" Expertise is <em>authority</em>, and favors are <em>reciprocation</em>.'
       },
       {
         id:'pe4', type:'mc',
@@ -909,11 +896,11 @@ window.EXTRA_MODULES = [
         opts:[
           '"I really enjoyed talking with you last week. Would you help with my project?"',
           '"As a fellow BYU Cougar, I hope you\'ll support our student fundraiser."',
-          '"Most students in your ward have already signed up. Will you join them?"',
+          '"I brought you a free sample to keep. Would you take our short survey?"',
           '"I love your style! Would you be willing to try our new product?"'
         ],
         correct:1,
-        exp:'<strong>Unity</strong> appeals to a shared identity, being "one of us" (like the student who added "I\'m a student here, too"). Building rapport and giving compliments increase <em>liking</em>. "Most students have signed up" is <em>social validation</em>. Cialdini says the shared identity should be real, relevant, and voluntary.'
+        exp:'<strong>Unity</strong> appeals to a shared identity, being "one of us" (like the student who added "I\'m a student here, too"). Building rapport and giving compliments increase <em>liking</em>. Handing over a free sample before asking is <em>reciprocation</em>. Cialdini says the shared identity should be real, relevant, and voluntary.'
       },
       {
         id:'pe8', type:'matching',
@@ -937,7 +924,6 @@ window.EXTRA_MODULES = [
     icon: '🎭',
     color: '#9d174d',
     desc: 'Truth-default, dark patterns, attacker mindset, AI deception',
-    draw: 6,
     questions: [
       {
         id:'dc1', type:'mc',
@@ -990,15 +976,15 @@ window.EXTRA_MODULES = [
       },
       {
         id:'dc5', type:'mc',
-        q:'A state requires voters to re-register in person each year at offices open only on weekday mornings, with the goal of lowering turnout among groups that tend to vote for the opposing party. In the behavioral economics lens, this is best described as:',
+        q:'A company wants more of its employees to save for retirement. In the behavioral economics lens (Thaler &amp; Sunstein\'s <em>Nudge</em>), which approach is a <strong>nudge</strong>?',
         opts:[
-          'A nudge, because it changes the choice environment without banning voting',
-          'Libertarian paternalism, because citizens are still free to register',
-          'Obligation, because citizens feel a duty to comply with the law',
-          'Sludge, because it adds friction to discourage a behavior'
+          'Requiring every employee to put 5% of each paycheck into the retirement plan',
+          'Paying a $1,000 bonus to every employee who signs up for the retirement plan',
+          'Enrolling employees without telling them and hiding the form for opting out',
+          'Enrolling new employees in the plan automatically but letting them opt out anytime'
         ],
         correct:3,
-        exp:'<strong>Sludge</strong> uses friction and inconvenience to discourage something the designer doesn\'t want to support. A <em>nudge</em> (libertarian paternalism) also shapes the environment, but it steers people toward choices that benefit <em>them</em> while keeping options easy. Sludge is the same toolkit turned against the chooser.'
+        exp:'A <strong>nudge</strong> changes how choices are presented in order to steer people toward a better option while leaving them free to choose otherwise. It doesn\'t remove options or significantly change incentives, which is why the approach is called <strong>libertarian paternalism</strong>. Automatic enrollment works with our tendency to stick with the default, and anyone can still opt out. A requirement removes the choice, a bonus changes the incentives, and hiding the opt-out form takes away any real freedom to choose, which makes it deceptive design, not a nudge.'
       },
       {
         id:'dc6', type:'mc',
@@ -1015,16 +1001,16 @@ window.EXTRA_MODULES = [
       {
         id:'dc7', type:'mc',
         q:'A caller says she is from your company\'s IT help desk. She uses the right jargon, mentions your manager by name, and sounds exactly like the real help desk. She makes no threats and claims no rank over you. Which influence tactic is she <strong>mainly</strong> relying on?',
-        opts:['Authority','Pretexting','Social proof','Concession'],
+        opts:['Authority','Pretexting','Social proof','Reciprocity'],
         correct:1,
         exp:'<strong>Pretexting</strong> means building a believable false identity and scenario ("She sounds and acts like the real thing"). <em>Authority</em> ("OK, you\'re the boss") would rely on rank or power, and <em>social proof</em> on what others are doing. Pretexting is often the setup that makes other tactics work.'
       },
       {
         id:'dc8', type:'mc',
-        q:'A suspicious target says, "How do I know this isn\'t a scam?" The caller replies, "You\'re absolutely right to ask. Honestly, I\'d be suspicious too," and then continues with the request. Which influence tactic is the caller using?',
-        opts:['Concession','Reciprocity','Liking','Commitment and consistency'],
+        q:'A caller posing as IT support asks an employee to confirm her name, then her department, then her employee ID. Having answered three small requests, she also reads him the security code that was just texted to her phone. Which influence tactic best explains why the final request worked?',
+        opts:['Commitment and consistency','Reciprocity','Scarcity','Social proof'],
         correct:0,
-        exp:'<strong>Concession</strong>: "Well, he conceded that I\'m right, so he must be trustworthy." Agreeing with the target\'s doubt makes the caller seem honest and lowers the target\'s guard. It may also build some liking, but the key move is conceding a point to win trust.'
+        exp:'<strong>Commitment and consistency</strong>: "Since this is task #4, I should keep going." After complying with a request, people are more likely to agree to later requests that are similar in type and effort, so attackers start small and escalate. The caller gave her nothing first (reciprocity), set no deadline or shortage (scarcity), and never mentioned what other people do (social proof).'
       },
       {
         id:'dc9', type:'mc',
@@ -1047,7 +1033,6 @@ window.EXTRA_MODULES = [
     icon: '🧩',
     color: '#c2410c',
     desc: 'IDEO mindsets, design thinking, diverge & converge',
-    draw: 6,
     questions: [
       {
         id:'hcd1', type:'mc',
@@ -1100,37 +1085,6 @@ window.EXTRA_MODULES = [
         correct:1,
         exp:'<strong>Define</strong> is where teams make sense of what they learned: interpret findings, find themes, sort and condense, frame opportunities, and set the design challenge. <em>Discover</em> is the research itself (immersion, interviews, observation). <em>Develop</em> is brainstorming and prototyping, and <em>Deliver</em> is making, testing, and getting feedback.'
       },
-      {
-        id:'hcd6', type:'mc',
-        q:'A software warning reads: <em>"Proceeding with the operation \'Delete\' will erase the contents of your hard drive. What do you wish to do?"</em> The only two buttons are <strong>Proceed</strong> and <strong>Delete</strong>. What is the most serious human-centered design problem?',
-        opts:[
-          'Both buttons lead to the destructive action, so users can\'t back out',
-          'It uses a red error icon for what may be a routine action',
-          'It doesn\'t say clearly enough which files will be erased',
-          'It asks the user a question instead of giving a clear instruction'
-        ],
-        correct:0,
-        exp:'A user who wants to stop has <strong>no safe way out</strong>: both choices erase the drive. The other issues are minor or not really problems. Designing from the user\'s point of view (<strong>empathy</strong>) means asking what the person at this moment might want, including changing their mind.'
-      },
-      {
-        id:'hcd7', type:'mc',
-        q:'Elder Ballard taught: "To innovate does not necessarily mean to expand; very often it means to simplify." Which action <strong>best</strong> applies this counsel to a ward or campus program?',
-        opts:[
-          'Adding new activities so the program meets every possible need',
-          'Following the handbook exactly, with no adaptation to local needs',
-          'Copying a program that worked elsewhere without testing it locally',
-          'Removing steps that don\'t actually help the people being served'
-        ],
-        correct:3,
-        exp:'Ballard\'s point is that innovation often <strong>simplifies</strong>: it removes what doesn\'t serve people. He also said handbook guidelines should be followed, but that <em>within</em> that framework there is room to think creatively. Copying without testing skips the human-centered steps of empathy and iteration.'
-      },
-      {
-        id:'hcd8', type:'mc',
-        q:'In the <strong>Sketchventor</strong> activity, a student draws the "Telegraph" invention card and redesigns it so it can be played as a musical instrument. Which prompt card did they most likely draw?',
-        opts:['Combine','Exaggerate','Adapt','Reverse'],
-        correct:2,
-        exp:'<strong>Adapt</strong> means transforming your invention for another use or function. <em>Combine</em> merges two inventions, <em>Exaggerate</em> amplifies one part, <em>Reverse</em> switches it to its opposite, <em>Anachronize</em> imagines it in an earlier time, and <em>Villify</em> modifies it for a nefarious purpose. Prompts like these help teams <strong>diverge</strong> during ideation.'
-      },
     ]
   },
   /* ── Day 11 ── Cognitive Biases ──────────────────────────────── */
@@ -1140,7 +1094,6 @@ window.EXTRA_MODULES = [
     icon: '🧠',
     color: '#be123c',
     desc: 'System 1 & 2, heuristics, framing, confirmation bias',
-    draw: 6,
     questions: [
       {
         id:'cb1', type:'mc',
@@ -1179,18 +1132,6 @@ window.EXTRA_MODULES = [
         exp:'The listed causes are <strong>limits on attention</strong>, <strong>individual motivations</strong>, <strong>heuristics</strong> (mental shortcuts), <strong>social pressure</strong>, and <strong>emotions</strong>. Biases come from how <em>all</em> human minds work, so highly intelligent and educated people are subject to them too.'
       },
       {
-        id:'cb4', type:'mc',
-        q:'Tversky and Kahneman\'s "Judgment under Uncertainty: Heuristics and Biases" (1974) helped launch behavioral economics. Which assumption of classical economics did this work most directly challenge?',
-        opts:[
-          'That prices are set by supply and demand in competitive markets',
-          'That people make rational choices that maximize their own interests',
-          'That money is the main motivator of most economic behavior',
-          'That people\'s preferences differ widely from person to person'
-        ],
-        correct:1,
-        exp:'Classical economics assumed people are <strong>rational actors</strong> who maximize their interests. Tversky and Kahneman showed that people rely on heuristics that produce <em>systematic</em> errors. Behavioral economics holds that people are "predictably irrational" and that, although preferences vary, people are fundamentally similar in how they decide.'
-      },
-      {
         id:'cb5', type:'mc',
         q:'In class, students used a slider from 0 (lowest-ranked student) to 50 (top student) to predict their own rank. The class average was about <strong>39</strong>. Which bias does this most directly show?',
         opts:[
@@ -1216,18 +1157,6 @@ window.EXTRA_MODULES = [
         correct:2,
         exp:'<strong>Confirmation bias</strong> covers what we seek out and also how we <em>interpret</em> evidence: we treat findings that fit our views as strong and dismiss the rest. Because the study was identical for both students, the framing didn\'t differ; the difference came from their prior beliefs.'
       },
-      {
-        id:'cb8', type:'mc',
-        q:'One spear-phishing email in the class reflection claimed to be from "Sadie Winters, Desiree Winters\' daughter," mentioned a past research project, and asked the professor to review a link. Why are personalized messages like this especially effective?',
-        opts:[
-          'Personalized messages slip past spam filters, so they reach many more inboxes',
-          'Familiar details make the request feel routine, so fast System 1 trust takes over',
-          'Recipients feel obligated to reply because the sender seems to have done them a favor',
-          'Long, detailed emails look more professional, which signals authority and expertise'
-        ],
-        correct:1,
-        exp:'Familiar names, a plausible connection, and real details make the message feel routine, so <strong>System 1</strong> accepts it before <strong>System 2</strong> checks the red flags (an unexpected link, an unverifiable sender). The email offered no favor, so reciprocity doesn\'t apply, and what makes it work is psychological, not technical.'
-      },
     ]
   },
   /* ── Day 12 ── Logical Fallacies & Cognitive Distortions ─────── */
@@ -1237,7 +1166,6 @@ window.EXTRA_MODULES = [
     icon: '⚖️',
     color: '#4338ca',
     desc: 'Arguments, validity & soundness, cognitive distortions',
-    draw: 6,
     questions: [
       {
         id:'lf1', type:'mc',
@@ -1334,21 +1262,8 @@ window.EXTRA_MODULES = [
     title: 'Game Design & Prototyping',
     icon: '🎲',
     color: '#0e7490',
-    desc: 'MDA framework, core loops, prototype fidelity, playtesting',
-    draw: 6,
+    desc: 'MDA framework, motivation, prototype fidelity, playtesting',
     questions: [
-      {
-        id:'gd1', type:'mc',
-        q:'Salen &amp; Zimmerman define a game as "a system in which players engage in an artificial conflict, defined by rules, that results in a quantifiable outcome." Which activity fits this definition <strong>least</strong> well?',
-        opts:[
-          'A game of solitaire played against the deck',
-          'A footrace between friends to the end of the block',
-          'A round of Werewolf at a youth activity',
-          'Friends taking turns adding to a story, with no winner or score'
-        ],
-        correct:3,
-        exp:'Open-ended collaborative storytelling has rules and players but no <strong>quantifiable outcome</strong> (and arguably no conflict). Solitaire has a conflict against the system and a clear win or loss; a footrace and Werewolf have rules, conflict, and winners. As the lecture noted, no definition is perfect, but this one gives clear criteria.'
-      },
       {
         id:'gd2', type:'matching',
         q:'Using the game <strong>Werewolf</strong>, match each part of the <strong>MDA framework</strong> to the correct example.',
@@ -1371,13 +1286,6 @@ window.EXTRA_MODULES = [
         ],
         correct:2,
         exp:'Designers work <strong>mechanics → dynamics → aesthetics</strong>: they can only directly change the rules (mechanics). Dynamics emerge from how players interact with those rules, and aesthetics are the feelings that result. A timer changes the mechanics, which can create rushed accusations (dynamics) and tension (aesthetics). Players experience the game in the reverse order, starting with how it feels.'
-      },
-      {
-        id:'gd4', type:'mc',
-        q:'In a typical compulsion loop (core game loop), a player buys improved gear, uses it to fight monsters, and earns gold and loot to buy more gear. In the diagram shown in class, which stage of the loop was associated with <strong>dopamine</strong>?',
-        opts:['Reward (earning gold and loot)','Anticipation (buying improved gear)','Challenge (fighting monsters)','Failure (losing a fight)'],
-        correct:1,
-        exp:'The loop runs <strong>Anticipation → Challenge → Reward</strong> and around again, and dopamine was linked to <strong>anticipation</strong>: looking forward to what the new gear will let you do. It is easy to assume dopamine belongs with the reward, but in the diagram it is anticipation that pulls players back into the loop.'
       },
       {
         id:'gd5', type:'mc',
@@ -1442,20 +1350,19 @@ window.EXTRA_MODULES = [
     title: 'Conspiracy Theories',
     icon: '🕵️',
     color: '#a16207',
-    desc: 'Definitions, conspiratorial thinking, measurement, narratives',
-    draw: 6,
+    desc: 'Definitions, conspiratorial thinking, real conspiracies, narratives',
     questions: [
       {
         id:'ct1', type:'mc',
         q:'Which claim best fits the academic definition of a <strong>conspiracy theory</strong> used in class?',
         opts:[
-          'A lone hacker secretly planted malware that disrupted a national election',
-          'Several companies openly agreed on new industry safety standards for workers',
-          'A large corporation publicly lobbied Congress for a tax break for itself',
-          'A few powerful officials secretly coordinated a crisis that harmed citizens'
+          'A rogue engineer, acting alone, secretly sabotaged a power grid and blacked out a city',
+          'A group of wealthy donors secretly paid off the medical debts of thousands of strangers',
+          'Thousands of investors, each acting separately, bought up homes and drove prices higher',
+          'Bankers and officials secretly engineered a recession to seize ordinary people\'s savings'
         ],
         correct:3,
-        exp:'A conspiracy theory claims a <strong>secret plot by two or more powerful actors</strong> that <strong>disadvantages or infringes on the rights of others</strong>. The hacker acted alone; the companies and the corporation acted openly. Only the claim about officials has all the elements: multiple powerful actors, secrecy, and harm.'
+        exp:'A conspiracy theory explains a significant event through a <strong>secret plot by two or more powerful actors</strong> whose deeds <strong>disadvantage or infringe on the rights of others</strong>. The engineer acted alone. The donors acted secretly as a group, but they helped people instead of harming them. The investors caused harm, but separately and with no secret plan. Only the recession claim has every element.'
       },
       {
         id:'ct2', type:'mc',
@@ -1470,18 +1377,6 @@ window.EXTRA_MODULES = [
         exp:'<strong>Conspiratorial thinking</strong> is a general predisposition to interpret events as the product of malevolent conspiracies. Research suggests this general tendency matters more than the content of any specific theory, which is why people who believe one theory often believe others, sometimes even contradictory ones. Believers, by contrast, tend to say it\'s all about the specific topic.'
       },
       {
-        id:'ct3', type:'mc',
-        q:'A researcher gives participants a questionnaire with general statements, such as "Groups of scientists manipulate evidence to deceive the public," that don\'t refer to any specific event. Responses are averaged into one score. Which measurement approach is this?',
-        opts:[
-          'A survey about specific conspiracies',
-          'A survey measuring conspiratorial thinking',
-          'Content analysis',
-          'A field experiment'
-        ],
-        correct:1,
-        exp:'Because the items are <strong>general</strong> rather than about specific events (like the JFK assassination), this measures the underlying predisposition, <strong>conspiratorial thinking</strong>. This is the kind of scale the class took. <em>Content analysis</em> would code existing texts, such as letters to the editor or social media posts, rather than survey responses.'
-      },
-      {
         id:'ct4', type:'mc',
         q:'A student argues: "The Tuskegee syphilis study and the CIA mind-control experiments were real conspiracies, so this new theory I read online is probably true too." Which response best reflects the lecture?',
         opts:[
@@ -1492,18 +1387,6 @@ window.EXTRA_MODULES = [
         ],
         correct:0,
         exp:'<strong>Some conspiracies are real</strong>, which is why Hayward (2021) asks whether "conspiracy theory" should always be a dismissive label. But one real conspiracy doesn\'t make a different claim true, and dismissing every claim automatically is also a mistake. Tuskegee and the CIA experiments <em>were</em> secret plots by powerful actors that harmed others.'
-      },
-      {
-        id:'ct5', type:'mc',
-        q:'In the "create a conspiracy theory" activity, Step 2 asked groups to generate supporting "evidence" by establishing a <strong>motive</strong> and the <strong>means</strong>. Using the activity\'s false narrative (that the Church secretly helps rule the world), which of these is an example of establishing the <strong>means</strong>?',
-        opts:[
-          'Claiming the Church profits financially whenever world conflicts break out',
-          'Casting believers as underdogs who can see what everyone else is missing',
-          'Setting up private chat groups where members can swap new "evidence"',
-          'Citing its worldwide missionary network as a way to gather intelligence'
-        ],
-        correct:3,
-        exp:'The <strong>means</strong> is <em>how</em> the supposed plot could be carried out, typically by twisting a real, unique fact (like a worldwide missionary network) into "evidence." The profit claim establishes a <strong>motive</strong> (also Step 2). Casting believers as underdogs is Step 3 (the Hero\'s Journey), and private chat groups are Step 4 (building a community). Seeing these steps from the inside helps you recognize them when others use them.'
       },
       {
         id:'ct6', type:'mc',
@@ -1538,7 +1421,6 @@ window.EXTRA_MODULES = [
     icon: '📰',
     color: '#1d4ed8',
     desc: 'Filtering vs. distortion, media manipulation, measuring bias',
-    draw: 6,
     questions: [
       {
         id:'nb1', type:'mc',
@@ -1600,20 +1482,7 @@ window.EXTRA_MODULES = [
           {L:'Content analysis', R:'Code articles for positive or negative wording about a policy'},
           {L:'Audience studies', R:'Examine the political views of each outlet\'s followers on social media'},
         ],
-        distractors:['Count which think tanks and experts each outlet cites'],
         exp:'Researchers measure media bias in several ways: <strong>evaluation of sources</strong>, <strong>gate-keeping</strong> (what topics get covered), <strong>journalist characteristics</strong>, <strong>content analysis</strong> (coding articles for indicators of bias), <strong>citation studies</strong>, and <strong>audience studies</strong>, such as using Twitter follower networks to estimate each outlet\'s audience bias.'
-      },
-      {
-        id:'nb7', type:'mc',
-        q:'The Ad Fontes Media Bias Chart places each outlet on <strong>two</strong> dimensions. What are they?',
-        opts:[
-          'Political bias, and news value and reliability',
-          'Political bias, and how much readers say they trust the outlet',
-          'Reliability, and the share of opinion versus news content',
-          'Political bias, and the size of the outlet\'s audience'
-        ],
-        correct:0,
-        exp:'Ad Fontes plots <strong>political bias</strong> horizontally (most extreme left to most extreme right) and <strong>news value and reliability</strong> vertically (from original fact reporting down to inaccurate or fabricated information). Opinion versus analysis is part of the reliability scale, not a separate axis. Because the two dimensions are separate, an outlet can be centrist but unreliable, or partisan but mostly accurate.'
       },
       {
         id:'nb8', type:'mc',
@@ -1636,7 +1505,6 @@ window.EXTRA_MODULES = [
     icon: '🪞',
     color: '#6d28d9',
     desc: 'Self-betrayal, self-justification, communities of knowledge',
-    draw: 6,
     questions: [
       {
         id:'sd1', type:'mc',
@@ -1743,7 +1611,6 @@ window.EXTRA_MODULES = [
     icon: '🌱',
     color: '#15803d',
     desc: 'Think Again modes, confident humility, replication crisis',
-    draw: 6,
     questions: [
       {
         id:'ih1', type:'matching',
@@ -1770,13 +1637,6 @@ window.EXTRA_MODULES = [
         exp:'In the <strong>overconfidence cycle</strong>, pride leads to conviction, conviction leads us to seek confirming evidence (confirmation and desirability bias), and that evidence brings validation, which feeds more pride. "Humility → Doubt → Curiosity → Discovery" is the <strong>rethinking cycle</strong>: humility → doubt → curiosity → discovery.'
       },
       {
-        id:'ih3', type:'mc',
-        q:'Jake doubts his own abilities and often feels he doesn\'t measure up, yet he is rigidly certain his study method is the only right one and refuses to try others. On Grant\'s 2×2 grid (belief in yourself × belief in your tools), where does Jake fall?',
-        opts:['Obsessive inferiority','Debilitating doubt','Blind arrogance','Confident humility'],
-        correct:0,
-        exp:'<strong>Obsessive inferiority</strong> is <em>insecure</em> in yourself but <em>certain</em> about your tools. The other quadrants: secure + certain = blind arrogance; insecure + uncertain = debilitating doubt; secure + uncertain = <strong>confident humility</strong>, the goal. Humility (openness to change) and confidence (belief in yourself) are separate dimensions.'
-      },
-      {
         id:'ih4', type:'mc',
         q:'A first-year student who just learned some coding says he could easily build a better operating system than Microsoft. A highly skilled senior engineer worries she isn\'t good enough for her job. Which ideas do these two cases illustrate?',
         opts:[
@@ -1799,18 +1659,6 @@ window.EXTRA_MODULES = [
         ],
         correct:2,
         exp:'The listed reasons are <strong>falsified results</strong>, <strong>small sample sizes</strong> (false positives plus publication bias), <strong>findings that don\'t generalize</strong> across people or time, and <strong>poorly conducted replication studies</strong>. The replication crisis mainly concerns quantitative, experimental findings, not qualitative interviews.'
-      },
-      {
-        id:'ih6', type:'mc',
-        q:'A UC San Diego study found that papers that <strong>fail to replicate</strong> are cited more than papers that do replicate (about 153 more citations each, on average). What is the most likely explanation, and why does it matter?',
-        opts:[
-          'Researchers cite failed studies mainly to criticize them, so the counts overstate their influence',
-          'Surprising findings attract attention even when less reliable, so shaky claims spread further',
-          'Non-replicable papers tend to be older, so they have simply had more time to collect citations',
-          'Journals require authors to cite failed studies as warnings, which inflates their counts'
-        ],
-        correct:1,
-        exp:'Findings that seem more <strong>interesting</strong> get more attention and citations, even when they are less likely to be true, so shaky claims can spread further than solid ones. Most citations of non-replicating papers don\'t even mention the failure. This is a strong reason for <strong>intellectual humility</strong> about even widely cited findings.'
       },
       {
         id:'ih7', type:'mc',
@@ -1852,7 +1700,6 @@ const MODULES = [
     icon: '🔭',
     color: '#2666cf',
     desc: 'Positivist, interpretive, critical & design',
-    draw: 4,
     questions: [
       {
         id:'p1', type:'mc',
@@ -1923,7 +1770,6 @@ const MODULES = [
     icon: '🔍',
     color: '#7b3fb5',
     desc: 'Exploratory, descriptive, explanatory & inductive/deductive',
-    draw: 5,
     questions: [
       {
         id:'rt1', type:'mc',
@@ -2001,7 +1847,6 @@ const MODULES = [
     icon: '📐',
     color: '#1a7f5a',
     desc: 'Independent/dependent variables, hypotheses, constructs',
-    draw: 4,
     questions: [
       {
         id:'v1', type:'mc',
@@ -2179,7 +2024,6 @@ const MODULES = [
     icon: '📚',
     color: '#9b2335',
     desc: 'Theory types, building blocks, grand & mid-range theories',
-    draw: 4,
     questions: [
       {
         id:'th1', type:'mc',
@@ -2281,7 +2125,6 @@ const MODULES = [
     icon: '🔬',
     color: '#2e7d5e',
     desc: 'Qualitative, quantitative & mixed methods; causation; choosing the right method',
-    draw: 6,
     questions: [
       {
         id:'rm1', type:'mc',
@@ -2426,7 +2269,6 @@ const MODULES = [
     icon: '👁️',
     color: '#5c4db1',
     desc: 'How biology, heuristics, and prior experience shape what we perceive',
-    draw: 5,
     questions: [
       {
         id:'perc1', type:'mc',
@@ -2511,18 +2353,6 @@ const MODULES = [
         ],
         correct:1,
         exp:'The <strong>Gestalt principles</strong> collectively show that the mind is not a passive recording device. It actively groups, completes, and organizes stimuli — seeing faces in clouds, completing broken circles, grouping nearby objects together. Perception is constructive, not merely receptive. This reinforces Takeaway #2: what we see is partly a product of what our brain creates.'
-      },
-      {
-        id:'perc8', type:'mc',
-        q:'Neil Harbisson was born completely colorblind but had an antenna implanted that converts light frequencies into sounds he can "hear" as colors. What concept from the perception lecture does his case best illustrate?',
-        opts:[
-          'Technology can give humans access to perceptual information beyond our biological defaults, expanding what reality we can experience',
-          'Color is an entirely social construct with no basis in physical reality',
-          'Sensory substitution is dangerous because it distorts objective reality',
-          'Only people with disabilities benefit from thinking about the limits of perception'
-        ],
-        correct:0,
-        exp:'Harbisson\'s case is a direct extension of <strong>Takeaway #1</strong>: biology normally constrains perception, but technology can expand those limits. He now "perceives" ultraviolet and infrared colors that no unaugmented human can detect — demonstrating that the biological boundary is not fixed forever, and that there is far more to reality than our unaided senses reveal.'
       },
       {
         id:'perc9', type:'short',
